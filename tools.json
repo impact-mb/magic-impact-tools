@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Magic Dashboard",
+    "category": "Dashboards",
+    "url": "https://mb-impact101.streamlit.app/",
+    "description": "Programme dashboard and impact reporting view.",
+    "status": "Live",
+    "badge": "Recommended"
+  },
+  {
+    "name": "MSP Insights",
+    "category": "Analytics",
+    "url": "https://msp-insights.streamlit.app/",
+    "description": "Explore MSP checklist data, trends, and field insights.",
+    "status": "Live",
+    "badge": ""
+  },
+  {
+    "name": "CPRF Validation Tool",
+    "category": "Validation",
+    "url": "https://cprf-validation-tool.streamlit.app/",
+    "description": "Validate CPRF records before reporting or submission.",
+    "status": "Live",
+    "badge": ""
+  },
+  {
+    "name": "CPRF Data Quality Checker",
+    "category": "Data Quality",
+    "url": "https://mbif-udise-missing.streamlit.app/",
+    "description": "Identify missing, duplicate, or inconsistent CPRF and UDISE data.",
+    "status": "Live",
+    "badge": ""
+  },
+  {
+    "name": "MB Excel Merger",
+    "category": "Utilities",
+    "url": "https://mb-excel-merger.streamlit.app/",
+    "description": "Merge multiple Excel or CSV files into one clean dataset.",
+    "status": "Live",
+    "badge": ""
+  },
+  {
+    "name": "Child-wise Curriculum Delivery Report",
+    "category": "Reports",
+    "url": "https://mb-child-session-report.streamlit.app/",
+    "description": "Review child-wise sessions and curriculum delivery progress.",
+    "status": "Live",
+    "badge": "New"
+  },
+  {
+    "name": "EXL",
+    "category": "Donor Reports",
+    "url": "",
+    "description": "Access the EXL donor reporting dashboard and related outputs.",
+    "status": "Coming Soon",
+    "badge": ""
+  },
+  {
+    "name": "BACI",
+    "category": "Donor Reports",
+    "url": "",
+    "description": "Access the BACI donor reporting dashboard and related outputs.",
+    "status": "Coming Soon",
+    "badge": ""
+  },
+  {
+    "name": "JSW",
+    "category": "Donor Reports",
+    "url": "",
+    "description": "Access the JSW donor reporting dashboard and related outputs.",
+    "status": "Coming Soon",
+    "badge": ""
+  },
+  {
+    "name": "Mondelez",
+    "category": "Donor Reports",
+    "url": "",
+    "description": "Access the Mondelez donor reporting dashboard and related outputs.",
+    "status": "Coming Soon",
+    "badge": ""
+  },
+  {
+    "name": "Outreach Report",
+    "category": "Donor Reports",
+    "url": "",
+    "description": "Access the consolidated outreach reporting dashboard.",
+    "status": "Coming Soon",
+    "badge": ""
+  },
+  {
+    "name": "CEO Dashboard",
+    "category": "Donor Reports",
+    "url": "",
+    "description": "Access the executive-level CEO dashboard and management view.",
+    "status": "Coming Soon",
+    "badge": "Executive"
+  }
+]

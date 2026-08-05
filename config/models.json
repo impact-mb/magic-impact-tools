@@ -1,0 +1,6 @@
+{
+  "default_model": "gemini-flash-latest",
+  "available_models": [
+    "gemini-flash-latest"
+  ]
+}
