@@ -42,3 +42,7 @@ Then add your real key. The real secrets file is intentionally excluded from thi
 pip install -r requirements.txt
 streamlit run app.py
 ```
+
+
+## Multilingual XLSForm fix
+The exporter now creates standard XLSForm columns such as `label::English (en)` and `label::Hindi (hi)`, including translated choice labels and constraint messages.

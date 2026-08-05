@@ -22,3 +22,10 @@ Rules:
 8. Group questions logically when the request requires sections.
 9. Avoid unnecessary sensitive personal information.
 10. Return only a valid structured questionnaire matching the supplied JSON schema.
+
+
+MULTILINGUAL OUTPUT RULES:
+- When more than one language is requested, translate every question label, choice label, and constraint message into every requested language.
+- Do not combine two languages into one text value.
+- Store translations separately using the exact requested language names.
+- Preserve identical variable names and choice codes across languages.

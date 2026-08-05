@@ -36,6 +36,45 @@ CATEGORY_ORDER = [
     "AI Data Collection",
 ]
 
+
+LANGUAGE_CODES = {
+    "English": "en",
+    "Hindi": "hi",
+    "Bangla": "bn",
+    "Tamil": "ta",
+    "Marathi": "mr",
+    "Assamese": "as",
+    "Telugu": "te",
+    "Kannada": "kn",
+    "Malayalam": "ml",
+    "Gujarati": "gu",
+    "Punjabi": "pa",
+    "Odia": "or",
+    "Urdu": "ur",
+    "Nepali": "ne",
+}
+
+
+def selected_languages(language_option: str):
+    parts = [part.strip() for part in language_option.split(" and ")]
+    return [part for part in parts if part]
+
+
+def language_column(language_name: str) -> str:
+    code = LANGUAGE_CODES.get(language_name)
+    return f"{language_name} ({code})" if code else language_name
+
+
+def translations_to_map(items):
+    result = {}
+    for item in items or []:
+        if isinstance(item, dict):
+            language = str(item.get("language", "")).strip()
+            text = str(item.get("text", "")).strip()
+            if language and text:
+                result[language] = text
+    return result
+
 STATUS_STYLES = {
     "Live": ("●", "status-live"),
     "Under Maintenance": ("●", "status-maintenance"),
@@ -106,66 +145,87 @@ def build_xlsform(questionnaire: dict) -> bytes:
     survey_rows = []
     choices_rows = []
 
-    survey_rows.append({
-        "type": "start",
-        "name": "start",
-        "label": "Start time",
-        "required": "",
-        "relevant": "",
-        "constraint": "",
-        "constraint_message": "",
-    })
-    survey_rows.append({
-        "type": "end",
-        "name": "end",
-        "label": "End time",
-        "required": "",
-        "relevant": "",
-        "constraint": "",
-        "constraint_message": "",
-    })
+    form_languages = questionnaire.get("languages") or ["English"]
+    default_language = questionnaire.get("default_language") or form_languages[0]
+    multilingual = len(form_languages) > 1
+
+    def add_translated_columns(row, prefix, translations, fallback=""):
+        translation_map = translations_to_map(translations)
+        if multilingual:
+            for language_name in form_languages:
+                column_name = f"{prefix}::{language_column(language_name)}"
+                row[column_name] = translation_map.get(language_name, fallback)
+        else:
+            row[prefix] = translation_map.get(form_languages[0], fallback)
+
+    for qtype, name, default_text in [
+        ("start", "start", "Start time"),
+        ("end", "end", "End time"),
+    ]:
+        row = {
+            "type": qtype,
+            "name": name,
+            "required": "",
+            "relevant": "",
+            "constraint": "",
+        }
+        add_translated_columns(
+            row,
+            "label",
+            [{"language": language, "text": default_text} for language in form_languages],
+            default_text,
+        )
+        survey_rows.append(row)
 
     for index, question in enumerate(questionnaire.get("questions", []), start=1):
         qtype = question.get("type", "text")
         name = question.get("name") or f"question_{index}"
-        label = question.get("label", f"Question {index}")
         required = "yes" if question.get("required", False) else ""
         relevant = question.get("relevant", "")
         constraint = question.get("constraint", "")
-        constraint_message = question.get("constraint_message", "")
 
         if qtype in {"select_one", "select_multiple"}:
             list_name = question.get("list_name") or f"list_{index}"
             xls_type = f"{qtype} {list_name}"
             for choice_index, choice in enumerate(question.get("choices", []), start=1):
-                if isinstance(choice, str):
-                    choice_name = f"option_{choice_index}"
-                    choice_label = choice
-                else:
-                    choice_name = choice.get("name", f"option_{choice_index}")
-                    choice_label = choice.get("label", choice_name)
-                choices_rows.append({
-                    "list_name": list_name,
-                    "name": choice_name,
-                    "label": choice_label,
-                })
+                choice_name = choice.get("name", f"option_{choice_index}")
+                choice_row = {"list_name": list_name, "name": choice_name}
+                add_translated_columns(
+                    choice_row,
+                    "label",
+                    choice.get("labels", []),
+                    choice_name,
+                )
+                choices_rows.append(choice_row)
         else:
             xls_type = qtype
 
-        survey_rows.append({
+        survey_row = {
             "type": xls_type,
             "name": name,
-            "label": label,
             "required": required,
             "relevant": relevant,
             "constraint": constraint,
-            "constraint_message": constraint_message,
-        })
+        }
+        add_translated_columns(
+            survey_row,
+            "label",
+            question.get("labels", []),
+            f"Question {index}",
+        )
+        add_translated_columns(
+            survey_row,
+            "constraint_message",
+            question.get("constraint_messages", []),
+            "",
+        )
+        survey_rows.append(survey_row)
 
     settings_rows = [{
         "form_title": questionnaire.get("title", "AI Generated Data Collection Tool"),
         "form_id": questionnaire.get("form_id", "ai_generated_form"),
         "version": datetime.now(INDIA_TZ).strftime("%Y%m%d%H%M"),
+        "default_language": language_column(default_language) if multilingual else "",
     }]
 
     output = io.BytesIO()
@@ -209,12 +269,18 @@ def generate_questionnaire(
         )
 
     client = genai.Client(api_key=api_key)
+    language_names = selected_languages(language)
 
     questionnaire_schema = {
         "type": "object",
         "properties": {
             "title": {"type": "string"},
             "form_id": {"type": "string"},
+            "languages": {
+                "type": "array",
+                "items": {"type": "string"},
+            },
+            "default_language": {"type": "string"},
             "questions": {
                 "type": "array",
                 "items": {
@@ -223,17 +289,22 @@ def generate_questionnaire(
                         "type": {
                             "type": "string",
                             "enum": [
-                                "text",
-                                "integer",
-                                "decimal",
-                                "date",
-                                "select_one",
-                                "select_multiple",
-                                "note",
+                                "text", "integer", "decimal", "date",
+                                "select_one", "select_multiple", "note",
                             ],
                         },
                         "name": {"type": "string"},
-                        "label": {"type": "string"},
+                        "labels": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "language": {"type": "string"},
+                                    "text": {"type": "string"},
+                                },
+                                "required": ["language", "text"],
+                            },
+                        },
                         "required": {"type": "boolean"},
                         "list_name": {"type": "string"},
                         "choices": {
@@ -242,38 +313,54 @@ def generate_questionnaire(
                                 "type": "object",
                                 "properties": {
                                     "name": {"type": "string"},
-                                    "label": {"type": "string"},
+                                    "labels": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "language": {"type": "string"},
+                                                "text": {"type": "string"},
+                                            },
+                                            "required": ["language", "text"],
+                                        },
+                                    },
                                 },
-                                "required": ["name", "label"],
+                                "required": ["name", "labels"],
                             },
                         },
                         "relevant": {"type": "string"},
                         "constraint": {"type": "string"},
-                        "constraint_message": {"type": "string"},
+                        "constraint_messages": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "language": {"type": "string"},
+                                    "text": {"type": "string"},
+                                },
+                                "required": ["language", "text"],
+                            },
+                        },
                     },
                     "required": [
-                        "type",
-                        "name",
-                        "label",
-                        "required",
-                        "list_name",
-                        "choices",
-                        "relevant",
-                        "constraint",
-                        "constraint_message",
+                        "type", "name", "labels", "required", "list_name",
+                        "choices", "relevant", "constraint", "constraint_messages",
                     ],
                 },
             },
         },
-        "required": ["title", "form_id", "questions"],
+        "required": ["title", "form_id", "languages", "default_language", "questions"],
     }
+
 
     prompt_template = load_system_prompt()
     prompt = prompt_template.format(
         platform=platform,
         language=language,
         requirement=requirement,
-    )
+    ) + f"\n\nExact output languages: {language_names}. " \
+        "Every question label, choice label, and constraint message must include one translation for every listed language. " \
+        "Use the exact language names in the JSON language fields."
 
 
     try:
@@ -290,7 +377,10 @@ def generate_questionnaire(
         if not response.text:
             raise RuntimeError("Gemini returned an empty response.")
 
-        return json.loads(response.text)
+        result = json.loads(response.text)
+        result["languages"] = language_names
+        result["default_language"] = language_names[0]
+        return result
 
     except json.JSONDecodeError as exc:
         raise RuntimeError(
@@ -635,6 +725,7 @@ if generate_button:
                     model_name=selected_model,
                 )
             st.session_state["generated_questionnaire"] = questionnaire
+            st.session_state["generated_language_option"] = language
             st.success("Questionnaire draft generated.")
         except Exception as exc:
             st.error(str(exc))
@@ -649,7 +740,9 @@ if questionnaire:
             "No.": number,
             "Variable": question.get("name", ""),
             "Type": question.get("type", ""),
-            "Question": question.get("label", ""),
+            "Question": translations_to_map(question.get("labels", [])).get(
+                questionnaire.get("default_language", "English"), ""
+            ),
             "Required": "Yes" if question.get("required") else "No",
         })
 
