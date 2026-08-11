@@ -25,6 +25,12 @@ MODELS_FILE = BASE_DIR / "config" / "models.json"
 SYSTEM_PROMPT_FILE = BASE_DIR / "config" / "system_prompt.txt"
 INDIA_TZ = ZoneInfo("Asia/Kolkata")
 
+PROMPT_TEMPLATE_FILE = (
+    BASE_DIR
+    / "resources"
+    / "ODK_Kobo_XLSForm_AI_Prompts.docx"
+)
+
 CATEGORY_ORDER = [
     "Dashboards",
     "Analytics",
@@ -697,6 +703,35 @@ st.html(
     </div>
     """
 )
+
+st.markdown(
+    """
+    <div style="
+        text-align:center;
+        margin-top:12px;
+        margin-bottom:18px;
+        color:#64748b;
+        font-size:0.92rem;
+    ">
+        Not sure what to write?
+        Refer to our ready-to-use ODK / Kobo questionnaire prompt templates.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+if PROMPT_TEMPLATE_FILE.exists():
+    with open(PROMPT_TEMPLATE_FILE, "rb") as prompt_file:
+        st.download_button(
+            label="📘 Download Ready-to-Use Prompt Templates",
+            data=prompt_file.read(),
+            file_name="ODK_Kobo_XLSForm_AI_Prompts.docx",
+            mime=(
+                "application/vnd.openxmlformats-officedocument."
+                "wordprocessingml.document"
+            ),
+            use_container_width=True,
+        )
 
 requirement = st.text_area(
     "What data collection tool do you need?",
