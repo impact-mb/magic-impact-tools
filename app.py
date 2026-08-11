@@ -2,6 +2,7 @@ import html
 import io
 import json
 import os
+import re
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -23,13 +24,8 @@ LOGO_FILE = BASE_DIR / "images" / "magicbus_logo.png"
 LANGUAGES_FILE = BASE_DIR / "config" / "languages.json"
 MODELS_FILE = BASE_DIR / "config" / "models.json"
 SYSTEM_PROMPT_FILE = BASE_DIR / "config" / "system_prompt.txt"
+INDIA_GEOGRAPHY_FILE = BASE_DIR / "config" / "india_geography.json"
 INDIA_TZ = ZoneInfo("Asia/Kolkata")
-
-PROMPT_TEMPLATE_FILE = (
-    BASE_DIR
-    / "resources"
-    / "ODK_Kobo_XLSForm_AI_Prompts.docx"
-)
 
 CATEGORY_ORDER = [
     "Dashboards",
@@ -115,6 +111,47 @@ def load_languages():
 
 
 @st.cache_data
+def load_india_geography():
+    """Load the State/UT -> District master used for deterministic XLSForm geography."""
+    if not INDIA_GEOGRAPHY_FILE.exists():
+        return {}
+
+    geography = json.loads(
+        INDIA_GEOGRAPHY_FILE.read_text(encoding="utf-8")
+    )
+
+    if not isinstance(geography, dict):
+        raise ValueError(
+            "config/india_geography.json must contain a JSON object."
+        )
+
+    cleaned = {}
+    for state, districts in geography.items():
+        state_name = str(state).strip()
+        if not state_name or not isinstance(districts, list):
+            continue
+
+        district_names = sorted({
+            str(district).strip()
+            for district in districts
+            if str(district).strip()
+        })
+
+        if district_names:
+            cleaned[state_name] = district_names
+
+    return dict(sorted(cleaned.items()))
+
+
+def geography_code(value: str) -> str:
+    """Create a stable XLSForm-friendly code from a geography label."""
+    value = str(value).strip().lower()
+    value = value.replace("&", " and ")
+    value = re.sub(r"[^a-z0-9]+", "_", value)
+    return value.strip("_")
+
+
+@st.cache_data
 def load_model_config():
     fallback = {
         "default_model": "gemini-flash-latest",
@@ -154,9 +191,16 @@ def safe_json_loads(text: str):
     return json.loads(cleaned)
 
 
-def build_xlsform(questionnaire: dict) -> bytes:
+def build_xlsform(
+    questionnaire: dict,
+    selected_states=None,
+    selected_districts=None,
+) -> bytes:
     survey_rows = []
     choices_rows = []
+
+    selected_states = selected_states or []
+    selected_districts = selected_districts or {}
 
     form_languages = questionnaire.get("languages") or ["English"]
     default_language = questionnaire.get("default_language") or form_languages[0]
@@ -190,6 +234,96 @@ def build_xlsform(questionnaire: dict) -> bytes:
         )
         survey_rows.append(row)
 
+    # ------------------------------------------------------------
+    # Deterministic India geography: State/UT -> District
+    # ------------------------------------------------------------
+    if selected_states:
+        state_row = {
+            "type": "select_one state_list",
+            "name": "state",
+            "required": "yes",
+            "relevant": "",
+            "constraint": "",
+            "choice_filter": "",
+        }
+        add_translated_columns(
+            state_row,
+            "label",
+            [
+                {
+                    "language": language,
+                    "text": "State / Union Territory",
+                }
+                for language in form_languages
+            ],
+            "State / Union Territory",
+        )
+        survey_rows.append(state_row)
+
+        district_row = {
+            "type": "select_one district_list",
+            "name": "district",
+            "required": "yes",
+            "relevant": "",
+            "constraint": "",
+            "choice_filter": "state_code=${state}",
+        }
+        add_translated_columns(
+            district_row,
+            "label",
+            [
+                {
+                    "language": language,
+                    "text": "District",
+                }
+                for language in form_languages
+            ],
+            "District",
+        )
+        survey_rows.append(district_row)
+
+        for state in selected_states:
+            state_code = geography_code(state)
+
+            state_choice = {
+                "list_name": "state_list",
+                "name": state_code,
+                "state_code": "",
+            }
+            add_translated_columns(
+                state_choice,
+                "label",
+                [
+                    {
+                        "language": language,
+                        "text": state,
+                    }
+                    for language in form_languages
+                ],
+                state,
+            )
+            choices_rows.append(state_choice)
+
+            for district in selected_districts.get(state, []):
+                district_choice = {
+                    "list_name": "district_list",
+                    "name": geography_code(district),
+                    "state_code": state_code,
+                }
+                add_translated_columns(
+                    district_choice,
+                    "label",
+                    [
+                        {
+                            "language": language,
+                            "text": district,
+                        }
+                        for language in form_languages
+                    ],
+                    district,
+                )
+                choices_rows.append(district_choice)
+
     for index, question in enumerate(questionnaire.get("questions", []), start=1):
         qtype = question.get("type", "text")
         name = question.get("name") or f"question_{index}"
@@ -219,6 +353,7 @@ def build_xlsform(questionnaire: dict) -> bytes:
             "required": required,
             "relevant": relevant,
             "constraint": constraint,
+            "choice_filter": question.get("choice_filter", ""),
         }
         add_translated_columns(
             survey_row,
@@ -343,6 +478,7 @@ def generate_questionnaire(
                         },
                         "relevant": {"type": "string"},
                         "constraint": {"type": "string"},
+                        "choice_filter": {"type": "string"},
                         "constraint_messages": {
                             "type": "array",
                             "items": {
@@ -357,7 +493,8 @@ def generate_questionnaire(
                     },
                     "required": [
                         "type", "name", "labels", "required", "list_name",
-                        "choices", "relevant", "constraint", "constraint_messages",
+                        "choices", "relevant", "constraint", "choice_filter",
+                        "constraint_messages",
                     ],
                 },
             },
@@ -369,8 +506,9 @@ def generate_questionnaire(
     prompt_template = load_system_prompt()
     language_display = ", ".join(language_names)
     prompt = prompt_template.format(
-    language=language_display,
-    requirement=requirement,
+        platform=platform,
+        language=language_display,
+        requirement=requirement,
     ) + f"\n\nExact output languages: {language_names}. " \
         "English is the primary and default language. " \
         "Every question label, choice label, and constraint message must include one translation for every listed language. " \
@@ -407,6 +545,7 @@ def generate_questionnaire(
 
 tools = load_tools()
 languages = load_languages()
+india_geography = load_india_geography()
 model_config = load_model_config()
 default_model = model_config["default_model"]
 available_models = model_config["available_models"]
@@ -704,62 +843,36 @@ st.html(
     """
 )
 
-st.markdown(
-    """
-    <div style="
-        text-align:center;
-        margin-top:12px;
-        margin-bottom:18px;
-        color:#64748b;
-        font-size:0.92rem;
-    ">
-        Not sure what to write?
-        Refer to our ready-to-use ODK / Kobo questionnaire prompt templates.
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-if PROMPT_TEMPLATE_FILE.exists():
-    with open(PROMPT_TEMPLATE_FILE, "rb") as prompt_file:
-        st.download_button(
-            label="📘 Download Ready-to-Use Prompt Templates",
-            data=prompt_file.read(),
-            file_name="ODK_Kobo_XLSForm_AI_Prompts.docx",
-            mime=(
-                "application/vnd.openxmlformats-officedocument."
-                "wordprocessingml.document"
-            ),
-            use_container_width=True,
-        )
-
 requirement = st.text_area(
     "What data collection tool do you need?",
     placeholder=(
-        "Example: Create a school monitoring form with school name, district, "
-        "visit date, attendance, infrastructure checklist, facilitator feedback, "
-        "GPS consent, and mandatory validation rules."
+        "Example: Create a school monitoring form with school name, visit date, "
+        "attendance, infrastructure checklist, facilitator feedback, consent, "
+        "and mandatory validation rules."
     ),
     height=160,
 )
 
-language_count_col = st.container()
-
-with language_count_col:
-    language_count = st.selectbox(
-        "Number of questionnaire languages",
-        options=[1, 2, 3, 4],
-        index=0,
-        format_func=lambda value: f"{value} Language" if value == 1 else f"{value} Languages",
-        help="English is always included as the primary/default language.",
-    )
-
+# ODK / Kobo is the only supported target platform.
 platform = "ODK / KoboToolbox XLSForm"
+
+language_count = st.selectbox(
+    "Number of questionnaire languages",
+    options=[1, 2, 3, 4],
+    index=0,
+    format_func=lambda value: (
+        f"{value} Language"
+        if value == 1
+        else f"{value} Languages"
+    ),
+    help="English is always included as the primary/default language.",
+)
 
 st.caption("English is always the primary/default questionnaire language.")
 
 additional_language_options = [
-    language for language in languages
+    language
+    for language in languages
     if language != "English" and " and " not in language
 ]
 
@@ -768,19 +881,18 @@ if language_count > 1:
         "Select additional questionnaire languages",
         options=additional_language_options,
         max_selections=language_count - 1,
-        placeholder=f"Select {language_count - 1} additional language"
-        if language_count == 2
-        else f"Select {language_count - 1} additional languages",
-        help=(
-            f"Select exactly {language_count - 1} additional language"
+        placeholder=(
+            f"Select {language_count - 1} additional language"
             if language_count == 2
-            else f"Select exactly {language_count - 1} additional languages"
+            else f"Select {language_count - 1} additional languages"
         ),
     )
 else:
     additional_languages = []
 
-language_names = normalize_languages(["English"] + additional_languages)
+language_names = normalize_languages(
+    ["English"] + additional_languages
+)
 language_selection_valid = len(language_names) == language_count
 
 if language_count > 1 and not language_selection_valid:
@@ -791,29 +903,133 @@ if language_count > 1 and not language_selection_valid:
     )
 
 if language_selection_valid:
-    st.caption("Selected languages: " + " • ".join(language_names))
+    st.caption(
+        "Selected languages: "
+        + " • ".join(language_names)
+    )
+
+st.divider()
+
+# ------------------------------------------------------------
+# Geography selection
+# ------------------------------------------------------------
+st.markdown("### Geography")
+
+include_geography = st.checkbox(
+    "Include State / Union Territory and District",
+    value=False,
+    help=(
+        "Adds State/UT and District questions to the generated XLSForm. "
+        "Districts are automatically filtered by the selected State/UT."
+    ),
+)
+
+selected_states = []
+selected_districts = {}
+geography_selection_valid = True
+
+if include_geography:
+    if not india_geography:
+        st.error(
+            "India geography master is unavailable. "
+            "Add config/india_geography.json."
+        )
+        geography_selection_valid = False
+    else:
+        selected_states = st.multiselect(
+            "Select State / Union Territory",
+            options=list(india_geography.keys()),
+            placeholder="Select one or more States / UTs",
+        )
+
+        if not selected_states:
+            st.info(
+                "Select at least one State / Union Territory."
+            )
+            geography_selection_valid = False
+
+        for state in selected_states:
+            st.markdown(f"**{state}**")
+
+            all_districts = india_geography.get(state, [])
+
+            select_all = st.checkbox(
+                f"Select all districts in {state}",
+                value=False,
+                key=f"select_all_{geography_code(state)}",
+            )
+
+            selected_districts[state] = st.multiselect(
+                f"Districts - {state}",
+                options=all_districts,
+                default=all_districts if select_all else [],
+                key=f"districts_{geography_code(state)}",
+                placeholder="Select districts",
+                label_visibility="collapsed",
+            )
+
+            if not selected_districts[state]:
+                geography_selection_valid = False
+
+        if selected_states and not geography_selection_valid:
+            st.info(
+                "Select at least one district for every selected State / UT."
+            )
+
+        if selected_states and geography_selection_valid:
+            total_districts = sum(
+                len(values)
+                for values in selected_districts.values()
+            )
+            st.success(
+                f"Geography selected: {len(selected_states)} "
+                f"{'State/UT' if len(selected_states) == 1 else 'States/UTs'} "
+                f"and {total_districts} "
+                f"{'district' if total_districts == 1 else 'districts'}."
+            )
+
+generate_enabled = (
+    language_selection_valid
+    and geography_selection_valid
+)
 
 generate_button = st.button(
     "Generate Data Collection Tool",
     type="primary",
     use_container_width=True,
-    disabled=not language_selection_valid,
+    disabled=not generate_enabled,
 )
 
 if generate_button:
     if not requirement.strip():
-        st.warning("Please describe the data collection tool you need.")
+        st.warning(
+            "Please describe the data collection tool you need."
+        )
     else:
         try:
-            with st.spinner("Generating questionnaire structure..."):
+            with st.spinner(
+                "Generating questionnaire structure..."
+            ):
                 questionnaire = generate_questionnaire(
                     requirement=requirement,
                     language_names=language_names,
                     platform=platform,
                     model_name=default_model,
                 )
-            st.session_state["generated_questionnaire"] = questionnaire
-            st.session_state["generated_language_option"] = language_names
+
+            st.session_state[
+                "generated_questionnaire"
+            ] = questionnaire
+            st.session_state[
+                "generated_language_option"
+            ] = language_names
+            st.session_state[
+                "generated_states"
+            ] = selected_states
+            st.session_state[
+                "generated_districts"
+            ] = selected_districts
+
             st.success("Questionnaire draft generated.")
         except Exception as exc:
             st.error(str(exc))
@@ -821,6 +1037,25 @@ if generate_button:
 questionnaire = st.session_state.get("generated_questionnaire")
 if questionnaire:
     st.subheader(questionnaire.get("title", "Generated Questionnaire"))
+
+    generated_states = st.session_state.get(
+        "generated_states", []
+    )
+    generated_districts = st.session_state.get(
+        "generated_districts", {}
+    )
+
+    if generated_states:
+        total_generated_districts = sum(
+            len(values)
+            for values in generated_districts.values()
+        )
+        st.caption(
+            f"Included geography: {len(generated_states)} "
+            f"{'State/UT' if len(generated_states) == 1 else 'States/UTs'} "
+            f"• {total_generated_districts} "
+            f"{'district' if total_generated_districts == 1 else 'districts'}"
+        )
 
     preview_rows = []
     for number, question in enumerate(questionnaire.get("questions", []), start=1):
@@ -837,7 +1072,15 @@ if questionnaire:
     if preview_rows:
         st.dataframe(preview_rows, use_container_width=True, hide_index=True)
 
-    excel_bytes = build_xlsform(questionnaire)
+    excel_bytes = build_xlsform(
+        questionnaire,
+        selected_states=st.session_state.get(
+            "generated_states", []
+        ),
+        selected_districts=st.session_state.get(
+            "generated_districts", {}
+        ),
+    )
     st.download_button(
         "Download XLSForm Excel",
         data=excel_bytes,
