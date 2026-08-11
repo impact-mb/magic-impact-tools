@@ -55,9 +55,16 @@ LANGUAGE_CODES = {
 }
 
 
-def selected_languages(language_option: str):
-    parts = [part.strip() for part in language_option.split(" and ")]
-    return [part for part in parts if part]
+def normalize_languages(language_names):
+    """Return unique questionnaire languages with English first."""
+    cleaned = []
+    for language in language_names or []:
+        language = str(language).strip()
+        if language and language not in cleaned:
+            cleaned.append(language)
+
+    cleaned = [language for language in cleaned if language != "English"]
+    return ["English"] + cleaned
 
 
 def language_column(language_name: str) -> str:
@@ -91,7 +98,7 @@ def load_tools():
 @st.cache_data
 def load_languages():
     if not LANGUAGES_FILE.exists():
-        return ["English", "Hindi", "English and Hindi"]
+        return ["English", "Hindi", "Assamese", "Bangla", "Odia", "Gujarati", "Marathi", "Telugu", "Kannada", "Malayalam", "Tamil", "Punjabi", "Urdu"]
     values = json.loads(LANGUAGES_FILE.read_text(encoding="utf-8"))
     if not isinstance(values, list):
         raise ValueError("config/languages.json must contain a JSON list.")
@@ -225,7 +232,7 @@ def build_xlsform(questionnaire: dict) -> bytes:
         "form_title": questionnaire.get("title", "AI Generated Data Collection Tool"),
         "form_id": questionnaire.get("form_id", "ai_generated_form"),
         "version": datetime.now(INDIA_TZ).strftime("%Y%m%d%H%M"),
-        "default_language": language_column(default_language) if multilingual else "",
+        "default_language": language_column(default_language),
     }]
 
     output = io.BytesIO()
@@ -242,7 +249,7 @@ def build_xlsform(questionnaire: dict) -> bytes:
 
 def generate_questionnaire(
     requirement: str,
-    language: str,
+    language_names: list[str],
     platform: str,
     model_name: str,
 ):
@@ -269,7 +276,7 @@ def generate_questionnaire(
         )
 
     client = genai.Client(api_key=api_key)
-    language_names = selected_languages(language)
+    language_names = normalize_languages(language_names)
 
     questionnaire_schema = {
         "type": "object",
@@ -354,13 +361,15 @@ def generate_questionnaire(
 
 
     prompt_template = load_system_prompt()
+    language_display = ", ".join(language_names)
     prompt = prompt_template.format(
-        platform=platform,
-        language=language,
-        requirement=requirement,
+    language=language_display,
+    requirement=requirement,
     ) + f"\n\nExact output languages: {language_names}. " \
+        "English is the primary and default language. " \
         "Every question label, choice label, and constraint message must include one translation for every listed language. " \
-        "Use the exact language names in the JSON language fields."
+        "Use the exact language names in the JSON language fields. " \
+        "Never combine translations from different languages into a single label value."
 
 
     try:
@@ -523,6 +532,19 @@ st.html(
         border-radius: 20px;
         padding: 1.3rem;
         margin-top: 2rem;
+        text-align: center;
+    }
+
+    .ai-box h2 {
+        margin: 0 0 .45rem 0;
+        color: #0f172a;
+    }
+
+    .ai-box p {
+        margin: 0 auto;
+        max-width: 860px;
+        color: #475569;
+        line-height: 1.55;
     }
 
     .footer {
@@ -667,8 +689,8 @@ for category in CATEGORY_ORDER[:-1]:
 st.html(
     """
     <div class="ai-box">
-        <h2 style="margin-top:0">AI Data Collection Tool Generator</h2>
-        <p style="color:#475569;margin-bottom:.2rem">
+        <h2>AI Data Collection Tool Generator</h2>
+        <p>
             Describe the survey or monitoring tool you need. The AI will generate
             structured questions and an XLSForm-compatible Excel draft.
         </p>
@@ -676,41 +698,72 @@ st.html(
     """
 )
 
-with st.form("ai_form"):
-    requirement = st.text_area(
-        "What data collection tool do you need?",
-        placeholder=(
-            "Example: Create a school monitoring form with school name, district, "
-            "visit date, attendance, infrastructure checklist, facilitator feedback, "
-            "GPS consent, and mandatory validation rules."
+requirement = st.text_area(
+    "What data collection tool do you need?",
+    placeholder=(
+        "Example: Create a school monitoring form with school name, district, "
+        "visit date, attendance, infrastructure checklist, facilitator feedback, "
+        "GPS consent, and mandatory validation rules."
+    ),
+    height=160,
+)
+
+language_count_col = st.container()
+
+with language_count_col:
+    language_count = st.selectbox(
+        "Number of questionnaire languages",
+        options=[1, 2, 3, 4],
+        index=0,
+        format_func=lambda value: f"{value} Language" if value == 1 else f"{value} Languages",
+        help="English is always included as the primary/default language.",
+    )
+
+platform = "ODK / KoboToolbox XLSForm"
+
+st.caption("English is always the primary/default questionnaire language.")
+
+additional_language_options = [
+    language for language in languages
+    if language != "English" and " and " not in language
+]
+
+if language_count > 1:
+    additional_languages = st.multiselect(
+        "Select additional questionnaire languages",
+        options=additional_language_options,
+        max_selections=language_count - 1,
+        placeholder=f"Select {language_count - 1} additional language"
+        if language_count == 2
+        else f"Select {language_count - 1} additional languages",
+        help=(
+            f"Select exactly {language_count - 1} additional language"
+            if language_count == 2
+            else f"Select exactly {language_count - 1} additional languages"
         ),
-        height=160,
+    )
+else:
+    additional_languages = []
+
+language_names = normalize_languages(["English"] + additional_languages)
+language_selection_valid = len(language_names) == language_count
+
+if language_count > 1 and not language_selection_valid:
+    remaining = language_count - len(language_names)
+    st.info(
+        f"Please select {remaining} more "
+        f"{'language' if remaining == 1 else 'languages'}."
     )
 
-    form_col1, form_col2, form_col3 = st.columns(3)
-    with form_col1:
-        language = st.selectbox(
-            "Questionnaire language",
-            languages,
-        )
-    with form_col2:
-        platform = st.selectbox(
-            "Target platform",
-            ["ODK / KoboToolbox XLSForm", "SurveyCTO XLSForm", "Generic survey"],
-        )
-    with form_col3:
-        selected_model = st.selectbox(
-            "Gemini model",
-            available_models,
-            index=available_models.index(default_model),
-            help="Managed through config/models.json",
-        )
+if language_selection_valid:
+    st.caption("Selected languages: " + " • ".join(language_names))
 
-    generate_button = st.form_submit_button(
-        "Generate Data Collection Tool",
-        type="primary",
-        use_container_width=True,
-    )
+generate_button = st.button(
+    "Generate Data Collection Tool",
+    type="primary",
+    use_container_width=True,
+    disabled=not language_selection_valid,
+)
 
 if generate_button:
     if not requirement.strip():
@@ -720,12 +773,12 @@ if generate_button:
             with st.spinner("Generating questionnaire structure..."):
                 questionnaire = generate_questionnaire(
                     requirement=requirement,
-                    language=language,
+                    language_names=language_names,
                     platform=platform,
-                    model_name=selected_model,
+                    model_name=default_model,
                 )
             st.session_state["generated_questionnaire"] = questionnaire
-            st.session_state["generated_language_option"] = language
+            st.session_state["generated_language_option"] = language_names
             st.success("Questionnaire draft generated.")
         except Exception as exc:
             st.error(str(exc))

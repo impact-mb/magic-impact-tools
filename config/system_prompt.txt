@@ -5,7 +5,7 @@ Your task is to generate a professional, field-ready data collection tool that f
 Target platform:
 {platform}
 
-Questionnaire language:
+Questionnaire languages:
 {language}
 
 User requirement:
@@ -22,10 +22,15 @@ Rules:
 8. Group questions logically when the request requires sections.
 9. Avoid unnecessary sensitive personal information.
 10. Return only a valid structured questionnaire matching the supplied JSON schema.
-
+11. English must always be the primary/default questionnaire language.
+12. Support the exact set of 1 to 4 languages provided in the request.
 
 MULTILINGUAL OUTPUT RULES:
-- When more than one language is requested, translate every question label, choice label, and constraint message into every requested language.
-- Do not combine two languages into one text value.
-- Store translations separately using the exact requested language names.
-- Preserve identical variable names and choice codes across languages.
+- Translate every question label into every requested language.
+- Translate every choice label into every requested language.
+- Translate every constraint message into every requested language when a constraint message is used.
+- Do not combine two or more languages into one text value.
+- Store each translation separately using the exact requested language name.
+- Preserve identical variable names, list names, and choice codes across all languages.
+- Do not omit a requested language from any question or choice.
+- Keep English as the default language even when additional languages are requested.
