@@ -25,7 +25,6 @@ LANGUAGES_FILE = BASE_DIR / "config" / "languages.json"
 MODELS_FILE = BASE_DIR / "config" / "models.json"
 SYSTEM_PROMPT_FILE = BASE_DIR / "config" / "system_prompt.txt"
 INDIA_GEOGRAPHY_FILE = BASE_DIR / "config" / "india_geography.json"
-PROMPT_LIBRARY_FILE = BASE_DIR / "resources" / "ODK_Kobo_XLSForm_AI_Prompts.docx"
 INDIA_TZ = ZoneInfo("Asia/Kolkata")
 
 CATEGORY_ORDER = [
@@ -693,54 +692,6 @@ st.html(
         line-height: 1.55;
     }
 
-
-    .ai-resource-strip {
-        margin: .9rem 0 1.2rem;
-        padding: .9rem 1rem;
-        background: #ffffff;
-        border: 1px solid #dbe4f0;
-        border-radius: 14px;
-        text-align: center;
-        color: #475569;
-        font-size: .9rem;
-        box-shadow: 0 4px 12px rgba(15,23,42,.04);
-    }
-
-    .ai-card-title {
-        font-size: 1.02rem;
-        font-weight: 850;
-        color: #0f172a;
-        margin-bottom: .25rem;
-    }
-
-    .ai-card-subtitle {
-        color: #64748b;
-        font-size: .82rem;
-        line-height: 1.45;
-        margin-bottom: .65rem;
-    }
-
-    .example-prompt-box {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        padding: .9rem 1rem;
-        color: #334155;
-        font-size: .88rem;
-        line-height: 1.55;
-        min-height: 190px;
-    }
-
-    .geography-summary {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        padding: .7rem .85rem;
-        color: #475569;
-        font-size: .82rem;
-        margin-top: .5rem;
-    }
-
     .footer {
         margin-top: 3rem;
         padding: 1.4rem;
@@ -885,240 +836,165 @@ st.html(
     <div class="ai-box">
         <h2>AI Data Collection Tool Generator</h2>
         <p>
-            Describe the survey or monitoring tool you need and generate a
-            field-ready ODK / KoboToolbox XLSForm with multilingual and
-            State–District cascading support.
+            Describe the survey or monitoring tool you need. The AI will generate
+            structured questions and an XLSForm-compatible Excel draft.
         </p>
     </div>
     """
 )
 
-st.html(
-    """
-    <div class="ai-resource-strip">
-        <strong>Need help writing your request?</strong><br>
-        Start with our ready-to-use ODK / Kobo AI prompt templates, then customise
-        the prompt for your programme.
-    </div>
-    """
+requirement = st.text_area(
+    "What data collection tool do you need?",
+    placeholder=(
+        "Example: Create a school monitoring form with school name, visit date, "
+        "attendance, infrastructure checklist, facilitator feedback, consent, "
+        "and mandatory validation rules."
+    ),
+    height=160,
 )
 
-if PROMPT_LIBRARY_FILE.exists():
-    with open(PROMPT_LIBRARY_FILE, "rb") as prompt_file:
-        st.download_button(
-            "📘 Download Ready-to-Use ODK / Kobo AI Prompts",
-            data=prompt_file.read(),
-            file_name="ODK_Kobo_XLSForm_AI_Prompts.docx",
-            mime=(
-                "application/vnd.openxmlformats-officedocument."
-                "wordprocessingml.document"
-            ),
-            use_container_width=True,
-        )
-else:
-    st.warning(
-        "Prompt template file not found at "
-        "resources/ODK_Kobo_XLSForm_AI_Prompts.docx"
-    )
-
+# ODK / Kobo is the only supported target platform.
 platform = "ODK / KoboToolbox XLSForm"
 
-# ============================================================
-# ROW 1: Prompt + Ready Example
-# ============================================================
-prefill_prompt = st.session_state.pop("ai_example_prompt", "")
-prompt_col, example_col = st.columns(2, gap="large")
+language_count = st.selectbox(
+    "Number of questionnaire languages",
+    options=[1, 2, 3, 4],
+    index=0,
+    format_func=lambda value: (
+        f"{value} Language"
+        if value == 1
+        else f"{value} Languages"
+    ),
+    help="English is always included as the primary/default language.",
+)
 
-with prompt_col:
-    with st.container(border=True):
-        st.html(
-            """
-            <div class="ai-card-title">1. Describe Your Data Collection Tool</div>
-            <div class="ai-card-subtitle">
-                Tell the AI what you want to collect, who the respondents are,
-                and any validation, skip logic, consent, GPS, photo, or
-                monitoring requirements.
-            </div>
-            """
+st.caption("English is always the primary/default questionnaire language.")
+
+additional_language_options = [
+    language
+    for language in languages
+    if language != "English" and " and " not in language
+]
+
+if language_count > 1:
+    additional_languages = st.multiselect(
+        "Select additional questionnaire languages",
+        options=additional_language_options,
+        max_selections=language_count - 1,
+        placeholder=(
+            f"Select {language_count - 1} additional language"
+            if language_count == 2
+            else f"Select {language_count - 1} additional languages"
+        ),
+    )
+else:
+    additional_languages = []
+
+language_names = normalize_languages(
+    ["English"] + additional_languages
+)
+language_selection_valid = len(language_names) == language_count
+
+if language_count > 1 and not language_selection_valid:
+    remaining = language_count - len(language_names)
+    st.info(
+        f"Please select {remaining} more "
+        f"{'language' if remaining == 1 else 'languages'}."
+    )
+
+if language_selection_valid:
+    st.caption(
+        "Selected languages: "
+        + " • ".join(language_names)
+    )
+
+st.divider()
+
+# ------------------------------------------------------------
+# Geography selection
+# ------------------------------------------------------------
+st.markdown("### Geography")
+
+include_geography = st.checkbox(
+    "Include State / Union Territory and District",
+    value=False,
+    help=(
+        "Adds State/UT and District questions to the generated XLSForm. "
+        "Districts are automatically filtered by the selected State/UT."
+    ),
+)
+
+selected_states = []
+selected_districts = {}
+geography_selection_valid = True
+
+if include_geography:
+    if not india_geography:
+        st.error(
+            "India geography master is unavailable. "
+            "Add config/india_geography.json."
         )
-        requirement = st.text_area(
-            "Your prompt",
-            value=prefill_prompt,
-            placeholder=(
-                "Example: Create a school monitoring form covering school profile, "
-                "visit date, attendance, infrastructure, classroom observation, "
-                "facilitator feedback, consent, GPS and validation rules."
-            ),
-            height=235,
-            label_visibility="collapsed",
-        )
-
-with example_col:
-    with st.container(border=True):
-        st.html(
-            """
-            <div class="ai-card-title">2. Ready Example</div>
-            <div class="ai-card-subtitle">
-                Use this example as a starting point, or download the full prompt
-                library above for more ready-to-use templates.
-            </div>
-            <div class="example-prompt-box">
-                <strong>School Monitoring Visit</strong><br><br>
-                Create a field-ready school monitoring XLSForm for ODK / Kobo.
-                Include school identification, visit date, attendance,
-                infrastructure, teacher availability, classroom observations,
-                sanitation, digital facilities, safety, GPS, photographs,
-                mandatory validation rules and relevant skip logic. Group
-                questions into logical sections and use stable,
-                analysis-friendly variable names.
-            </div>
-            """
-        )
-        if st.button(
-            "Use This Example",
-            use_container_width=True,
-            key="use_example_prompt",
-        ):
-            st.session_state["ai_example_prompt"] = (
-                "Create a field-ready school monitoring XLSForm for ODK / Kobo. "
-                "Include school identification, visit date, attendance, "
-                "infrastructure, teacher availability, classroom observations, "
-                "sanitation, digital facilities, safety, GPS, photographs, "
-                "mandatory validation rules and relevant skip logic. "
-                "Group questions into logical sections and use stable, "
-                "analysis-friendly variable names."
-            )
-            st.rerun()
-
-# ============================================================
-# ROW 2: Languages + Geography
-# ============================================================
-language_col, geography_col = st.columns(2, gap="large")
-
-with language_col:
-    with st.container(border=True):
-        st.html(
-            """
-            <div class="ai-card-title">3. Questionnaire Languages</div>
-            <div class="ai-card-subtitle">
-                English is always the primary/default language. Add up to three
-                additional questionnaire languages.
-            </div>
-            """
-        )
-
-        language_count = st.selectbox(
-            "Number of questionnaire languages",
-            options=[1, 2, 3, 4],
-            index=0,
-            format_func=lambda value: (
-                f"{value} Language" if value == 1 else f"{value} Languages"
-            ),
+        geography_selection_valid = False
+    else:
+        selected_states = st.multiselect(
+            "Select State / Union Territory",
+            options=list(india_geography.keys()),
+            placeholder="Select one or more States / UTs",
         )
 
-        additional_language_options = [
-            language for language in languages
-            if language != "English" and " and " not in language
-        ]
-
-        if language_count > 1:
-            additional_languages = st.multiselect(
-                "Additional languages",
-                options=additional_language_options,
-                max_selections=language_count - 1,
-                placeholder="Select additional languages",
-            )
-        else:
-            additional_languages = []
-
-        language_names = normalize_languages(["English"] + additional_languages)
-        language_selection_valid = len(language_names) == language_count
-
-        st.caption("English is the primary/default questionnaire language.")
-        if language_count > 1 and not language_selection_valid:
+        if not selected_states:
             st.info(
-                f"Select {language_count - len(language_names)} more "
-                f"{'language' if language_count - len(language_names) == 1 else 'languages'}."
+                "Select at least one State / Union Territory."
             )
-        elif language_selection_valid:
-            st.caption("Selected: " + " • ".join(language_names))
+            geography_selection_valid = False
 
-with geography_col:
-    with st.container(border=True):
-        st.html(
-            """
-            <div class="ai-card-title">4. Geography</div>
-            <div class="ai-card-subtitle">
-                Optionally add State / Union Territory and District questions.
-                Districts automatically cascade from the selected State/UT.
-            </div>
-            """
-        )
+        for state in selected_states:
+            st.markdown(f"**{state}**")
 
-        include_geography = st.checkbox(
-            "Include State / Union Territory and District",
-            value=False,
-        )
+            all_districts = india_geography.get(state, [])
 
-        selected_states = []
-        selected_districts = {}
-        geography_selection_valid = True
+            select_all = st.checkbox(
+                f"Select all districts in {state}",
+                value=False,
+                key=f"select_all_{geography_code(state)}",
+            )
 
-        if include_geography:
-            if not india_geography:
-                st.error(
-                    "India geography master is unavailable. Add "
-                    "config/india_geography.json."
-                )
+            selected_districts[state] = st.multiselect(
+                f"Districts - {state}",
+                options=all_districts,
+                default=all_districts if select_all else [],
+                key=f"districts_{geography_code(state)}",
+                placeholder="Select districts",
+                label_visibility="collapsed",
+            )
+
+            if not selected_districts[state]:
                 geography_selection_valid = False
-            else:
-                selected_states = st.multiselect(
-                    "State / Union Territory",
-                    options=list(india_geography.keys()),
-                    placeholder="Select one or more States / UTs",
-                )
 
-                if not selected_states:
-                    geography_selection_valid = False
+        if selected_states and not geography_selection_valid:
+            st.info(
+                "Select at least one district for every selected State / UT."
+            )
 
-                for state in selected_states:
-                    all_districts = india_geography.get(state, [])
-                    select_all = st.checkbox(
-                        f"Select all districts — {state}",
-                        value=False,
-                        key=f"select_all_{geography_code(state)}",
-                    )
-                    selected_districts[state] = st.multiselect(
-                        f"Districts — {state}",
-                        options=all_districts,
-                        default=all_districts if select_all else [],
-                        key=f"districts_{geography_code(state)}",
-                        placeholder="Select districts",
-                    )
-                    if not selected_districts[state]:
-                        geography_selection_valid = False
+        if selected_states and geography_selection_valid:
+            total_districts = sum(
+                len(values)
+                for values in selected_districts.values()
+            )
+            st.success(
+                f"Geography selected: {len(selected_states)} "
+                f"{'State/UT' if len(selected_states) == 1 else 'States/UTs'} "
+                f"and {total_districts} "
+                f"{'district' if total_districts == 1 else 'districts'}."
+            )
 
-                if selected_states and geography_selection_valid:
-                    total_districts = sum(len(v) for v in selected_districts.values())
-                    st.html(
-                        f"""
-                        <div class="geography-summary">
-                            <strong>{len(selected_states)}</strong>
-                            {'State/UT' if len(selected_states) == 1 else 'States/UTs'}
-                            selected · <strong>{total_districts}</strong>
-                            {'district' if total_districts == 1 else 'districts'}
-                        </div>
-                        """
-                    )
-                elif selected_states:
-                    st.info(
-                        "Select at least one district for every selected State / UT."
-                    )
+generate_enabled = (
+    language_selection_valid
+    and geography_selection_valid
+)
 
-generate_enabled = language_selection_valid and geography_selection_valid
-st.markdown("")
 generate_button = st.button(
-    "✨ Generate Data Collection Tool",
+    "Generate Data Collection Tool",
     type="primary",
     use_container_width=True,
     disabled=not generate_enabled,
@@ -1126,20 +1002,34 @@ generate_button = st.button(
 
 if generate_button:
     if not requirement.strip():
-        st.warning("Please describe the data collection tool you need.")
+        st.warning(
+            "Please describe the data collection tool you need."
+        )
     else:
         try:
-            with st.spinner("Generating questionnaire structure..."):
+            with st.spinner(
+                "Generating questionnaire structure..."
+            ):
                 questionnaire = generate_questionnaire(
                     requirement=requirement,
                     language_names=language_names,
                     platform=platform,
                     model_name=default_model,
                 )
-            st.session_state["generated_questionnaire"] = questionnaire
-            st.session_state["generated_language_option"] = language_names
-            st.session_state["generated_states"] = selected_states
-            st.session_state["generated_districts"] = selected_districts
+
+            st.session_state[
+                "generated_questionnaire"
+            ] = questionnaire
+            st.session_state[
+                "generated_language_option"
+            ] = language_names
+            st.session_state[
+                "generated_states"
+            ] = selected_states
+            st.session_state[
+                "generated_districts"
+            ] = selected_districts
+
             st.success("Questionnaire draft generated.")
         except Exception as exc:
             st.error(str(exc))
