@@ -1,5 +1,7 @@
 import io
+import json
 from datetime import datetime
+from pathlib import Path
 
 import pandas as pd
 
@@ -11,6 +13,43 @@ from core.settings import INDIA_TZ
 from services.geography_service import geography_code
 
 
+STANDARD_CHOICES_FILE = (
+    Path(__file__).resolve().parents[1]
+    / "config"
+    / "standard_choices.json"
+)
+
+
+def load_standard_choices() -> dict:
+    """Load reusable multilingual choice lists from config."""
+    if not STANDARD_CHOICES_FILE.exists():
+        return {}
+
+    with STANDARD_CHOICES_FILE.open(
+        "r",
+        encoding="utf-8",
+    ) as file:
+        data = json.load(file)
+
+    return data.get(
+        "choice_lists",
+        {},
+    )
+
+
+def standard_choice_labels(choice: dict) -> list[dict]:
+    """Convert local label mapping to the questionnaire translation format."""
+    return [
+        {
+            "language": language,
+            "text": text,
+        }
+        for language, text in (
+            choice.get("labels", {})
+        ).items()
+    ]
+
+
 def build_xlsform(
     questionnaire: dict,
     selected_states=None,
@@ -19,6 +58,9 @@ def build_xlsform(
 ) -> bytes:
     survey_rows = []
     choices_rows = []
+    standard_choice_lists = (
+        load_standard_choices()
+    )
 
     selected_states = (
         selected_states or []
@@ -319,11 +361,44 @@ def build_xlsform(
                 f"{qtype} {list_name}"
             )
 
+            standard_list = (
+                standard_choice_lists.get(
+                    list_name
+                )
+            )
+
+            if standard_list:
+                source_choices = (
+                    standard_list.get(
+                        "choices",
+                        [],
+                    )
+                )
+
+                source_choices = [
+                    {
+                        "name": choice.get(
+                            "name",
+                            "",
+                        ),
+                        "labels": (
+                            standard_choice_labels(
+                                choice
+                            )
+                        ),
+                    }
+                    for choice in source_choices
+                ]
+            else:
+                source_choices = (
+                    question.get(
+                        "choices",
+                        [],
+                    )
+                )
+
             for choice_index, choice in enumerate(
-                question.get(
-                    "choices",
-                    [],
-                ),
+                source_choices,
                 start=1,
             ):
                 choice_name = str(

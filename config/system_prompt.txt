@@ -34,3 +34,30 @@ MULTILINGUAL OUTPUT RULES:
 - Preserve identical variable names, list names, and choice codes across all languages.
 - Do not omit a requested language from any question or choice.
 - Keep English as the default language even when additional languages are requested.
+
+
+STANDARD CHOICE LIBRARY:
+The application has a local multilingual standard choice library. When a question exactly matches one of the following reusable response sets, use the exact list_name and do not generate the choice rows or translations yourself:
+
+- yes_no
+- yes_no_dont_know
+- yes_no_na
+- yes_no_dont_know_na
+- consent
+- urban_rural
+- present_absent
+- government_private
+- male_female
+- male_female_other
+- available_not_available
+- functional_non_functional
+- working_not_working
+- good_average_poor
+- excellent_good_average_poor
+- agree_neutral_disagree
+- completed_in_progress_not_started
+- safe_unsafe
+
+For a standard list, return an empty choices array. The application will inject the stable choice codes and requested-language labels from standard_choices.json.
+
+Do not force a standard list when it does not semantically fit the question. For questionnaire-specific options, such as SJT scenario responses, generate the custom choices normally.

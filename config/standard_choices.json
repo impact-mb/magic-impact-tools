@@ -1,0 +1,883 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "Reusable multilingual standard choice lists for ODK/Kobo XLSForms.",
+    "default_language": "English",
+    "languages": [
+      "English",
+      "Hindi",
+      "Assamese",
+      "Bengali",
+      "Gujarati",
+      "Kannada",
+      "Malayalam",
+      "Marathi",
+      "Odia",
+      "Punjabi",
+      "Tamil",
+      "Telugu"
+    ],
+    "rules": [
+      "list_name values use lowercase snake_case.",
+      "Choice name codes are stable and are never translated.",
+      "Only labels are translated.",
+      "Use this library before asking Gemini to generate equivalent generic choices."
+    ]
+  },
+  "choice_lists": {
+    "yes_no": {
+      "choices": [
+        {
+          "name": "yes",
+          "labels": {
+            "English": "Yes",
+            "Hindi": "हाँ",
+            "Assamese": "হয়",
+            "Bengali": "হ্যাঁ",
+            "Gujarati": "હા",
+            "Kannada": "ಹೌದು",
+            "Malayalam": "അതെ",
+            "Marathi": "होय",
+            "Odia": "ହଁ",
+            "Punjabi": "ਹਾਂ",
+            "Tamil": "ஆம்",
+            "Telugu": "అవును"
+          }
+        },
+        {
+          "name": "no",
+          "labels": {
+            "English": "No",
+            "Hindi": "नहीं",
+            "Assamese": "নহয়",
+            "Bengali": "না",
+            "Gujarati": "ના",
+            "Kannada": "ಇಲ್ಲ",
+            "Malayalam": "ഇല്ല",
+            "Marathi": "नाही",
+            "Odia": "ନା",
+            "Punjabi": "ਨਹੀਂ",
+            "Tamil": "இல்லை",
+            "Telugu": "కాదు"
+          }
+        }
+      ]
+    },
+    "yes_no_dont_know": {
+      "choices": [
+        {
+          "name": "yes",
+          "labels": {
+            "English": "Yes",
+            "Hindi": "हाँ",
+            "Assamese": "হয়",
+            "Bengali": "হ্যাঁ",
+            "Gujarati": "હા",
+            "Kannada": "ಹೌದು",
+            "Malayalam": "അതെ",
+            "Marathi": "होय",
+            "Odia": "ହଁ",
+            "Punjabi": "ਹਾਂ",
+            "Tamil": "ஆம்",
+            "Telugu": "అవును"
+          }
+        },
+        {
+          "name": "no",
+          "labels": {
+            "English": "No",
+            "Hindi": "नहीं",
+            "Assamese": "নহয়",
+            "Bengali": "না",
+            "Gujarati": "ના",
+            "Kannada": "ಇಲ್ಲ",
+            "Malayalam": "ഇല്ല",
+            "Marathi": "नाही",
+            "Odia": "ନା",
+            "Punjabi": "ਨਹੀਂ",
+            "Tamil": "இல்லை",
+            "Telugu": "కాదు"
+          }
+        },
+        {
+          "name": "dont_know",
+          "labels": {
+            "English": "Don't know",
+            "Hindi": "पता नहीं",
+            "Assamese": "নাজানো",
+            "Bengali": "জানি না",
+            "Gujarati": "ખબર નથી",
+            "Kannada": "ಗೊತ್ತಿಲ್ಲ",
+            "Malayalam": "അറിയില്ല",
+            "Marathi": "माहित नाही",
+            "Odia": "ଜାଣି ନାହିଁ",
+            "Punjabi": "ਪਤਾ ਨਹੀਂ",
+            "Tamil": "தெரியாது",
+            "Telugu": "తెలియదు"
+          }
+        }
+      ]
+    },
+    "yes_no_na": {
+      "choices": [
+        {
+          "name": "yes",
+          "labels": {
+            "English": "Yes",
+            "Hindi": "हाँ",
+            "Assamese": "হয়",
+            "Bengali": "হ্যাঁ",
+            "Gujarati": "હા",
+            "Kannada": "ಹೌದು",
+            "Malayalam": "അതെ",
+            "Marathi": "होय",
+            "Odia": "ହଁ",
+            "Punjabi": "ਹਾਂ",
+            "Tamil": "ஆம்",
+            "Telugu": "అవును"
+          }
+        },
+        {
+          "name": "no",
+          "labels": {
+            "English": "No",
+            "Hindi": "नहीं",
+            "Assamese": "নহয়",
+            "Bengali": "না",
+            "Gujarati": "ના",
+            "Kannada": "ಇಲ್ಲ",
+            "Malayalam": "ഇല്ല",
+            "Marathi": "नाही",
+            "Odia": "ନା",
+            "Punjabi": "ਨਹੀਂ",
+            "Tamil": "இல்லை",
+            "Telugu": "కాదు"
+          }
+        },
+        {
+          "name": "not_applicable",
+          "labels": {
+            "English": "Not applicable",
+            "Hindi": "लागू नहीं",
+            "Assamese": "প্ৰযোজ্য নহয়",
+            "Bengali": "প্রযোজ্য নয়",
+            "Gujarati": "લાગુ પડતું નથી",
+            "Kannada": "ಅನ್ವಯಿಸುವುದಿಲ್ಲ",
+            "Malayalam": "ബാധകമല്ല",
+            "Marathi": "लागू नाही",
+            "Odia": "ପ୍ରଯୁଜ୍ୟ ନୁହେଁ",
+            "Punjabi": "ਲਾਗੂ ਨਹੀਂ",
+            "Tamil": "பொருந்தாது",
+            "Telugu": "వర్తించదు"
+          }
+        }
+      ]
+    },
+    "yes_no_dont_know_na": {
+      "choices": [
+        {
+          "name": "yes",
+          "labels": {
+            "English": "Yes",
+            "Hindi": "हाँ",
+            "Assamese": "হয়",
+            "Bengali": "হ্যাঁ",
+            "Gujarati": "હા",
+            "Kannada": "ಹೌದು",
+            "Malayalam": "അതെ",
+            "Marathi": "होय",
+            "Odia": "ହଁ",
+            "Punjabi": "ਹਾਂ",
+            "Tamil": "ஆம்",
+            "Telugu": "అవును"
+          }
+        },
+        {
+          "name": "no",
+          "labels": {
+            "English": "No",
+            "Hindi": "नहीं",
+            "Assamese": "নহয়",
+            "Bengali": "না",
+            "Gujarati": "ના",
+            "Kannada": "ಇಲ್ಲ",
+            "Malayalam": "ഇല്ല",
+            "Marathi": "नाही",
+            "Odia": "ନା",
+            "Punjabi": "ਨਹੀਂ",
+            "Tamil": "இல்லை",
+            "Telugu": "కాదు"
+          }
+        },
+        {
+          "name": "dont_know",
+          "labels": {
+            "English": "Don't know",
+            "Hindi": "पता नहीं",
+            "Assamese": "নাজানো",
+            "Bengali": "জানি না",
+            "Gujarati": "ખબર નથી",
+            "Kannada": "ಗೊತ್ತಿಲ್ಲ",
+            "Malayalam": "അറിയില്ല",
+            "Marathi": "माहित नाही",
+            "Odia": "ଜାଣି ନାହିଁ",
+            "Punjabi": "ਪਤਾ ਨਹੀਂ",
+            "Tamil": "தெரியாது",
+            "Telugu": "తెలియదు"
+          }
+        },
+        {
+          "name": "not_applicable",
+          "labels": {
+            "English": "Not applicable",
+            "Hindi": "लागू नहीं",
+            "Assamese": "প্ৰযোজ্য নহয়",
+            "Bengali": "প্রযোজ্য নয়",
+            "Gujarati": "લાગુ પડતું નથી",
+            "Kannada": "ಅನ್ವಯಿಸುವುದಿಲ್ಲ",
+            "Malayalam": "ബാധകമല്ല",
+            "Marathi": "लागू नाही",
+            "Odia": "ପ୍ରଯୁଜ୍ୟ ନୁହେଁ",
+            "Punjabi": "ਲਾਗੂ ਨਹੀਂ",
+            "Tamil": "பொருந்தாது",
+            "Telugu": "వర్తించదు"
+          }
+        }
+      ]
+    },
+    "consent": {
+      "choices": [
+        {
+          "name": "agree",
+          "labels": {
+            "English": "I agree to participate",
+            "Hindi": "मैं भाग लेने के लिए सहमत हूँ",
+            "Assamese": "মই অংশগ্ৰহণ কৰিবলৈ সন্মত",
+            "Bengali": "আমি অংশগ্রহণ করতে সম্মত",
+            "Gujarati": "હું ભાગ લેવા માટે સંમત છું",
+            "Kannada": "ನಾನು ಭಾಗವಹಿಸಲು ಒಪ್ಪುತ್ತೇನೆ",
+            "Malayalam": "പങ്കെടുക്കാൻ ഞാൻ സമ്മതിക്കുന്നു",
+            "Marathi": "मी सहभागी होण्यास सहमत आहे",
+            "Odia": "ମୁଁ ଅଂଶଗ୍ରହଣ କରିବାକୁ ସମ୍ମତ",
+            "Punjabi": "ਮੈਂ ਭਾਗ ਲੈਣ ਲਈ ਸਹਿਮਤ ਹਾਂ",
+            "Tamil": "நான் பங்கேற்க சம்மதிக்கிறேன்",
+            "Telugu": "నేను పాల్గొనడానికి అంగీకరిస్తున్నాను"
+          }
+        },
+        {
+          "name": "disagree",
+          "labels": {
+            "English": "I do not agree to participate",
+            "Hindi": "मैं भाग लेने के लिए सहमत नहीं हूँ",
+            "Assamese": "মই অংশগ্ৰহণ কৰিবলৈ সন্মত নহয়",
+            "Bengali": "আমি অংশগ্রহণ করতে সম্মত নই",
+            "Gujarati": "હું ભાગ લેવા માટે સંમત નથી",
+            "Kannada": "ನಾನು ಭಾಗವಹಿಸಲು ಒಪ್ಪುವುದಿಲ್ಲ",
+            "Malayalam": "പങ്കെടുക്കാൻ ഞാൻ സമ്മതിക്കുന്നില്ല",
+            "Marathi": "मी सहभागी होण्यास सहमत नाही",
+            "Odia": "ମୁଁ ଅଂଶଗ୍ରହଣ କରିବାକୁ ସମ୍ମତ ନୁହେଁ",
+            "Punjabi": "ਮੈਂ ਭਾਗ ਲੈਣ ਲਈ ਸਹਿਮਤ ਨਹੀਂ ਹਾਂ",
+            "Tamil": "நான் பங்கேற்க சம்மதிக்கவில்லை",
+            "Telugu": "నేను పాల్గొనడానికి అంగీకరించను"
+          }
+        }
+      ]
+    },
+    "urban_rural": {
+      "choices": [
+        {
+          "name": "urban",
+          "labels": {
+            "English": "Urban",
+            "Hindi": "शहरी",
+            "Assamese": "চহৰীয়া",
+            "Bengali": "শহরাঞ্চল",
+            "Gujarati": "શહેરી",
+            "Kannada": "ನಗರ",
+            "Malayalam": "നഗര",
+            "Marathi": "शहरी",
+            "Odia": "ସହରାଞ୍ଚଳ",
+            "Punjabi": "ਸ਼ਹਿਰੀ",
+            "Tamil": "நகர்ப்புறம்",
+            "Telugu": "పట్టణ"
+          }
+        },
+        {
+          "name": "rural",
+          "labels": {
+            "English": "Rural",
+            "Hindi": "ग्रामीण",
+            "Assamese": "গ্ৰাম্য",
+            "Bengali": "গ্রামীণ",
+            "Gujarati": "ગ્રામીણ",
+            "Kannada": "ಗ್ರಾಮೀಣ",
+            "Malayalam": "ഗ്രാമീണ",
+            "Marathi": "ग्रामीण",
+            "Odia": "ଗ୍ରାମୀଣ",
+            "Punjabi": "ਪੇਂਡੂ",
+            "Tamil": "கிராமப்புறம்",
+            "Telugu": "గ్రామీణ"
+          }
+        }
+      ]
+    },
+    "present_absent": {
+      "choices": [
+        {
+          "name": "present",
+          "labels": {
+            "English": "Present",
+            "Hindi": "उपस्थित",
+            "Assamese": "উপস্থিত",
+            "Bengali": "উপস্থিত",
+            "Gujarati": "હાજર",
+            "Kannada": "ಹಾಜರು",
+            "Malayalam": "ഹാജർ",
+            "Marathi": "उपस्थित",
+            "Odia": "ଉପସ୍ଥିତ",
+            "Punjabi": "ਹਾਜ਼ਰ",
+            "Tamil": "வருகை",
+            "Telugu": "హాజరు"
+          }
+        },
+        {
+          "name": "absent",
+          "labels": {
+            "English": "Absent",
+            "Hindi": "अनुपस्थित",
+            "Assamese": "অনুপস্থিত",
+            "Bengali": "অনুপস্থিত",
+            "Gujarati": "ગેરહાજર",
+            "Kannada": "ಗೈರುಹಾಜರು",
+            "Malayalam": "ഹാജരല്ല",
+            "Marathi": "अनुपस्थित",
+            "Odia": "ଅନୁପସ୍ଥିତ",
+            "Punjabi": "ਗੈਰਹਾਜ਼ਰ",
+            "Tamil": "வரவில்லை",
+            "Telugu": "గైర్హాజరు"
+          }
+        }
+      ]
+    },
+    "government_private": {
+      "choices": [
+        {
+          "name": "government",
+          "labels": {
+            "English": "Government",
+            "Hindi": "सरकारी",
+            "Assamese": "চৰকাৰী",
+            "Bengali": "সরকারি",
+            "Gujarati": "સરકારી",
+            "Kannada": "ಸರ್ಕಾರಿ",
+            "Malayalam": "സർക്കാർ",
+            "Marathi": "शासकीय",
+            "Odia": "ସରକାରୀ",
+            "Punjabi": "ਸਰਕਾਰੀ",
+            "Tamil": "அரசு",
+            "Telugu": "ప్రభుత్వ"
+          }
+        },
+        {
+          "name": "private",
+          "labels": {
+            "English": "Private",
+            "Hindi": "निजी",
+            "Assamese": "ব্যক্তিগত",
+            "Bengali": "বেসরকারি",
+            "Gujarati": "ખાનગી",
+            "Kannada": "ಖಾಸಗಿ",
+            "Malayalam": "സ്വകാര്യ",
+            "Marathi": "खाजगी",
+            "Odia": "ବେସରକାରୀ",
+            "Punjabi": "ਨਿੱਜੀ",
+            "Tamil": "தனியார்",
+            "Telugu": "ప్రైవేట్"
+          }
+        }
+      ]
+    },
+    "male_female": {
+      "choices": [
+        {
+          "name": "male",
+          "labels": {
+            "English": "Male",
+            "Hindi": "पुरुष",
+            "Assamese": "পুৰুষ",
+            "Bengali": "পুরুষ",
+            "Gujarati": "પુરુષ",
+            "Kannada": "ಪುರುಷ",
+            "Malayalam": "പുരുഷൻ",
+            "Marathi": "पुरुष",
+            "Odia": "ପୁରୁଷ",
+            "Punjabi": "ਪੁਰਸ਼",
+            "Tamil": "ஆண்",
+            "Telugu": "పురుషుడు"
+          }
+        },
+        {
+          "name": "female",
+          "labels": {
+            "English": "Female",
+            "Hindi": "महिला",
+            "Assamese": "মহিলা",
+            "Bengali": "মহিলা",
+            "Gujarati": "મહિલા",
+            "Kannada": "ಮಹಿಳೆ",
+            "Malayalam": "സ്ത്രീ",
+            "Marathi": "महिला",
+            "Odia": "ମହିଳା",
+            "Punjabi": "ਮਹਿਲਾ",
+            "Tamil": "பெண்",
+            "Telugu": "మహిళ"
+          }
+        }
+      ]
+    },
+    "male_female_other": {
+      "choices": [
+        {
+          "name": "male",
+          "labels": {
+            "English": "Male",
+            "Hindi": "पुरुष",
+            "Assamese": "পুৰুষ",
+            "Bengali": "পুরুষ",
+            "Gujarati": "પુરુષ",
+            "Kannada": "ಪುರುಷ",
+            "Malayalam": "പുരുഷൻ",
+            "Marathi": "पुरुष",
+            "Odia": "ପୁରୁଷ",
+            "Punjabi": "ਪੁਰਸ਼",
+            "Tamil": "ஆண்",
+            "Telugu": "పురుషుడు"
+          }
+        },
+        {
+          "name": "female",
+          "labels": {
+            "English": "Female",
+            "Hindi": "महिला",
+            "Assamese": "মহিলা",
+            "Bengali": "মহিলা",
+            "Gujarati": "મહિલા",
+            "Kannada": "ಮಹಿಳೆ",
+            "Malayalam": "സ്ത്രീ",
+            "Marathi": "महिला",
+            "Odia": "ମହିଳା",
+            "Punjabi": "ਮਹਿਲਾ",
+            "Tamil": "பெண்",
+            "Telugu": "మహిళ"
+          }
+        },
+        {
+          "name": "other",
+          "labels": {
+            "English": "Other",
+            "Hindi": "अन्य",
+            "Assamese": "অন্যান্য",
+            "Bengali": "অন্যান্য",
+            "Gujarati": "અન્ય",
+            "Kannada": "ಇತರೆ",
+            "Malayalam": "മറ്റുള്ളവ",
+            "Marathi": "इतर",
+            "Odia": "ଅନ୍ୟ",
+            "Punjabi": "ਹੋਰ",
+            "Tamil": "மற்றவை",
+            "Telugu": "ఇతర"
+          }
+        }
+      ]
+    },
+    "available_not_available": {
+      "choices": [
+        {
+          "name": "available",
+          "labels": {
+            "English": "Available",
+            "Hindi": "उपलब्ध",
+            "Assamese": "উপলব্ধ",
+            "Bengali": "উপলব্ধ",
+            "Gujarati": "ઉપલબ્ધ",
+            "Kannada": "ಲಭ್ಯ",
+            "Malayalam": "ലഭ്യമാണ്",
+            "Marathi": "उपलब्ध",
+            "Odia": "ଉପଲବ୍ଧ",
+            "Punjabi": "ਉਪਲਬਧ",
+            "Tamil": "கிடைக்கிறது",
+            "Telugu": "అందుబాటులో ఉంది"
+          }
+        },
+        {
+          "name": "not_available",
+          "labels": {
+            "English": "Not available",
+            "Hindi": "उपलब्ध नहीं",
+            "Assamese": "উপলব্ধ নহয়",
+            "Bengali": "উপলব্ধ নয়",
+            "Gujarati": "ઉપલબ્ધ નથી",
+            "Kannada": "ಲಭ್ಯವಿಲ್ಲ",
+            "Malayalam": "ലഭ്യമല്ല",
+            "Marathi": "उपलब्ध नाही",
+            "Odia": "ଉପଲବ୍ଧ ନୁହେଁ",
+            "Punjabi": "ਉਪਲਬਧ ਨਹੀਂ",
+            "Tamil": "கிடைக்கவில்லை",
+            "Telugu": "అందుబాటులో లేదు"
+          }
+        }
+      ]
+    },
+    "functional_non_functional": {
+      "choices": [
+        {
+          "name": "functional",
+          "labels": {
+            "English": "Functional",
+            "Hindi": "कार्यशील",
+            "Assamese": "কাৰ্যক্ষম",
+            "Bengali": "কার্যকর",
+            "Gujarati": "કાર્યરત",
+            "Kannada": "ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ",
+            "Malayalam": "പ്രവർത്തനക്ഷമം",
+            "Marathi": "कार्यरत",
+            "Odia": "କାର୍ଯ୍ୟକ୍ଷମ",
+            "Punjabi": "ਕਾਰਜਸ਼ੀਲ",
+            "Tamil": "செயல்பாட்டில் உள்ளது",
+            "Telugu": "పనిచేస్తోంది"
+          }
+        },
+        {
+          "name": "non_functional",
+          "labels": {
+            "English": "Non-functional",
+            "Hindi": "कार्यशील नहीं",
+            "Assamese": "অকাৰ্যক্ষম",
+            "Bengali": "অকার্যকর",
+            "Gujarati": "કાર્યરત નથી",
+            "Kannada": "ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿಲ್ಲ",
+            "Malayalam": "പ്രവർത്തനക്ഷമമല്ല",
+            "Marathi": "कार्यरत नाही",
+            "Odia": "କାର୍ଯ୍ୟକ୍ଷମ ନୁହେଁ",
+            "Punjabi": "ਕਾਰਜਸ਼ੀਲ ਨਹੀਂ",
+            "Tamil": "செயல்பாட்டில் இல்லை",
+            "Telugu": "పనిచేయడం లేదు"
+          }
+        }
+      ]
+    },
+    "working_not_working": {
+      "choices": [
+        {
+          "name": "working",
+          "labels": {
+            "English": "Functional",
+            "Hindi": "कार्यशील",
+            "Assamese": "কাৰ্যক্ষম",
+            "Bengali": "কার্যকর",
+            "Gujarati": "કાર્યરત",
+            "Kannada": "ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ",
+            "Malayalam": "പ്രവർത്തനക്ഷമം",
+            "Marathi": "कार्यरत",
+            "Odia": "କାର୍ଯ୍ୟକ୍ଷମ",
+            "Punjabi": "ਕਾਰਜਸ਼ੀਲ",
+            "Tamil": "செயல்பாட்டில் உள்ளது",
+            "Telugu": "పనిచేస్తోంది"
+          }
+        },
+        {
+          "name": "not_working",
+          "labels": {
+            "English": "Non-functional",
+            "Hindi": "कार्यशील नहीं",
+            "Assamese": "অকাৰ্যক্ষম",
+            "Bengali": "অকার্যকর",
+            "Gujarati": "કાર્યરત નથી",
+            "Kannada": "ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿಲ್ಲ",
+            "Malayalam": "പ്രവർത്തനക്ഷമമല്ല",
+            "Marathi": "कार्यरत नाही",
+            "Odia": "କାର୍ଯ୍ୟକ୍ଷମ ନୁହେଁ",
+            "Punjabi": "ਕਾਰਜਸ਼ੀਲ ਨਹੀਂ",
+            "Tamil": "செயல்பாட்டில் இல்லை",
+            "Telugu": "పనిచేయడం లేదు"
+          }
+        }
+      ]
+    },
+    "good_average_poor": {
+      "choices": [
+        {
+          "name": "good",
+          "labels": {
+            "English": "Good",
+            "Hindi": "अच्छा",
+            "Assamese": "ভাল",
+            "Bengali": "ভালো",
+            "Gujarati": "સારું",
+            "Kannada": "ಉತ್ತಮ",
+            "Malayalam": "നല്ലത്",
+            "Marathi": "चांगले",
+            "Odia": "ଭଲ",
+            "Punjabi": "ਚੰਗਾ",
+            "Tamil": "நன்று",
+            "Telugu": "మంచిది"
+          }
+        },
+        {
+          "name": "average",
+          "labels": {
+            "English": "Average",
+            "Hindi": "औसत",
+            "Assamese": "মধ্যম",
+            "Bengali": "মাঝারি",
+            "Gujarati": "સરેરાશ",
+            "Kannada": "ಸರಾಸರಿ",
+            "Malayalam": "ശരാശരി",
+            "Marathi": "सरासरी",
+            "Odia": "ହାରାହାରି",
+            "Punjabi": "ਔਸਤ",
+            "Tamil": "சராசரி",
+            "Telugu": "సగటు"
+          }
+        },
+        {
+          "name": "poor",
+          "labels": {
+            "English": "Poor",
+            "Hindi": "खराब",
+            "Assamese": "দুৰ্বল",
+            "Bengali": "খারাপ",
+            "Gujarati": "નબળું",
+            "Kannada": "ಕಳಪೆ",
+            "Malayalam": "മോശം",
+            "Marathi": "खराब",
+            "Odia": "ଖରାପ",
+            "Punjabi": "ਮਾੜਾ",
+            "Tamil": "மோசம்",
+            "Telugu": "బలహీనంగా"
+          }
+        }
+      ]
+    },
+    "excellent_good_average_poor": {
+      "choices": [
+        {
+          "name": "excellent",
+          "labels": {
+            "English": "Excellent",
+            "Hindi": "उत्कृष्ट",
+            "Assamese": "অতি উত্তম",
+            "Bengali": "চমৎকার",
+            "Gujarati": "ઉત્કૃષ્ટ",
+            "Kannada": "ಅತ್ಯುತ್ತಮ",
+            "Malayalam": "മികച്ചത്",
+            "Marathi": "उत्कृष्ट",
+            "Odia": "ଉତ୍କୃଷ୍ଟ",
+            "Punjabi": "ਸ਼ਾਨਦਾਰ",
+            "Tamil": "மிகச் சிறந்தது",
+            "Telugu": "అత్యుత్తమం"
+          }
+        },
+        {
+          "name": "good",
+          "labels": {
+            "English": "Good",
+            "Hindi": "अच्छा",
+            "Assamese": "ভাল",
+            "Bengali": "ভালো",
+            "Gujarati": "સારું",
+            "Kannada": "ಉತ್ತಮ",
+            "Malayalam": "നല്ലത്",
+            "Marathi": "चांगले",
+            "Odia": "ଭଲ",
+            "Punjabi": "ਚੰਗਾ",
+            "Tamil": "நன்று",
+            "Telugu": "మంచిది"
+          }
+        },
+        {
+          "name": "average",
+          "labels": {
+            "English": "Average",
+            "Hindi": "औसत",
+            "Assamese": "মধ্যম",
+            "Bengali": "মাঝারি",
+            "Gujarati": "સરેરાશ",
+            "Kannada": "ಸರಾಸರಿ",
+            "Malayalam": "ശരാശരി",
+            "Marathi": "सरासरी",
+            "Odia": "ହାରାହାରି",
+            "Punjabi": "ਔਸਤ",
+            "Tamil": "சராசரி",
+            "Telugu": "సగటు"
+          }
+        },
+        {
+          "name": "poor",
+          "labels": {
+            "English": "Poor",
+            "Hindi": "खराब",
+            "Assamese": "দুৰ্বল",
+            "Bengali": "খারাপ",
+            "Gujarati": "નબળું",
+            "Kannada": "ಕಳಪೆ",
+            "Malayalam": "മോശം",
+            "Marathi": "खराब",
+            "Odia": "ଖରାପ",
+            "Punjabi": "ਮਾੜਾ",
+            "Tamil": "மோசம்",
+            "Telugu": "బలహీనంగా"
+          }
+        }
+      ]
+    },
+    "agree_neutral_disagree": {
+      "choices": [
+        {
+          "name": "agree",
+          "labels": {
+            "English": "Agree",
+            "Hindi": "सहमत",
+            "Assamese": "সন্মত",
+            "Bengali": "সম্মত",
+            "Gujarati": "સંમત",
+            "Kannada": "ಒಪ್ಪುತ್ತೇನೆ",
+            "Malayalam": "യോജിക്കുന്നു",
+            "Marathi": "सहमत",
+            "Odia": "ସହମତ",
+            "Punjabi": "ਸਹਿਮਤ",
+            "Tamil": "சம்மதம்",
+            "Telugu": "అంగీకరిస్తున్నాను"
+          }
+        },
+        {
+          "name": "neutral",
+          "labels": {
+            "English": "Neutral",
+            "Hindi": "तटस्थ",
+            "Assamese": "নিৰপেক্ষ",
+            "Bengali": "নিরপেক্ষ",
+            "Gujarati": "તટસ્થ",
+            "Kannada": "ತಟಸ್ಥ",
+            "Malayalam": "നിഷ്പക്ഷം",
+            "Marathi": "तटस्थ",
+            "Odia": "ନିରପେକ୍ଷ",
+            "Punjabi": "ਨਿਰਪੱਖ",
+            "Tamil": "நடுநிலை",
+            "Telugu": "తటస్థ"
+          }
+        },
+        {
+          "name": "disagree",
+          "labels": {
+            "English": "Disagree",
+            "Hindi": "असहमत",
+            "Assamese": "অসম্মত",
+            "Bengali": "অসম্মত",
+            "Gujarati": "અસંમત",
+            "Kannada": "ಒಪ್ಪುವುದಿಲ್ಲ",
+            "Malayalam": "വിയോജിക്കുന്നു",
+            "Marathi": "असहमत",
+            "Odia": "ଅସହମତ",
+            "Punjabi": "ਅਸਹਿਮਤ",
+            "Tamil": "சம்மதமில்லை",
+            "Telugu": "అంగీకరించను"
+          }
+        }
+      ]
+    },
+    "completed_in_progress_not_started": {
+      "choices": [
+        {
+          "name": "completed",
+          "labels": {
+            "English": "Completed",
+            "Hindi": "पूर्ण",
+            "Assamese": "সম্পূৰ্ণ",
+            "Bengali": "সম্পন্ন",
+            "Gujarati": "પૂર્ણ",
+            "Kannada": "ಪೂರ್ಣಗೊಂಡಿದೆ",
+            "Malayalam": "പൂർത്തിയായി",
+            "Marathi": "पूर्ण",
+            "Odia": "ସମ୍ପୂର୍ଣ୍ଣ",
+            "Punjabi": "ਪੂਰਾ ਹੋਇਆ",
+            "Tamil": "முடிக்கப்பட்டது",
+            "Telugu": "పూర్తయింది"
+          }
+        },
+        {
+          "name": "in_progress",
+          "labels": {
+            "English": "In progress",
+            "Hindi": "प्रगति पर",
+            "Assamese": "চলি আছে",
+            "Bengali": "চলমান",
+            "Gujarati": "પ્રગતિમાં",
+            "Kannada": "ಪ್ರಗತಿಯಲ್ಲಿದೆ",
+            "Malayalam": "പുരോഗതിയിൽ",
+            "Marathi": "प्रगतीपथावर",
+            "Odia": "ଚାଲୁ ଅଛି",
+            "Punjabi": "ਜਾਰੀ ਹੈ",
+            "Tamil": "நடைபெற்று வருகிறது",
+            "Telugu": "పురోగతిలో ఉంది"
+          }
+        },
+        {
+          "name": "not_started",
+          "labels": {
+            "English": "Not started",
+            "Hindi": "शुरू नहीं हुआ",
+            "Assamese": "আৰম্ভ হোৱা নাই",
+            "Bengali": "শুরু হয়নি",
+            "Gujarati": "શરૂ થયું નથી",
+            "Kannada": "ಪ್ರಾರಂಭವಾಗಿಲ್ಲ",
+            "Malayalam": "ആരംഭിച്ചിട്ടില്ല",
+            "Marathi": "सुरू झाले नाही",
+            "Odia": "ଆରମ୍ଭ ହୋଇନାହିଁ",
+            "Punjabi": "ਸ਼ੁਰੂ ਨਹੀਂ ਹੋਇਆ",
+            "Tamil": "தொடங்கப்படவில்லை",
+            "Telugu": "ప్రారంభం కాలేదు"
+          }
+        }
+      ]
+    },
+    "safe_unsafe": {
+      "choices": [
+        {
+          "name": "safe",
+          "labels": {
+            "English": "Safe",
+            "Hindi": "सुरक्षित",
+            "Assamese": "সুৰক্ষিত",
+            "Bengali": "নিরাপদ",
+            "Gujarati": "સુરક્ષિત",
+            "Kannada": "ಸುರಕ್ಷಿತ",
+            "Malayalam": "സുരക്ഷിതം",
+            "Marathi": "सुरक्षित",
+            "Odia": "ସୁରକ୍ଷିତ",
+            "Punjabi": "ਸੁਰੱਖਿਅਤ",
+            "Tamil": "பாதுகாப்பானது",
+            "Telugu": "సురక్షితం"
+          }
+        },
+        {
+          "name": "unsafe",
+          "labels": {
+            "English": "Unsafe",
+            "Hindi": "असुरक्षित",
+            "Assamese": "অসুৰক্ষিত",
+            "Bengali": "অনিরাপদ",
+            "Gujarati": "અસુરક્ષિત",
+            "Kannada": "ಅಸುರಕ್ಷಿತ",
+            "Malayalam": "സുരക്ഷിതമല്ല",
+            "Marathi": "असुरक्षित",
+            "Odia": "ଅସୁରକ୍ଷିତ",
+            "Punjabi": "ਅਸੁਰੱਖਿਅਤ",
+            "Tamil": "பாதுகாப்பற்றது",
+            "Telugu": "అసురక్షితం"
+          }
+        }
+      ]
+    }
+  }
+}

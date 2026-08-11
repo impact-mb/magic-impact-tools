@@ -201,7 +201,18 @@ def generate_questionnaire(
         "When questions reuse a choice list, reuse "
         "the same list_name and identical choice codes. "
         "Do not generate duplicate choice names "
-        "within the same list."
+        "within the same list. "
+        "\n\nSTANDARD CHOICE LIBRARY: "
+        "The application already stores these reusable choice lists locally: "
+        "yes_no, yes_no_dont_know, yes_no_na, yes_no_dont_know_na, consent, "
+        "urban_rural, present_absent, government_private, male_female, "
+        "male_female_other, available_not_available, functional_non_functional, "
+        "working_not_working, good_average_poor, excellent_good_average_poor, "
+        "agree_neutral_disagree, completed_in_progress_not_started, safe_unsafe. "
+        "Whenever one of these lists exactly fits a question, use its exact "
+        "list_name and return an empty choices array. Do not recreate or translate "
+        "those standard choices. For questionnaire-specific response options, "
+        "continue generating choices and translations normally."
     )
 
     client = genai.Client(
