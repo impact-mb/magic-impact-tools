@@ -1,6 +1,11 @@
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 
+from core.auth import (
+    require_login,
+    render_user_sidebar,
+)
+
 from core.loaders import (
     load_languages,
     load_model_config,
@@ -37,8 +42,18 @@ st.set_page_config(
 def main():
     render_global_styles()
 
+    # ========================================================
+    # LOGIN / AUTHENTICATION
+    # ========================================================
+    user = require_login()
+    render_user_sidebar(user)
+
+    # ========================================================
+    # LOAD APPLICATION DATA
+    # ========================================================
     tools = load_tools()
     languages = load_languages()
+
     india_geography = (
         load_india_geography()
     )
@@ -51,11 +66,17 @@ def main():
         model_config["default_model"]
     )
 
+    # ========================================================
+    # AUTO REFRESH
+    # ========================================================
     st_autorefresh(
         interval=60_000,
         key="clock_refresh",
     )
 
+    # ========================================================
+    # PAGE SECTIONS
+    # ========================================================
     render_header()
 
     render_tools_section(
