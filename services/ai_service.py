@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 import streamlit as st
 
@@ -219,41 +220,91 @@ def generate_questionnaire(
         api_key=api_key
     )
 
-    try:
-        response = client.models.generate_content(
-            model=model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_json_schema=questionnaire_schema,
-                temperature=0.2,
-            ),
-        )
+    # --------------------------------------------------------
+    # GEMINI REQUEST WITH CONTROLLED RETRY
+    # --------------------------------------------------------
+    max_attempts = 3
+    retry_delays = [2, 5]
 
-        if not response.text:
-            raise RuntimeError(
-                "Gemini returned an empty response."
+    for attempt in range(max_attempts):
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    response_json_schema=questionnaire_schema,
+                ),
             )
 
-        result = json.loads(
-            response.text
-        )
+            if not response.text:
+                raise RuntimeError(
+                    "Gemini returned an empty response."
+                )
 
-        result["languages"] = (
-            language_names
-        )
-        result["default_language"] = (
-            language_names[0]
-        )
+            result = json.loads(
+                response.text
+            )
 
-        return result
+            result["languages"] = language_names
+            result["default_language"] = language_names[0]
 
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(
-            "Gemini returned an invalid questionnaire structure."
-        ) from exc
+            return result
 
-    except Exception as exc:
-        raise RuntimeError(
-            f"Gemini generation failed: {exc}"
-        ) from exc
+        except json.JSONDecodeError as exc:
+            raise RuntimeError(
+                "Gemini returned an invalid questionnaire structure. "
+                "Please try again."
+            ) from exc
+
+        except Exception as exc:
+            error_text = str(exc)
+            error_code = getattr(
+                exc,
+                "code",
+                None,
+            )
+
+            # 429 = project quota / rate limit.
+            is_quota_error = (
+                error_code == 429
+                or "429" in error_text
+                or "RESOURCE_EXHAUSTED" in error_text
+            )
+
+            if is_quota_error:
+                raise RuntimeError(
+                    "The AI generation limit for this Gemini project "
+                    "has currently been reached. "
+                    "Please try again after the quota becomes available."
+                ) from exc
+
+            # 503 = temporary model capacity / high demand.
+            is_temporary_unavailable = (
+                error_code == 503
+                or "503" in error_text
+                or "UNAVAILABLE" in error_text
+                or "high demand" in error_text.lower()
+            )
+
+            if is_temporary_unavailable:
+                if attempt < max_attempts - 1:
+                    time.sleep(
+                        retry_delays[attempt]
+                    )
+                    continue
+
+                raise RuntimeError(
+                    "Gemini is temporarily experiencing high demand. "
+                    "The request was retried automatically, but the "
+                    "service is still busy. Please try again in a few minutes."
+                ) from exc
+
+            raise RuntimeError(
+                "AI questionnaire generation failed. "
+                "Please try again."
+            ) from exc
+
+    raise RuntimeError(
+        "AI questionnaire generation could not be completed."
+    )
