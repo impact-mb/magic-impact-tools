@@ -1,661 +1,4538 @@
 {
-  "Andhra Pradesh": [
-    "Alluri Sitharama Raju",
-    "Anakapalli",
-    "Ananthapuramu",
-    "Annamayya",
-    "Bapatla",
-    "Chittoor",
-    "Dr. B.R. Ambedkar Konaseema",
-    "East Godavari",
-    "Eluru",
-    "Guntur",
-    "Kakinada",
-    "Krishna",
-    "Kurnool",
-    "NTR",
-    "Nandyal",
-    "Palnadu",
-    "Parvathipuram Manyam",
-    "Prakasam",
-    "Sri Potti Sriramulu Nellore",
-    "Sri Sathya Sai",
-    "Srikakulam",
-    "Tirupati",
-    "Visakhapatnam",
-    "Vizianagaram",
-    "West Godavari",
-    "Y.S.R. Kadapa"
-  ],
-  "Assam": [
-    "Bajali",
-    "Baksa",
-    "Barpeta",
-    "Biswanath",
-    "Bongaigaon",
-    "Cachar",
-    "Charaideo",
-    "Chirang",
-    "Darrang",
-    "Dhemaji",
-    "Dhubri",
-    "Dibrugarh",
-    "Dima Hasao",
-    "Goalpara",
-    "Golaghat",
-    "Hailakandi",
-    "Hojai",
-    "Jorhat",
-    "Kamrup",
-    "Kamrup Metropolitan",
-    "Karbi Anglong",
-    "Kokrajhar",
-    "Lakhimpur",
-    "Majuli",
-    "Morigaon",
-    "Nagaon",
-    "Nalbari",
-    "Sivasagar",
-    "Sonitpur",
-    "South Salmara-Mankachar",
-    "Sribhumi",
-    "Tamulpur",
-    "Tinsukia",
-    "Udalguri",
-    "West Karbi Anglong"
-  ],
-  "Chhattisgarh": [
-    "Balod",
-    "Baloda Bazar-Bhatapara",
-    "Balrampur-Ramanujganj",
-    "Bastar",
-    "Bemetara",
-    "Bijapur",
-    "Bilaspur",
-    "Dantewada",
-    "Dhamtari",
-    "Durg",
-    "Gariaband",
-    "Gaurela-Pendra-Marwahi",
-    "Janjgir-Champa",
-    "Jashpur",
-    "Kabirdham",
-    "Kanker",
-    "Khairagarh-Chhuikhadan-Gandai",
-    "Kondagaon",
-    "Korba",
-    "Korea",
-    "Mahasamund",
-    "Manendragarh-Chirmiri-Bharatpur",
-    "Mohla-Manpur-Ambagarh Chowki",
-    "Mungeli",
-    "Narayanpur",
-    "Raigarh",
-    "Raipur",
-    "Rajnandgaon",
-    "Sakti",
-    "Sarangarh-Bilaigarh",
-    "Sukma",
-    "Surajpur",
-    "Surguja"
-  ],
-  "Delhi": [
-    "Central",
-    "East",
-    "New Delhi",
-    "North",
-    "North East",
-    "North West",
-    "Shahdara",
-    "South",
-    "South East",
-    "South West",
-    "West"
-  ],
-  "Gujarat": [
-    "Ahmedabad",
-    "Amreli",
-    "Anand",
-    "Aravalli",
-    "Banaskantha",
-    "Bharuch",
-    "Bhavnagar",
-    "Botad",
-    "Chhota Udepur",
-    "Dahod",
-    "Dang",
-    "Devbhumi Dwarka",
-    "Gandhinagar",
-    "Gir Somnath",
-    "Jamnagar",
-    "Junagadh",
-    "Kachchh",
-    "Kheda",
-    "Mahisagar",
-    "Mehsana",
-    "Morbi",
-    "Narmada",
-    "Navsari",
-    "Panchmahal",
-    "Patan",
-    "Porbandar",
-    "Rajkot",
-    "Sabarkantha",
-    "Surat",
-    "Surendranagar",
-    "Tapi",
-    "Vadodara",
-    "Valsad"
-  ],
-  "Haryana": [
-    "Ambala",
-    "Bhiwani",
-    "Charkhi Dadri",
-    "Faridabad",
-    "Fatehabad",
-    "Gurugram",
-    "Hisar",
-    "Jhajjar",
-    "Jind",
-    "Kaithal",
-    "Karnal",
-    "Kurukshetra",
-    "Mahendragarh",
-    "Nuh",
-    "Palwal",
-    "Panchkula",
-    "Panipat",
-    "Rewari",
-    "Rohtak",
-    "Sirsa",
-    "Sonipat",
-    "Yamunanagar"
-  ],
-  "Himachal Pradesh": [
-    "Bilaspur",
-    "Chamba",
-    "Hamirpur",
-    "Kangra",
-    "Kinnaur",
-    "Kullu",
-    "Lahaul and Spiti",
-    "Mandi",
-    "Shimla",
-    "Sirmaur",
-    "Solan",
-    "Una"
-  ],
-  "Jammu and Kashmir": [
-    "Anantnag",
-    "Bandipora",
-    "Baramulla",
-    "Budgam",
-    "Doda",
-    "Ganderbal",
-    "Jammu",
-    "Kathua",
-    "Kishtwar",
-    "Kulgam",
-    "Kupwara",
-    "Poonch",
-    "Pulwama",
-    "Rajouri",
-    "Ramban",
-    "Reasi",
-    "Samba",
-    "Shopian",
-    "Srinagar",
-    "Udhampur"
-  ],
-  "Jharkhand": [
-    "Bokaro",
-    "Chatra",
-    "Deoghar",
-    "Dhanbad",
-    "Dumka",
-    "East Singhbhum",
-    "Garhwa",
-    "Giridih",
-    "Godda",
-    "Gumla",
-    "Hazaribagh",
-    "Jamtara",
-    "Khunti",
-    "Koderma",
-    "Latehar",
-    "Lohardaga",
-    "Pakur",
-    "Palamu",
-    "Ramgarh",
-    "Ranchi",
-    "Sahibganj",
-    "Seraikela-Kharsawan",
-    "Simdega",
-    "West Singhbhum"
-  ],
-  "Karnataka": [
-    "Bagalkote",
-    "Ballari",
-    "Belagavi",
-    "Bengaluru Rural",
-    "Bengaluru South",
-    "Bengaluru Urban",
-    "Bidar",
-    "Chamarajanagara",
-    "Chikkaballapura",
-    "Chikkamagaluru",
-    "Chitradurga",
-    "Dakshina Kannada",
-    "Davangere",
-    "Dharwad",
-    "Gadag",
-    "Hassan",
-    "Haveri",
-    "Kalaburagi",
-    "Kodagu",
-    "Kolar",
-    "Koppal",
-    "Mandya",
-    "Mysuru",
-    "Raichur",
-    "Shivamogga",
-    "Tumakuru",
-    "Udupi",
-    "Uttara Kannada",
-    "Vijayanagara",
-    "Vijayapura",
-    "Yadgir"
-  ],
-  "Kerala": [
-    "Alappuzha",
-    "Ernakulam",
-    "Idukki",
-    "Kannur",
-    "Kasaragod",
-    "Kollam",
-    "Kottayam",
-    "Kozhikode",
-    "Malappuram",
-    "Palakkad",
-    "Pathanamthitta",
-    "Thiruvananthapuram",
-    "Thrissur",
-    "Wayanad"
-  ],
-  "Ladakh": [
-    "Kargil",
-    "Leh"
-  ],
-  "Madhya Pradesh": [
-    "Agar Malwa",
-    "Alirajpur",
-    "Anuppur",
-    "Ashoknagar",
-    "Balaghat",
-    "Barwani",
-    "Betul",
-    "Bhind",
-    "Bhopal",
-    "Burhanpur",
-    "Chhatarpur",
-    "Chhindwara",
-    "Damoh",
-    "Datia",
-    "Dewas",
-    "Dhar",
-    "Dindori",
-    "Guna",
-    "Gwalior",
-    "Harda",
-    "Indore",
-    "Jabalpur",
-    "Jhabua",
-    "Katni",
-    "Khandwa",
-    "Khargone",
-    "Maihar",
-    "Mandla",
-    "Mandsaur",
-    "Mauganj",
-    "Morena",
-    "Narmadapuram",
-    "Narsinghpur",
-    "Neemuch",
-    "Niwari",
-    "Pandhurna",
-    "Panna",
-    "Raisen",
-    "Rajgarh",
-    "Ratlam",
-    "Rewa",
-    "Sagar",
-    "Satna",
-    "Sehore",
-    "Seoni",
-    "Shahdol",
-    "Shajapur",
-    "Sheopur",
-    "Shivpuri",
-    "Sidhi",
-    "Singrauli",
-    "Tikamgarh",
-    "Ujjain",
-    "Umaria",
-    "Vidisha"
-  ],
-  "Maharashtra": [
-    "Ahilyanagar",
-    "Akola",
-    "Amravati",
-    "Beed",
-    "Bhandara",
-    "Buldhana",
-    "Chandrapur",
-    "Chhatrapati Sambhajinagar",
-    "Dharashiv",
-    "Dhule",
-    "Gadchiroli",
-    "Gondia",
-    "Hingoli",
-    "Jalgaon",
-    "Jalna",
-    "Kolhapur",
-    "Latur",
-    "Mumbai City",
-    "Mumbai Suburban",
-    "Nagpur",
-    "Nanded",
-    "Nandurbar",
-    "Nashik",
-    "Palghar",
-    "Parbhani",
-    "Pune",
-    "Raigad",
-    "Ratnagiri",
-    "Sangli",
-    "Satara",
-    "Sindhudurg",
-    "Solapur",
-    "Thane",
-    "Wardha",
-    "Washim",
-    "Yavatmal"
-  ],
-  "Odisha": [
-    "Angul",
-    "Balangir",
-    "Balasore",
-    "Bargarh",
-    "Bhadrak",
-    "Boudh",
-    "Cuttack",
-    "Deogarh",
-    "Dhenkanal",
-    "Gajapati",
-    "Ganjam",
-    "Jagatsinghpur",
-    "Jajpur",
-    "Jharsuguda",
-    "Kalahandi",
-    "Kandhamal",
-    "Kendrapara",
-    "Kendujhar",
-    "Khordha",
-    "Koraput",
-    "Malkangiri",
-    "Mayurbhanj",
-    "Nabarangpur",
-    "Nayagarh",
-    "Nuapada",
-    "Puri",
-    "Rayagada",
-    "Sambalpur",
-    "Subarnapur",
-    "Sundargarh"
-  ],
-  "Punjab": [
-    "Amritsar",
-    "Barnala",
-    "Bathinda",
-    "Faridkot",
-    "Fatehgarh Sahib",
-    "Fazilka",
-    "Ferozepur",
-    "Gurdaspur",
-    "Hoshiarpur",
-    "Jalandhar",
-    "Kapurthala",
-    "Ludhiana",
-    "Malerkotla",
-    "Mansa",
-    "Moga",
-    "Pathankot",
-    "Patiala",
-    "Rupnagar",
-    "Sahibzada Ajit Singh Nagar",
-    "Sangrur",
-    "Shaheed Bhagat Singh Nagar",
-    "Sri Muktsar Sahib",
-    "Tarn Taran"
-  ],
-  "Rajasthan": [
-    "Ajmer",
-    "Alwar",
-    "Balotra",
-    "Banswara",
-    "Baran",
-    "Barmer",
-    "Beawar",
-    "Bharatpur",
-    "Bhilwara",
-    "Bikaner",
-    "Bundi",
-    "Chittorgarh",
-    "Churu",
-    "Dausa",
-    "Deeg",
-    "Dholpur",
-    "Didwana-Kuchaman",
-    "Dungarpur",
-    "Hanumangarh",
-    "Jaipur",
-    "Jaisalmer",
-    "Jalore",
-    "Jhalawar",
-    "Jhunjhunu",
-    "Jodhpur",
-    "Karauli",
-    "Khairthal-Tijara",
-    "Kota",
-    "Kotputli-Behror",
-    "Nagaur",
-    "Pali",
-    "Phalodi",
-    "Pratapgarh",
-    "Rajsamand",
-    "Salumber",
-    "Sawai Madhopur",
-    "Sikar",
-    "Sirohi",
-    "Sri Ganganagar",
-    "Tonk",
-    "Udaipur"
-  ],
-  "Tamil Nadu": [
-    "Ariyalur",
-    "Chengalpattu",
-    "Chennai",
-    "Coimbatore",
-    "Cuddalore",
-    "Dharmapuri",
-    "Dindigul",
-    "Erode",
-    "Kallakurichi",
-    "Kancheepuram",
-    "Kanniyakumari",
-    "Karur",
-    "Krishnagiri",
-    "Madurai",
-    "Mayiladuthurai",
-    "Nagapattinam",
-    "Namakkal",
-    "Perambalur",
-    "Pudukkottai",
-    "Ramanathapuram",
-    "Ranipet",
-    "Salem",
-    "Sivaganga",
-    "Tenkasi",
-    "Thanjavur",
-    "The Nilgiris",
-    "Theni",
-    "Thoothukudi",
-    "Tiruchirappalli",
-    "Tirunelveli",
-    "Tirupathur",
-    "Tiruppur",
-    "Tiruvallur",
-    "Tiruvannamalai",
-    "Tiruvarur",
-    "Vellore",
-    "Viluppuram",
-    "Virudhunagar"
-  ],
-  "Telangana": [
-    "Adilabad",
-    "Bhadradri Kothagudem",
-    "Hanumakonda",
-    "Hyderabad",
-    "Jagtial",
-    "Jangaon",
-    "Jayashankar Bhupalpally",
-    "Jogulamba Gadwal",
-    "Kamareddy",
-    "Karimnagar",
-    "Khammam",
-    "Kumuram Bheem Asifabad",
-    "Mahabubabad",
-    "Mahabubnagar",
-    "Mancherial",
-    "Medak",
-    "Medchal-Malkajgiri",
-    "Mulugu",
-    "Nagarkurnool",
-    "Nalgonda",
-    "Narayanpet",
-    "Nirmal",
-    "Nizamabad",
-    "Peddapalli",
-    "Rajanna Sircilla",
-    "Rangareddy",
-    "Sangareddy",
-    "Siddipet",
-    "Suryapet",
-    "Vikarabad",
-    "Wanaparthy",
-    "Warangal",
-    "Yadadri Bhuvanagiri"
-  ],
-  "Uttar Pradesh": [
-    "Agra",
-    "Aligarh",
-    "Ambedkar Nagar",
-    "Amethi",
-    "Amroha",
-    "Auraiya",
-    "Ayodhya",
-    "Azamgarh",
-    "Baghpat",
-    "Bahraich",
-    "Ballia",
-    "Balrampur",
-    "Banda",
-    "Barabanki",
-    "Bareilly",
-    "Basti",
-    "Bhadohi",
-    "Bijnor",
-    "Budaun",
-    "Bulandshahr",
-    "Chandauli",
-    "Chitrakoot",
-    "Deoria",
-    "Etah",
-    "Etawah",
-    "Farrukhabad",
-    "Fatehpur",
-    "Firozabad",
-    "Gautam Buddha Nagar",
-    "Ghaziabad",
-    "Ghazipur",
-    "Gonda",
-    "Gorakhpur",
-    "Hamirpur",
-    "Hapur",
-    "Hardoi",
-    "Hathras",
-    "Jalaun",
-    "Jaunpur",
-    "Jhansi",
-    "Kannauj",
-    "Kanpur Dehat",
-    "Kanpur Nagar",
-    "Kasganj",
-    "Kaushambi",
-    "Kheri",
-    "Kushinagar",
-    "Lalitpur",
-    "Lucknow",
-    "Maharajganj",
-    "Mahoba",
-    "Mainpuri",
-    "Mathura",
-    "Mau",
-    "Meerut",
-    "Mirzapur",
-    "Moradabad",
-    "Muzaffarnagar",
-    "Pilibhit",
-    "Pratapgarh",
-    "Prayagraj",
-    "Rae Bareli",
-    "Rampur",
-    "Saharanpur",
-    "Sambhal",
-    "Sant Kabir Nagar",
-    "Shahjahanpur",
-    "Shamli",
-    "Shravasti",
-    "Siddharthnagar",
-    "Sitapur",
-    "Sonbhadra",
-    "Sultanpur",
-    "Unnao",
-    "Varanasi"
-  ],
-  "West Bengal": [
-    "Alipurduar",
-    "Bankura",
-    "Birbhum",
-    "Cooch Behar",
-    "Dakshin Dinajpur",
-    "Darjeeling",
-    "Hooghly",
-    "Howrah",
-    "Jalpaiguri",
-    "Jhargram",
-    "Kalimpong",
-    "Kolkata",
-    "Malda",
-    "Murshidabad",
-    "Nadia",
-    "North 24 Parganas",
-    "Paschim Bardhaman",
-    "Paschim Medinipur",
-    "Purba Bardhaman",
-    "Purba Medinipur",
-    "Purulia",
-    "South 24 Parganas",
-    "Uttar Dinajpur"
-  ]
+  "_meta": {
+    "default_language": "English",
+    "fallback_language": "English",
+    "note": "English is always available. Each state/UT has a configured local language. State labels include native-script labels. District labels currently use the existing English master as the safe fallback; add reviewed native-script district labels before using them as official translations."
+  },
+  "states": {
+    "andhra_pradesh": {
+      "name": "Andhra Pradesh",
+      "default_local_language": "Telugu",
+      "labels": {
+        "English": "Andhra Pradesh",
+        "Telugu": "ఆంధ్ర ప్రదేశ్"
+      },
+      "districts": {
+        "alluri_sitharama_raju": {
+          "name": "Alluri Sitharama Raju",
+          "labels": {
+            "English": "Alluri Sitharama Raju",
+            "Telugu": "Alluri Sitharama Raju"
+          }
+        },
+        "anakapalli": {
+          "name": "Anakapalli",
+          "labels": {
+            "English": "Anakapalli",
+            "Telugu": "Anakapalli"
+          }
+        },
+        "ananthapuramu": {
+          "name": "Ananthapuramu",
+          "labels": {
+            "English": "Ananthapuramu",
+            "Telugu": "Ananthapuramu"
+          }
+        },
+        "annamayya": {
+          "name": "Annamayya",
+          "labels": {
+            "English": "Annamayya",
+            "Telugu": "Annamayya"
+          }
+        },
+        "bapatla": {
+          "name": "Bapatla",
+          "labels": {
+            "English": "Bapatla",
+            "Telugu": "Bapatla"
+          }
+        },
+        "chittoor": {
+          "name": "Chittoor",
+          "labels": {
+            "English": "Chittoor",
+            "Telugu": "Chittoor"
+          }
+        },
+        "dr_b_r_ambedkar_konaseema": {
+          "name": "Dr. B.R. Ambedkar Konaseema",
+          "labels": {
+            "English": "Dr. B.R. Ambedkar Konaseema",
+            "Telugu": "Dr. B.R. Ambedkar Konaseema"
+          }
+        },
+        "east_godavari": {
+          "name": "East Godavari",
+          "labels": {
+            "English": "East Godavari",
+            "Telugu": "East Godavari"
+          }
+        },
+        "eluru": {
+          "name": "Eluru",
+          "labels": {
+            "English": "Eluru",
+            "Telugu": "Eluru"
+          }
+        },
+        "guntur": {
+          "name": "Guntur",
+          "labels": {
+            "English": "Guntur",
+            "Telugu": "Guntur"
+          }
+        },
+        "kakinada": {
+          "name": "Kakinada",
+          "labels": {
+            "English": "Kakinada",
+            "Telugu": "Kakinada"
+          }
+        },
+        "krishna": {
+          "name": "Krishna",
+          "labels": {
+            "English": "Krishna",
+            "Telugu": "Krishna"
+          }
+        },
+        "kurnool": {
+          "name": "Kurnool",
+          "labels": {
+            "English": "Kurnool",
+            "Telugu": "Kurnool"
+          }
+        },
+        "ntr": {
+          "name": "NTR",
+          "labels": {
+            "English": "NTR",
+            "Telugu": "NTR"
+          }
+        },
+        "nandyal": {
+          "name": "Nandyal",
+          "labels": {
+            "English": "Nandyal",
+            "Telugu": "Nandyal"
+          }
+        },
+        "palnadu": {
+          "name": "Palnadu",
+          "labels": {
+            "English": "Palnadu",
+            "Telugu": "Palnadu"
+          }
+        },
+        "parvathipuram_manyam": {
+          "name": "Parvathipuram Manyam",
+          "labels": {
+            "English": "Parvathipuram Manyam",
+            "Telugu": "Parvathipuram Manyam"
+          }
+        },
+        "prakasam": {
+          "name": "Prakasam",
+          "labels": {
+            "English": "Prakasam",
+            "Telugu": "Prakasam"
+          }
+        },
+        "sri_potti_sriramulu_nellore": {
+          "name": "Sri Potti Sriramulu Nellore",
+          "labels": {
+            "English": "Sri Potti Sriramulu Nellore",
+            "Telugu": "Sri Potti Sriramulu Nellore"
+          }
+        },
+        "sri_sathya_sai": {
+          "name": "Sri Sathya Sai",
+          "labels": {
+            "English": "Sri Sathya Sai",
+            "Telugu": "Sri Sathya Sai"
+          }
+        },
+        "srikakulam": {
+          "name": "Srikakulam",
+          "labels": {
+            "English": "Srikakulam",
+            "Telugu": "Srikakulam"
+          }
+        },
+        "tirupati": {
+          "name": "Tirupati",
+          "labels": {
+            "English": "Tirupati",
+            "Telugu": "Tirupati"
+          }
+        },
+        "visakhapatnam": {
+          "name": "Visakhapatnam",
+          "labels": {
+            "English": "Visakhapatnam",
+            "Telugu": "Visakhapatnam"
+          }
+        },
+        "vizianagaram": {
+          "name": "Vizianagaram",
+          "labels": {
+            "English": "Vizianagaram",
+            "Telugu": "Vizianagaram"
+          }
+        },
+        "west_godavari": {
+          "name": "West Godavari",
+          "labels": {
+            "English": "West Godavari",
+            "Telugu": "West Godavari"
+          }
+        },
+        "y_s_r_kadapa": {
+          "name": "Y.S.R. Kadapa",
+          "labels": {
+            "English": "Y.S.R. Kadapa",
+            "Telugu": "Y.S.R. Kadapa"
+          }
+        }
+      }
+    },
+    "assam": {
+      "name": "Assam",
+      "default_local_language": "Assamese",
+      "labels": {
+        "English": "Assam",
+        "Assamese": "অসম"
+      },
+      "districts": {
+        "bajali": {
+          "name": "Bajali",
+          "labels": {
+            "English": "Bajali",
+            "Assamese": "Bajali"
+          }
+        },
+        "baksa": {
+          "name": "Baksa",
+          "labels": {
+            "English": "Baksa",
+            "Assamese": "Baksa"
+          }
+        },
+        "barpeta": {
+          "name": "Barpeta",
+          "labels": {
+            "English": "Barpeta",
+            "Assamese": "Barpeta"
+          }
+        },
+        "biswanath": {
+          "name": "Biswanath",
+          "labels": {
+            "English": "Biswanath",
+            "Assamese": "Biswanath"
+          }
+        },
+        "bongaigaon": {
+          "name": "Bongaigaon",
+          "labels": {
+            "English": "Bongaigaon",
+            "Assamese": "Bongaigaon"
+          }
+        },
+        "cachar": {
+          "name": "Cachar",
+          "labels": {
+            "English": "Cachar",
+            "Assamese": "Cachar"
+          }
+        },
+        "charaideo": {
+          "name": "Charaideo",
+          "labels": {
+            "English": "Charaideo",
+            "Assamese": "Charaideo"
+          }
+        },
+        "chirang": {
+          "name": "Chirang",
+          "labels": {
+            "English": "Chirang",
+            "Assamese": "Chirang"
+          }
+        },
+        "darrang": {
+          "name": "Darrang",
+          "labels": {
+            "English": "Darrang",
+            "Assamese": "Darrang"
+          }
+        },
+        "dhemaji": {
+          "name": "Dhemaji",
+          "labels": {
+            "English": "Dhemaji",
+            "Assamese": "Dhemaji"
+          }
+        },
+        "dhubri": {
+          "name": "Dhubri",
+          "labels": {
+            "English": "Dhubri",
+            "Assamese": "Dhubri"
+          }
+        },
+        "dibrugarh": {
+          "name": "Dibrugarh",
+          "labels": {
+            "English": "Dibrugarh",
+            "Assamese": "Dibrugarh"
+          }
+        },
+        "dima_hasao": {
+          "name": "Dima Hasao",
+          "labels": {
+            "English": "Dima Hasao",
+            "Assamese": "Dima Hasao"
+          }
+        },
+        "goalpara": {
+          "name": "Goalpara",
+          "labels": {
+            "English": "Goalpara",
+            "Assamese": "Goalpara"
+          }
+        },
+        "golaghat": {
+          "name": "Golaghat",
+          "labels": {
+            "English": "Golaghat",
+            "Assamese": "Golaghat"
+          }
+        },
+        "hailakandi": {
+          "name": "Hailakandi",
+          "labels": {
+            "English": "Hailakandi",
+            "Assamese": "Hailakandi"
+          }
+        },
+        "hojai": {
+          "name": "Hojai",
+          "labels": {
+            "English": "Hojai",
+            "Assamese": "Hojai"
+          }
+        },
+        "jorhat": {
+          "name": "Jorhat",
+          "labels": {
+            "English": "Jorhat",
+            "Assamese": "Jorhat"
+          }
+        },
+        "kamrup": {
+          "name": "Kamrup",
+          "labels": {
+            "English": "Kamrup",
+            "Assamese": "Kamrup"
+          }
+        },
+        "kamrup_metropolitan": {
+          "name": "Kamrup Metropolitan",
+          "labels": {
+            "English": "Kamrup Metropolitan",
+            "Assamese": "Kamrup Metropolitan"
+          }
+        },
+        "karbi_anglong": {
+          "name": "Karbi Anglong",
+          "labels": {
+            "English": "Karbi Anglong",
+            "Assamese": "Karbi Anglong"
+          }
+        },
+        "kokrajhar": {
+          "name": "Kokrajhar",
+          "labels": {
+            "English": "Kokrajhar",
+            "Assamese": "Kokrajhar"
+          }
+        },
+        "lakhimpur": {
+          "name": "Lakhimpur",
+          "labels": {
+            "English": "Lakhimpur",
+            "Assamese": "Lakhimpur"
+          }
+        },
+        "majuli": {
+          "name": "Majuli",
+          "labels": {
+            "English": "Majuli",
+            "Assamese": "Majuli"
+          }
+        },
+        "morigaon": {
+          "name": "Morigaon",
+          "labels": {
+            "English": "Morigaon",
+            "Assamese": "Morigaon"
+          }
+        },
+        "nagaon": {
+          "name": "Nagaon",
+          "labels": {
+            "English": "Nagaon",
+            "Assamese": "Nagaon"
+          }
+        },
+        "nalbari": {
+          "name": "Nalbari",
+          "labels": {
+            "English": "Nalbari",
+            "Assamese": "Nalbari"
+          }
+        },
+        "sivasagar": {
+          "name": "Sivasagar",
+          "labels": {
+            "English": "Sivasagar",
+            "Assamese": "Sivasagar"
+          }
+        },
+        "sonitpur": {
+          "name": "Sonitpur",
+          "labels": {
+            "English": "Sonitpur",
+            "Assamese": "Sonitpur"
+          }
+        },
+        "south_salmara_mankachar": {
+          "name": "South Salmara-Mankachar",
+          "labels": {
+            "English": "South Salmara-Mankachar",
+            "Assamese": "South Salmara-Mankachar"
+          }
+        },
+        "sribhumi": {
+          "name": "Sribhumi",
+          "labels": {
+            "English": "Sribhumi",
+            "Assamese": "Sribhumi"
+          }
+        },
+        "tamulpur": {
+          "name": "Tamulpur",
+          "labels": {
+            "English": "Tamulpur",
+            "Assamese": "Tamulpur"
+          }
+        },
+        "tinsukia": {
+          "name": "Tinsukia",
+          "labels": {
+            "English": "Tinsukia",
+            "Assamese": "Tinsukia"
+          }
+        },
+        "udalguri": {
+          "name": "Udalguri",
+          "labels": {
+            "English": "Udalguri",
+            "Assamese": "Udalguri"
+          }
+        },
+        "west_karbi_anglong": {
+          "name": "West Karbi Anglong",
+          "labels": {
+            "English": "West Karbi Anglong",
+            "Assamese": "West Karbi Anglong"
+          }
+        }
+      }
+    },
+    "chhattisgarh": {
+      "name": "Chhattisgarh",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Chhattisgarh",
+        "Hindi": "छत्तीसगढ़"
+      },
+      "districts": {
+        "balod": {
+          "name": "Balod",
+          "labels": {
+            "English": "Balod",
+            "Hindi": "Balod"
+          }
+        },
+        "baloda_bazar_bhatapara": {
+          "name": "Baloda Bazar-Bhatapara",
+          "labels": {
+            "English": "Baloda Bazar-Bhatapara",
+            "Hindi": "Baloda Bazar-Bhatapara"
+          }
+        },
+        "balrampur_ramanujganj": {
+          "name": "Balrampur-Ramanujganj",
+          "labels": {
+            "English": "Balrampur-Ramanujganj",
+            "Hindi": "Balrampur-Ramanujganj"
+          }
+        },
+        "bastar": {
+          "name": "Bastar",
+          "labels": {
+            "English": "Bastar",
+            "Hindi": "Bastar"
+          }
+        },
+        "bemetara": {
+          "name": "Bemetara",
+          "labels": {
+            "English": "Bemetara",
+            "Hindi": "Bemetara"
+          }
+        },
+        "bijapur": {
+          "name": "Bijapur",
+          "labels": {
+            "English": "Bijapur",
+            "Hindi": "Bijapur"
+          }
+        },
+        "bilaspur": {
+          "name": "Bilaspur",
+          "labels": {
+            "English": "Bilaspur",
+            "Hindi": "Bilaspur"
+          }
+        },
+        "dantewada": {
+          "name": "Dantewada",
+          "labels": {
+            "English": "Dantewada",
+            "Hindi": "Dantewada"
+          }
+        },
+        "dhamtari": {
+          "name": "Dhamtari",
+          "labels": {
+            "English": "Dhamtari",
+            "Hindi": "Dhamtari"
+          }
+        },
+        "durg": {
+          "name": "Durg",
+          "labels": {
+            "English": "Durg",
+            "Hindi": "Durg"
+          }
+        },
+        "gariaband": {
+          "name": "Gariaband",
+          "labels": {
+            "English": "Gariaband",
+            "Hindi": "Gariaband"
+          }
+        },
+        "gaurela_pendra_marwahi": {
+          "name": "Gaurela-Pendra-Marwahi",
+          "labels": {
+            "English": "Gaurela-Pendra-Marwahi",
+            "Hindi": "Gaurela-Pendra-Marwahi"
+          }
+        },
+        "janjgir_champa": {
+          "name": "Janjgir-Champa",
+          "labels": {
+            "English": "Janjgir-Champa",
+            "Hindi": "Janjgir-Champa"
+          }
+        },
+        "jashpur": {
+          "name": "Jashpur",
+          "labels": {
+            "English": "Jashpur",
+            "Hindi": "Jashpur"
+          }
+        },
+        "kabirdham": {
+          "name": "Kabirdham",
+          "labels": {
+            "English": "Kabirdham",
+            "Hindi": "Kabirdham"
+          }
+        },
+        "kanker": {
+          "name": "Kanker",
+          "labels": {
+            "English": "Kanker",
+            "Hindi": "Kanker"
+          }
+        },
+        "khairagarh_chhuikhadan_gandai": {
+          "name": "Khairagarh-Chhuikhadan-Gandai",
+          "labels": {
+            "English": "Khairagarh-Chhuikhadan-Gandai",
+            "Hindi": "Khairagarh-Chhuikhadan-Gandai"
+          }
+        },
+        "kondagaon": {
+          "name": "Kondagaon",
+          "labels": {
+            "English": "Kondagaon",
+            "Hindi": "Kondagaon"
+          }
+        },
+        "korba": {
+          "name": "Korba",
+          "labels": {
+            "English": "Korba",
+            "Hindi": "Korba"
+          }
+        },
+        "korea": {
+          "name": "Korea",
+          "labels": {
+            "English": "Korea",
+            "Hindi": "Korea"
+          }
+        },
+        "mahasamund": {
+          "name": "Mahasamund",
+          "labels": {
+            "English": "Mahasamund",
+            "Hindi": "Mahasamund"
+          }
+        },
+        "manendragarh_chirmiri_bharatpur": {
+          "name": "Manendragarh-Chirmiri-Bharatpur",
+          "labels": {
+            "English": "Manendragarh-Chirmiri-Bharatpur",
+            "Hindi": "Manendragarh-Chirmiri-Bharatpur"
+          }
+        },
+        "mohla_manpur_ambagarh_chowki": {
+          "name": "Mohla-Manpur-Ambagarh Chowki",
+          "labels": {
+            "English": "Mohla-Manpur-Ambagarh Chowki",
+            "Hindi": "Mohla-Manpur-Ambagarh Chowki"
+          }
+        },
+        "mungeli": {
+          "name": "Mungeli",
+          "labels": {
+            "English": "Mungeli",
+            "Hindi": "Mungeli"
+          }
+        },
+        "narayanpur": {
+          "name": "Narayanpur",
+          "labels": {
+            "English": "Narayanpur",
+            "Hindi": "Narayanpur"
+          }
+        },
+        "raigarh": {
+          "name": "Raigarh",
+          "labels": {
+            "English": "Raigarh",
+            "Hindi": "Raigarh"
+          }
+        },
+        "raipur": {
+          "name": "Raipur",
+          "labels": {
+            "English": "Raipur",
+            "Hindi": "Raipur"
+          }
+        },
+        "rajnandgaon": {
+          "name": "Rajnandgaon",
+          "labels": {
+            "English": "Rajnandgaon",
+            "Hindi": "Rajnandgaon"
+          }
+        },
+        "sakti": {
+          "name": "Sakti",
+          "labels": {
+            "English": "Sakti",
+            "Hindi": "Sakti"
+          }
+        },
+        "sarangarh_bilaigarh": {
+          "name": "Sarangarh-Bilaigarh",
+          "labels": {
+            "English": "Sarangarh-Bilaigarh",
+            "Hindi": "Sarangarh-Bilaigarh"
+          }
+        },
+        "sukma": {
+          "name": "Sukma",
+          "labels": {
+            "English": "Sukma",
+            "Hindi": "Sukma"
+          }
+        },
+        "surajpur": {
+          "name": "Surajpur",
+          "labels": {
+            "English": "Surajpur",
+            "Hindi": "Surajpur"
+          }
+        },
+        "surguja": {
+          "name": "Surguja",
+          "labels": {
+            "English": "Surguja",
+            "Hindi": "Surguja"
+          }
+        }
+      }
+    },
+    "delhi": {
+      "name": "Delhi",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Delhi",
+        "Hindi": "दिल्ली"
+      },
+      "districts": {
+        "central": {
+          "name": "Central",
+          "labels": {
+            "English": "Central",
+            "Hindi": "Central"
+          }
+        },
+        "east": {
+          "name": "East",
+          "labels": {
+            "English": "East",
+            "Hindi": "East"
+          }
+        },
+        "new_delhi": {
+          "name": "New Delhi",
+          "labels": {
+            "English": "New Delhi",
+            "Hindi": "New Delhi"
+          }
+        },
+        "north": {
+          "name": "North",
+          "labels": {
+            "English": "North",
+            "Hindi": "North"
+          }
+        },
+        "north_east": {
+          "name": "North East",
+          "labels": {
+            "English": "North East",
+            "Hindi": "North East"
+          }
+        },
+        "north_west": {
+          "name": "North West",
+          "labels": {
+            "English": "North West",
+            "Hindi": "North West"
+          }
+        },
+        "shahdara": {
+          "name": "Shahdara",
+          "labels": {
+            "English": "Shahdara",
+            "Hindi": "Shahdara"
+          }
+        },
+        "south": {
+          "name": "South",
+          "labels": {
+            "English": "South",
+            "Hindi": "South"
+          }
+        },
+        "south_east": {
+          "name": "South East",
+          "labels": {
+            "English": "South East",
+            "Hindi": "South East"
+          }
+        },
+        "south_west": {
+          "name": "South West",
+          "labels": {
+            "English": "South West",
+            "Hindi": "South West"
+          }
+        },
+        "west": {
+          "name": "West",
+          "labels": {
+            "English": "West",
+            "Hindi": "West"
+          }
+        }
+      }
+    },
+    "gujarat": {
+      "name": "Gujarat",
+      "default_local_language": "Gujarati",
+      "labels": {
+        "English": "Gujarat",
+        "Gujarati": "ગુજરાત"
+      },
+      "districts": {
+        "ahmedabad": {
+          "name": "Ahmedabad",
+          "labels": {
+            "English": "Ahmedabad",
+            "Gujarati": "Ahmedabad"
+          }
+        },
+        "amreli": {
+          "name": "Amreli",
+          "labels": {
+            "English": "Amreli",
+            "Gujarati": "Amreli"
+          }
+        },
+        "anand": {
+          "name": "Anand",
+          "labels": {
+            "English": "Anand",
+            "Gujarati": "Anand"
+          }
+        },
+        "aravalli": {
+          "name": "Aravalli",
+          "labels": {
+            "English": "Aravalli",
+            "Gujarati": "Aravalli"
+          }
+        },
+        "banaskantha": {
+          "name": "Banaskantha",
+          "labels": {
+            "English": "Banaskantha",
+            "Gujarati": "Banaskantha"
+          }
+        },
+        "bharuch": {
+          "name": "Bharuch",
+          "labels": {
+            "English": "Bharuch",
+            "Gujarati": "Bharuch"
+          }
+        },
+        "bhavnagar": {
+          "name": "Bhavnagar",
+          "labels": {
+            "English": "Bhavnagar",
+            "Gujarati": "Bhavnagar"
+          }
+        },
+        "botad": {
+          "name": "Botad",
+          "labels": {
+            "English": "Botad",
+            "Gujarati": "Botad"
+          }
+        },
+        "chhota_udepur": {
+          "name": "Chhota Udepur",
+          "labels": {
+            "English": "Chhota Udepur",
+            "Gujarati": "Chhota Udepur"
+          }
+        },
+        "dahod": {
+          "name": "Dahod",
+          "labels": {
+            "English": "Dahod",
+            "Gujarati": "Dahod"
+          }
+        },
+        "dang": {
+          "name": "Dang",
+          "labels": {
+            "English": "Dang",
+            "Gujarati": "Dang"
+          }
+        },
+        "devbhumi_dwarka": {
+          "name": "Devbhumi Dwarka",
+          "labels": {
+            "English": "Devbhumi Dwarka",
+            "Gujarati": "Devbhumi Dwarka"
+          }
+        },
+        "gandhinagar": {
+          "name": "Gandhinagar",
+          "labels": {
+            "English": "Gandhinagar",
+            "Gujarati": "Gandhinagar"
+          }
+        },
+        "gir_somnath": {
+          "name": "Gir Somnath",
+          "labels": {
+            "English": "Gir Somnath",
+            "Gujarati": "Gir Somnath"
+          }
+        },
+        "jamnagar": {
+          "name": "Jamnagar",
+          "labels": {
+            "English": "Jamnagar",
+            "Gujarati": "Jamnagar"
+          }
+        },
+        "junagadh": {
+          "name": "Junagadh",
+          "labels": {
+            "English": "Junagadh",
+            "Gujarati": "Junagadh"
+          }
+        },
+        "kachchh": {
+          "name": "Kachchh",
+          "labels": {
+            "English": "Kachchh",
+            "Gujarati": "Kachchh"
+          }
+        },
+        "kheda": {
+          "name": "Kheda",
+          "labels": {
+            "English": "Kheda",
+            "Gujarati": "Kheda"
+          }
+        },
+        "mahisagar": {
+          "name": "Mahisagar",
+          "labels": {
+            "English": "Mahisagar",
+            "Gujarati": "Mahisagar"
+          }
+        },
+        "mehsana": {
+          "name": "Mehsana",
+          "labels": {
+            "English": "Mehsana",
+            "Gujarati": "Mehsana"
+          }
+        },
+        "morbi": {
+          "name": "Morbi",
+          "labels": {
+            "English": "Morbi",
+            "Gujarati": "Morbi"
+          }
+        },
+        "narmada": {
+          "name": "Narmada",
+          "labels": {
+            "English": "Narmada",
+            "Gujarati": "Narmada"
+          }
+        },
+        "navsari": {
+          "name": "Navsari",
+          "labels": {
+            "English": "Navsari",
+            "Gujarati": "Navsari"
+          }
+        },
+        "panchmahal": {
+          "name": "Panchmahal",
+          "labels": {
+            "English": "Panchmahal",
+            "Gujarati": "Panchmahal"
+          }
+        },
+        "patan": {
+          "name": "Patan",
+          "labels": {
+            "English": "Patan",
+            "Gujarati": "Patan"
+          }
+        },
+        "porbandar": {
+          "name": "Porbandar",
+          "labels": {
+            "English": "Porbandar",
+            "Gujarati": "Porbandar"
+          }
+        },
+        "rajkot": {
+          "name": "Rajkot",
+          "labels": {
+            "English": "Rajkot",
+            "Gujarati": "Rajkot"
+          }
+        },
+        "sabarkantha": {
+          "name": "Sabarkantha",
+          "labels": {
+            "English": "Sabarkantha",
+            "Gujarati": "Sabarkantha"
+          }
+        },
+        "surat": {
+          "name": "Surat",
+          "labels": {
+            "English": "Surat",
+            "Gujarati": "Surat"
+          }
+        },
+        "surendranagar": {
+          "name": "Surendranagar",
+          "labels": {
+            "English": "Surendranagar",
+            "Gujarati": "Surendranagar"
+          }
+        },
+        "tapi": {
+          "name": "Tapi",
+          "labels": {
+            "English": "Tapi",
+            "Gujarati": "Tapi"
+          }
+        },
+        "vadodara": {
+          "name": "Vadodara",
+          "labels": {
+            "English": "Vadodara",
+            "Gujarati": "Vadodara"
+          }
+        },
+        "valsad": {
+          "name": "Valsad",
+          "labels": {
+            "English": "Valsad",
+            "Gujarati": "Valsad"
+          }
+        }
+      }
+    },
+    "haryana": {
+      "name": "Haryana",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Haryana",
+        "Hindi": "हरियाणा"
+      },
+      "districts": {
+        "ambala": {
+          "name": "Ambala",
+          "labels": {
+            "English": "Ambala",
+            "Hindi": "Ambala"
+          }
+        },
+        "bhiwani": {
+          "name": "Bhiwani",
+          "labels": {
+            "English": "Bhiwani",
+            "Hindi": "Bhiwani"
+          }
+        },
+        "charkhi_dadri": {
+          "name": "Charkhi Dadri",
+          "labels": {
+            "English": "Charkhi Dadri",
+            "Hindi": "Charkhi Dadri"
+          }
+        },
+        "faridabad": {
+          "name": "Faridabad",
+          "labels": {
+            "English": "Faridabad",
+            "Hindi": "Faridabad"
+          }
+        },
+        "fatehabad": {
+          "name": "Fatehabad",
+          "labels": {
+            "English": "Fatehabad",
+            "Hindi": "Fatehabad"
+          }
+        },
+        "gurugram": {
+          "name": "Gurugram",
+          "labels": {
+            "English": "Gurugram",
+            "Hindi": "Gurugram"
+          }
+        },
+        "hisar": {
+          "name": "Hisar",
+          "labels": {
+            "English": "Hisar",
+            "Hindi": "Hisar"
+          }
+        },
+        "jhajjar": {
+          "name": "Jhajjar",
+          "labels": {
+            "English": "Jhajjar",
+            "Hindi": "Jhajjar"
+          }
+        },
+        "jind": {
+          "name": "Jind",
+          "labels": {
+            "English": "Jind",
+            "Hindi": "Jind"
+          }
+        },
+        "kaithal": {
+          "name": "Kaithal",
+          "labels": {
+            "English": "Kaithal",
+            "Hindi": "Kaithal"
+          }
+        },
+        "karnal": {
+          "name": "Karnal",
+          "labels": {
+            "English": "Karnal",
+            "Hindi": "Karnal"
+          }
+        },
+        "kurukshetra": {
+          "name": "Kurukshetra",
+          "labels": {
+            "English": "Kurukshetra",
+            "Hindi": "Kurukshetra"
+          }
+        },
+        "mahendragarh": {
+          "name": "Mahendragarh",
+          "labels": {
+            "English": "Mahendragarh",
+            "Hindi": "Mahendragarh"
+          }
+        },
+        "nuh": {
+          "name": "Nuh",
+          "labels": {
+            "English": "Nuh",
+            "Hindi": "Nuh"
+          }
+        },
+        "palwal": {
+          "name": "Palwal",
+          "labels": {
+            "English": "Palwal",
+            "Hindi": "Palwal"
+          }
+        },
+        "panchkula": {
+          "name": "Panchkula",
+          "labels": {
+            "English": "Panchkula",
+            "Hindi": "Panchkula"
+          }
+        },
+        "panipat": {
+          "name": "Panipat",
+          "labels": {
+            "English": "Panipat",
+            "Hindi": "Panipat"
+          }
+        },
+        "rewari": {
+          "name": "Rewari",
+          "labels": {
+            "English": "Rewari",
+            "Hindi": "Rewari"
+          }
+        },
+        "rohtak": {
+          "name": "Rohtak",
+          "labels": {
+            "English": "Rohtak",
+            "Hindi": "Rohtak"
+          }
+        },
+        "sirsa": {
+          "name": "Sirsa",
+          "labels": {
+            "English": "Sirsa",
+            "Hindi": "Sirsa"
+          }
+        },
+        "sonipat": {
+          "name": "Sonipat",
+          "labels": {
+            "English": "Sonipat",
+            "Hindi": "Sonipat"
+          }
+        },
+        "yamunanagar": {
+          "name": "Yamunanagar",
+          "labels": {
+            "English": "Yamunanagar",
+            "Hindi": "Yamunanagar"
+          }
+        }
+      }
+    },
+    "himachal_pradesh": {
+      "name": "Himachal Pradesh",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Himachal Pradesh",
+        "Hindi": "हिमाचल प्रदेश"
+      },
+      "districts": {
+        "bilaspur": {
+          "name": "Bilaspur",
+          "labels": {
+            "English": "Bilaspur",
+            "Hindi": "Bilaspur"
+          }
+        },
+        "chamba": {
+          "name": "Chamba",
+          "labels": {
+            "English": "Chamba",
+            "Hindi": "Chamba"
+          }
+        },
+        "hamirpur": {
+          "name": "Hamirpur",
+          "labels": {
+            "English": "Hamirpur",
+            "Hindi": "Hamirpur"
+          }
+        },
+        "kangra": {
+          "name": "Kangra",
+          "labels": {
+            "English": "Kangra",
+            "Hindi": "Kangra"
+          }
+        },
+        "kinnaur": {
+          "name": "Kinnaur",
+          "labels": {
+            "English": "Kinnaur",
+            "Hindi": "Kinnaur"
+          }
+        },
+        "kullu": {
+          "name": "Kullu",
+          "labels": {
+            "English": "Kullu",
+            "Hindi": "Kullu"
+          }
+        },
+        "lahaul_and_spiti": {
+          "name": "Lahaul and Spiti",
+          "labels": {
+            "English": "Lahaul and Spiti",
+            "Hindi": "Lahaul and Spiti"
+          }
+        },
+        "mandi": {
+          "name": "Mandi",
+          "labels": {
+            "English": "Mandi",
+            "Hindi": "Mandi"
+          }
+        },
+        "shimla": {
+          "name": "Shimla",
+          "labels": {
+            "English": "Shimla",
+            "Hindi": "Shimla"
+          }
+        },
+        "sirmaur": {
+          "name": "Sirmaur",
+          "labels": {
+            "English": "Sirmaur",
+            "Hindi": "Sirmaur"
+          }
+        },
+        "solan": {
+          "name": "Solan",
+          "labels": {
+            "English": "Solan",
+            "Hindi": "Solan"
+          }
+        },
+        "una": {
+          "name": "Una",
+          "labels": {
+            "English": "Una",
+            "Hindi": "Una"
+          }
+        }
+      }
+    },
+    "jammu_and_kashmir": {
+      "name": "Jammu and Kashmir",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Jammu and Kashmir",
+        "Hindi": "जम्मू और कश्मीर"
+      },
+      "districts": {
+        "anantnag": {
+          "name": "Anantnag",
+          "labels": {
+            "English": "Anantnag",
+            "Hindi": "Anantnag"
+          }
+        },
+        "bandipora": {
+          "name": "Bandipora",
+          "labels": {
+            "English": "Bandipora",
+            "Hindi": "Bandipora"
+          }
+        },
+        "baramulla": {
+          "name": "Baramulla",
+          "labels": {
+            "English": "Baramulla",
+            "Hindi": "Baramulla"
+          }
+        },
+        "budgam": {
+          "name": "Budgam",
+          "labels": {
+            "English": "Budgam",
+            "Hindi": "Budgam"
+          }
+        },
+        "doda": {
+          "name": "Doda",
+          "labels": {
+            "English": "Doda",
+            "Hindi": "Doda"
+          }
+        },
+        "ganderbal": {
+          "name": "Ganderbal",
+          "labels": {
+            "English": "Ganderbal",
+            "Hindi": "Ganderbal"
+          }
+        },
+        "jammu": {
+          "name": "Jammu",
+          "labels": {
+            "English": "Jammu",
+            "Hindi": "Jammu"
+          }
+        },
+        "kathua": {
+          "name": "Kathua",
+          "labels": {
+            "English": "Kathua",
+            "Hindi": "Kathua"
+          }
+        },
+        "kishtwar": {
+          "name": "Kishtwar",
+          "labels": {
+            "English": "Kishtwar",
+            "Hindi": "Kishtwar"
+          }
+        },
+        "kulgam": {
+          "name": "Kulgam",
+          "labels": {
+            "English": "Kulgam",
+            "Hindi": "Kulgam"
+          }
+        },
+        "kupwara": {
+          "name": "Kupwara",
+          "labels": {
+            "English": "Kupwara",
+            "Hindi": "Kupwara"
+          }
+        },
+        "poonch": {
+          "name": "Poonch",
+          "labels": {
+            "English": "Poonch",
+            "Hindi": "Poonch"
+          }
+        },
+        "pulwama": {
+          "name": "Pulwama",
+          "labels": {
+            "English": "Pulwama",
+            "Hindi": "Pulwama"
+          }
+        },
+        "rajouri": {
+          "name": "Rajouri",
+          "labels": {
+            "English": "Rajouri",
+            "Hindi": "Rajouri"
+          }
+        },
+        "ramban": {
+          "name": "Ramban",
+          "labels": {
+            "English": "Ramban",
+            "Hindi": "Ramban"
+          }
+        },
+        "reasi": {
+          "name": "Reasi",
+          "labels": {
+            "English": "Reasi",
+            "Hindi": "Reasi"
+          }
+        },
+        "samba": {
+          "name": "Samba",
+          "labels": {
+            "English": "Samba",
+            "Hindi": "Samba"
+          }
+        },
+        "shopian": {
+          "name": "Shopian",
+          "labels": {
+            "English": "Shopian",
+            "Hindi": "Shopian"
+          }
+        },
+        "srinagar": {
+          "name": "Srinagar",
+          "labels": {
+            "English": "Srinagar",
+            "Hindi": "Srinagar"
+          }
+        },
+        "udhampur": {
+          "name": "Udhampur",
+          "labels": {
+            "English": "Udhampur",
+            "Hindi": "Udhampur"
+          }
+        }
+      }
+    },
+    "jharkhand": {
+      "name": "Jharkhand",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Jharkhand",
+        "Hindi": "झारखंड"
+      },
+      "districts": {
+        "bokaro": {
+          "name": "Bokaro",
+          "labels": {
+            "English": "Bokaro",
+            "Hindi": "Bokaro"
+          }
+        },
+        "chatra": {
+          "name": "Chatra",
+          "labels": {
+            "English": "Chatra",
+            "Hindi": "Chatra"
+          }
+        },
+        "deoghar": {
+          "name": "Deoghar",
+          "labels": {
+            "English": "Deoghar",
+            "Hindi": "Deoghar"
+          }
+        },
+        "dhanbad": {
+          "name": "Dhanbad",
+          "labels": {
+            "English": "Dhanbad",
+            "Hindi": "Dhanbad"
+          }
+        },
+        "dumka": {
+          "name": "Dumka",
+          "labels": {
+            "English": "Dumka",
+            "Hindi": "Dumka"
+          }
+        },
+        "east_singhbhum": {
+          "name": "East Singhbhum",
+          "labels": {
+            "English": "East Singhbhum",
+            "Hindi": "East Singhbhum"
+          }
+        },
+        "garhwa": {
+          "name": "Garhwa",
+          "labels": {
+            "English": "Garhwa",
+            "Hindi": "Garhwa"
+          }
+        },
+        "giridih": {
+          "name": "Giridih",
+          "labels": {
+            "English": "Giridih",
+            "Hindi": "Giridih"
+          }
+        },
+        "godda": {
+          "name": "Godda",
+          "labels": {
+            "English": "Godda",
+            "Hindi": "Godda"
+          }
+        },
+        "gumla": {
+          "name": "Gumla",
+          "labels": {
+            "English": "Gumla",
+            "Hindi": "Gumla"
+          }
+        },
+        "hazaribagh": {
+          "name": "Hazaribagh",
+          "labels": {
+            "English": "Hazaribagh",
+            "Hindi": "Hazaribagh"
+          }
+        },
+        "jamtara": {
+          "name": "Jamtara",
+          "labels": {
+            "English": "Jamtara",
+            "Hindi": "Jamtara"
+          }
+        },
+        "khunti": {
+          "name": "Khunti",
+          "labels": {
+            "English": "Khunti",
+            "Hindi": "Khunti"
+          }
+        },
+        "koderma": {
+          "name": "Koderma",
+          "labels": {
+            "English": "Koderma",
+            "Hindi": "Koderma"
+          }
+        },
+        "latehar": {
+          "name": "Latehar",
+          "labels": {
+            "English": "Latehar",
+            "Hindi": "Latehar"
+          }
+        },
+        "lohardaga": {
+          "name": "Lohardaga",
+          "labels": {
+            "English": "Lohardaga",
+            "Hindi": "Lohardaga"
+          }
+        },
+        "pakur": {
+          "name": "Pakur",
+          "labels": {
+            "English": "Pakur",
+            "Hindi": "Pakur"
+          }
+        },
+        "palamu": {
+          "name": "Palamu",
+          "labels": {
+            "English": "Palamu",
+            "Hindi": "Palamu"
+          }
+        },
+        "ramgarh": {
+          "name": "Ramgarh",
+          "labels": {
+            "English": "Ramgarh",
+            "Hindi": "Ramgarh"
+          }
+        },
+        "ranchi": {
+          "name": "Ranchi",
+          "labels": {
+            "English": "Ranchi",
+            "Hindi": "Ranchi"
+          }
+        },
+        "sahibganj": {
+          "name": "Sahibganj",
+          "labels": {
+            "English": "Sahibganj",
+            "Hindi": "Sahibganj"
+          }
+        },
+        "seraikela_kharsawan": {
+          "name": "Seraikela-Kharsawan",
+          "labels": {
+            "English": "Seraikela-Kharsawan",
+            "Hindi": "Seraikela-Kharsawan"
+          }
+        },
+        "simdega": {
+          "name": "Simdega",
+          "labels": {
+            "English": "Simdega",
+            "Hindi": "Simdega"
+          }
+        },
+        "west_singhbhum": {
+          "name": "West Singhbhum",
+          "labels": {
+            "English": "West Singhbhum",
+            "Hindi": "West Singhbhum"
+          }
+        }
+      }
+    },
+    "karnataka": {
+      "name": "Karnataka",
+      "default_local_language": "Kannada",
+      "labels": {
+        "English": "Karnataka",
+        "Kannada": "ಕರ್ನಾಟಕ"
+      },
+      "districts": {
+        "bagalkote": {
+          "name": "Bagalkote",
+          "labels": {
+            "English": "Bagalkote",
+            "Kannada": "Bagalkote"
+          }
+        },
+        "ballari": {
+          "name": "Ballari",
+          "labels": {
+            "English": "Ballari",
+            "Kannada": "Ballari"
+          }
+        },
+        "belagavi": {
+          "name": "Belagavi",
+          "labels": {
+            "English": "Belagavi",
+            "Kannada": "Belagavi"
+          }
+        },
+        "bengaluru_rural": {
+          "name": "Bengaluru Rural",
+          "labels": {
+            "English": "Bengaluru Rural",
+            "Kannada": "Bengaluru Rural"
+          }
+        },
+        "bengaluru_south": {
+          "name": "Bengaluru South",
+          "labels": {
+            "English": "Bengaluru South",
+            "Kannada": "Bengaluru South"
+          }
+        },
+        "bengaluru_urban": {
+          "name": "Bengaluru Urban",
+          "labels": {
+            "English": "Bengaluru Urban",
+            "Kannada": "Bengaluru Urban"
+          }
+        },
+        "bidar": {
+          "name": "Bidar",
+          "labels": {
+            "English": "Bidar",
+            "Kannada": "Bidar"
+          }
+        },
+        "chamarajanagara": {
+          "name": "Chamarajanagara",
+          "labels": {
+            "English": "Chamarajanagara",
+            "Kannada": "Chamarajanagara"
+          }
+        },
+        "chikkaballapura": {
+          "name": "Chikkaballapura",
+          "labels": {
+            "English": "Chikkaballapura",
+            "Kannada": "Chikkaballapura"
+          }
+        },
+        "chikkamagaluru": {
+          "name": "Chikkamagaluru",
+          "labels": {
+            "English": "Chikkamagaluru",
+            "Kannada": "Chikkamagaluru"
+          }
+        },
+        "chitradurga": {
+          "name": "Chitradurga",
+          "labels": {
+            "English": "Chitradurga",
+            "Kannada": "Chitradurga"
+          }
+        },
+        "dakshina_kannada": {
+          "name": "Dakshina Kannada",
+          "labels": {
+            "English": "Dakshina Kannada",
+            "Kannada": "Dakshina Kannada"
+          }
+        },
+        "davangere": {
+          "name": "Davangere",
+          "labels": {
+            "English": "Davangere",
+            "Kannada": "Davangere"
+          }
+        },
+        "dharwad": {
+          "name": "Dharwad",
+          "labels": {
+            "English": "Dharwad",
+            "Kannada": "Dharwad"
+          }
+        },
+        "gadag": {
+          "name": "Gadag",
+          "labels": {
+            "English": "Gadag",
+            "Kannada": "Gadag"
+          }
+        },
+        "hassan": {
+          "name": "Hassan",
+          "labels": {
+            "English": "Hassan",
+            "Kannada": "Hassan"
+          }
+        },
+        "haveri": {
+          "name": "Haveri",
+          "labels": {
+            "English": "Haveri",
+            "Kannada": "Haveri"
+          }
+        },
+        "kalaburagi": {
+          "name": "Kalaburagi",
+          "labels": {
+            "English": "Kalaburagi",
+            "Kannada": "Kalaburagi"
+          }
+        },
+        "kodagu": {
+          "name": "Kodagu",
+          "labels": {
+            "English": "Kodagu",
+            "Kannada": "Kodagu"
+          }
+        },
+        "kolar": {
+          "name": "Kolar",
+          "labels": {
+            "English": "Kolar",
+            "Kannada": "Kolar"
+          }
+        },
+        "koppal": {
+          "name": "Koppal",
+          "labels": {
+            "English": "Koppal",
+            "Kannada": "Koppal"
+          }
+        },
+        "mandya": {
+          "name": "Mandya",
+          "labels": {
+            "English": "Mandya",
+            "Kannada": "Mandya"
+          }
+        },
+        "mysuru": {
+          "name": "Mysuru",
+          "labels": {
+            "English": "Mysuru",
+            "Kannada": "Mysuru"
+          }
+        },
+        "raichur": {
+          "name": "Raichur",
+          "labels": {
+            "English": "Raichur",
+            "Kannada": "Raichur"
+          }
+        },
+        "shivamogga": {
+          "name": "Shivamogga",
+          "labels": {
+            "English": "Shivamogga",
+            "Kannada": "Shivamogga"
+          }
+        },
+        "tumakuru": {
+          "name": "Tumakuru",
+          "labels": {
+            "English": "Tumakuru",
+            "Kannada": "Tumakuru"
+          }
+        },
+        "udupi": {
+          "name": "Udupi",
+          "labels": {
+            "English": "Udupi",
+            "Kannada": "Udupi"
+          }
+        },
+        "uttara_kannada": {
+          "name": "Uttara Kannada",
+          "labels": {
+            "English": "Uttara Kannada",
+            "Kannada": "Uttara Kannada"
+          }
+        },
+        "vijayanagara": {
+          "name": "Vijayanagara",
+          "labels": {
+            "English": "Vijayanagara",
+            "Kannada": "Vijayanagara"
+          }
+        },
+        "vijayapura": {
+          "name": "Vijayapura",
+          "labels": {
+            "English": "Vijayapura",
+            "Kannada": "Vijayapura"
+          }
+        },
+        "yadgir": {
+          "name": "Yadgir",
+          "labels": {
+            "English": "Yadgir",
+            "Kannada": "Yadgir"
+          }
+        }
+      }
+    },
+    "kerala": {
+      "name": "Kerala",
+      "default_local_language": "Malayalam",
+      "labels": {
+        "English": "Kerala",
+        "Malayalam": "കേരളം"
+      },
+      "districts": {
+        "alappuzha": {
+          "name": "Alappuzha",
+          "labels": {
+            "English": "Alappuzha",
+            "Malayalam": "Alappuzha"
+          }
+        },
+        "ernakulam": {
+          "name": "Ernakulam",
+          "labels": {
+            "English": "Ernakulam",
+            "Malayalam": "Ernakulam"
+          }
+        },
+        "idukki": {
+          "name": "Idukki",
+          "labels": {
+            "English": "Idukki",
+            "Malayalam": "Idukki"
+          }
+        },
+        "kannur": {
+          "name": "Kannur",
+          "labels": {
+            "English": "Kannur",
+            "Malayalam": "Kannur"
+          }
+        },
+        "kasaragod": {
+          "name": "Kasaragod",
+          "labels": {
+            "English": "Kasaragod",
+            "Malayalam": "Kasaragod"
+          }
+        },
+        "kollam": {
+          "name": "Kollam",
+          "labels": {
+            "English": "Kollam",
+            "Malayalam": "Kollam"
+          }
+        },
+        "kottayam": {
+          "name": "Kottayam",
+          "labels": {
+            "English": "Kottayam",
+            "Malayalam": "Kottayam"
+          }
+        },
+        "kozhikode": {
+          "name": "Kozhikode",
+          "labels": {
+            "English": "Kozhikode",
+            "Malayalam": "Kozhikode"
+          }
+        },
+        "malappuram": {
+          "name": "Malappuram",
+          "labels": {
+            "English": "Malappuram",
+            "Malayalam": "Malappuram"
+          }
+        },
+        "palakkad": {
+          "name": "Palakkad",
+          "labels": {
+            "English": "Palakkad",
+            "Malayalam": "Palakkad"
+          }
+        },
+        "pathanamthitta": {
+          "name": "Pathanamthitta",
+          "labels": {
+            "English": "Pathanamthitta",
+            "Malayalam": "Pathanamthitta"
+          }
+        },
+        "thiruvananthapuram": {
+          "name": "Thiruvananthapuram",
+          "labels": {
+            "English": "Thiruvananthapuram",
+            "Malayalam": "Thiruvananthapuram"
+          }
+        },
+        "thrissur": {
+          "name": "Thrissur",
+          "labels": {
+            "English": "Thrissur",
+            "Malayalam": "Thrissur"
+          }
+        },
+        "wayanad": {
+          "name": "Wayanad",
+          "labels": {
+            "English": "Wayanad",
+            "Malayalam": "Wayanad"
+          }
+        }
+      }
+    },
+    "ladakh": {
+      "name": "Ladakh",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Ladakh",
+        "Hindi": "लद्दाख"
+      },
+      "districts": {
+        "kargil": {
+          "name": "Kargil",
+          "labels": {
+            "English": "Kargil",
+            "Hindi": "Kargil"
+          }
+        },
+        "leh": {
+          "name": "Leh",
+          "labels": {
+            "English": "Leh",
+            "Hindi": "Leh"
+          }
+        }
+      }
+    },
+    "madhya_pradesh": {
+      "name": "Madhya Pradesh",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Madhya Pradesh",
+        "Hindi": "मध्य प्रदेश"
+      },
+      "districts": {
+        "agar_malwa": {
+          "name": "Agar Malwa",
+          "labels": {
+            "English": "Agar Malwa",
+            "Hindi": "Agar Malwa"
+          }
+        },
+        "alirajpur": {
+          "name": "Alirajpur",
+          "labels": {
+            "English": "Alirajpur",
+            "Hindi": "Alirajpur"
+          }
+        },
+        "anuppur": {
+          "name": "Anuppur",
+          "labels": {
+            "English": "Anuppur",
+            "Hindi": "Anuppur"
+          }
+        },
+        "ashoknagar": {
+          "name": "Ashoknagar",
+          "labels": {
+            "English": "Ashoknagar",
+            "Hindi": "Ashoknagar"
+          }
+        },
+        "balaghat": {
+          "name": "Balaghat",
+          "labels": {
+            "English": "Balaghat",
+            "Hindi": "Balaghat"
+          }
+        },
+        "barwani": {
+          "name": "Barwani",
+          "labels": {
+            "English": "Barwani",
+            "Hindi": "Barwani"
+          }
+        },
+        "betul": {
+          "name": "Betul",
+          "labels": {
+            "English": "Betul",
+            "Hindi": "Betul"
+          }
+        },
+        "bhind": {
+          "name": "Bhind",
+          "labels": {
+            "English": "Bhind",
+            "Hindi": "Bhind"
+          }
+        },
+        "bhopal": {
+          "name": "Bhopal",
+          "labels": {
+            "English": "Bhopal",
+            "Hindi": "Bhopal"
+          }
+        },
+        "burhanpur": {
+          "name": "Burhanpur",
+          "labels": {
+            "English": "Burhanpur",
+            "Hindi": "Burhanpur"
+          }
+        },
+        "chhatarpur": {
+          "name": "Chhatarpur",
+          "labels": {
+            "English": "Chhatarpur",
+            "Hindi": "Chhatarpur"
+          }
+        },
+        "chhindwara": {
+          "name": "Chhindwara",
+          "labels": {
+            "English": "Chhindwara",
+            "Hindi": "Chhindwara"
+          }
+        },
+        "damoh": {
+          "name": "Damoh",
+          "labels": {
+            "English": "Damoh",
+            "Hindi": "Damoh"
+          }
+        },
+        "datia": {
+          "name": "Datia",
+          "labels": {
+            "English": "Datia",
+            "Hindi": "Datia"
+          }
+        },
+        "dewas": {
+          "name": "Dewas",
+          "labels": {
+            "English": "Dewas",
+            "Hindi": "Dewas"
+          }
+        },
+        "dhar": {
+          "name": "Dhar",
+          "labels": {
+            "English": "Dhar",
+            "Hindi": "Dhar"
+          }
+        },
+        "dindori": {
+          "name": "Dindori",
+          "labels": {
+            "English": "Dindori",
+            "Hindi": "Dindori"
+          }
+        },
+        "guna": {
+          "name": "Guna",
+          "labels": {
+            "English": "Guna",
+            "Hindi": "Guna"
+          }
+        },
+        "gwalior": {
+          "name": "Gwalior",
+          "labels": {
+            "English": "Gwalior",
+            "Hindi": "Gwalior"
+          }
+        },
+        "harda": {
+          "name": "Harda",
+          "labels": {
+            "English": "Harda",
+            "Hindi": "Harda"
+          }
+        },
+        "indore": {
+          "name": "Indore",
+          "labels": {
+            "English": "Indore",
+            "Hindi": "Indore"
+          }
+        },
+        "jabalpur": {
+          "name": "Jabalpur",
+          "labels": {
+            "English": "Jabalpur",
+            "Hindi": "Jabalpur"
+          }
+        },
+        "jhabua": {
+          "name": "Jhabua",
+          "labels": {
+            "English": "Jhabua",
+            "Hindi": "Jhabua"
+          }
+        },
+        "katni": {
+          "name": "Katni",
+          "labels": {
+            "English": "Katni",
+            "Hindi": "Katni"
+          }
+        },
+        "khandwa": {
+          "name": "Khandwa",
+          "labels": {
+            "English": "Khandwa",
+            "Hindi": "Khandwa"
+          }
+        },
+        "khargone": {
+          "name": "Khargone",
+          "labels": {
+            "English": "Khargone",
+            "Hindi": "Khargone"
+          }
+        },
+        "maihar": {
+          "name": "Maihar",
+          "labels": {
+            "English": "Maihar",
+            "Hindi": "Maihar"
+          }
+        },
+        "mandla": {
+          "name": "Mandla",
+          "labels": {
+            "English": "Mandla",
+            "Hindi": "Mandla"
+          }
+        },
+        "mandsaur": {
+          "name": "Mandsaur",
+          "labels": {
+            "English": "Mandsaur",
+            "Hindi": "Mandsaur"
+          }
+        },
+        "mauganj": {
+          "name": "Mauganj",
+          "labels": {
+            "English": "Mauganj",
+            "Hindi": "Mauganj"
+          }
+        },
+        "morena": {
+          "name": "Morena",
+          "labels": {
+            "English": "Morena",
+            "Hindi": "Morena"
+          }
+        },
+        "narmadapuram": {
+          "name": "Narmadapuram",
+          "labels": {
+            "English": "Narmadapuram",
+            "Hindi": "Narmadapuram"
+          }
+        },
+        "narsinghpur": {
+          "name": "Narsinghpur",
+          "labels": {
+            "English": "Narsinghpur",
+            "Hindi": "Narsinghpur"
+          }
+        },
+        "neemuch": {
+          "name": "Neemuch",
+          "labels": {
+            "English": "Neemuch",
+            "Hindi": "Neemuch"
+          }
+        },
+        "niwari": {
+          "name": "Niwari",
+          "labels": {
+            "English": "Niwari",
+            "Hindi": "Niwari"
+          }
+        },
+        "pandhurna": {
+          "name": "Pandhurna",
+          "labels": {
+            "English": "Pandhurna",
+            "Hindi": "Pandhurna"
+          }
+        },
+        "panna": {
+          "name": "Panna",
+          "labels": {
+            "English": "Panna",
+            "Hindi": "Panna"
+          }
+        },
+        "raisen": {
+          "name": "Raisen",
+          "labels": {
+            "English": "Raisen",
+            "Hindi": "Raisen"
+          }
+        },
+        "rajgarh": {
+          "name": "Rajgarh",
+          "labels": {
+            "English": "Rajgarh",
+            "Hindi": "Rajgarh"
+          }
+        },
+        "ratlam": {
+          "name": "Ratlam",
+          "labels": {
+            "English": "Ratlam",
+            "Hindi": "Ratlam"
+          }
+        },
+        "rewa": {
+          "name": "Rewa",
+          "labels": {
+            "English": "Rewa",
+            "Hindi": "Rewa"
+          }
+        },
+        "sagar": {
+          "name": "Sagar",
+          "labels": {
+            "English": "Sagar",
+            "Hindi": "Sagar"
+          }
+        },
+        "satna": {
+          "name": "Satna",
+          "labels": {
+            "English": "Satna",
+            "Hindi": "Satna"
+          }
+        },
+        "sehore": {
+          "name": "Sehore",
+          "labels": {
+            "English": "Sehore",
+            "Hindi": "Sehore"
+          }
+        },
+        "seoni": {
+          "name": "Seoni",
+          "labels": {
+            "English": "Seoni",
+            "Hindi": "Seoni"
+          }
+        },
+        "shahdol": {
+          "name": "Shahdol",
+          "labels": {
+            "English": "Shahdol",
+            "Hindi": "Shahdol"
+          }
+        },
+        "shajapur": {
+          "name": "Shajapur",
+          "labels": {
+            "English": "Shajapur",
+            "Hindi": "Shajapur"
+          }
+        },
+        "sheopur": {
+          "name": "Sheopur",
+          "labels": {
+            "English": "Sheopur",
+            "Hindi": "Sheopur"
+          }
+        },
+        "shivpuri": {
+          "name": "Shivpuri",
+          "labels": {
+            "English": "Shivpuri",
+            "Hindi": "Shivpuri"
+          }
+        },
+        "sidhi": {
+          "name": "Sidhi",
+          "labels": {
+            "English": "Sidhi",
+            "Hindi": "Sidhi"
+          }
+        },
+        "singrauli": {
+          "name": "Singrauli",
+          "labels": {
+            "English": "Singrauli",
+            "Hindi": "Singrauli"
+          }
+        },
+        "tikamgarh": {
+          "name": "Tikamgarh",
+          "labels": {
+            "English": "Tikamgarh",
+            "Hindi": "Tikamgarh"
+          }
+        },
+        "ujjain": {
+          "name": "Ujjain",
+          "labels": {
+            "English": "Ujjain",
+            "Hindi": "Ujjain"
+          }
+        },
+        "umaria": {
+          "name": "Umaria",
+          "labels": {
+            "English": "Umaria",
+            "Hindi": "Umaria"
+          }
+        },
+        "vidisha": {
+          "name": "Vidisha",
+          "labels": {
+            "English": "Vidisha",
+            "Hindi": "Vidisha"
+          }
+        }
+      }
+    },
+    "maharashtra": {
+      "name": "Maharashtra",
+      "default_local_language": "Marathi",
+      "labels": {
+        "English": "Maharashtra",
+        "Marathi": "महाराष्ट्र"
+      },
+      "districts": {
+        "ahilyanagar": {
+          "name": "Ahilyanagar",
+          "labels": {
+            "English": "Ahilyanagar",
+            "Marathi": "Ahilyanagar"
+          }
+        },
+        "akola": {
+          "name": "Akola",
+          "labels": {
+            "English": "Akola",
+            "Marathi": "Akola"
+          }
+        },
+        "amravati": {
+          "name": "Amravati",
+          "labels": {
+            "English": "Amravati",
+            "Marathi": "Amravati"
+          }
+        },
+        "beed": {
+          "name": "Beed",
+          "labels": {
+            "English": "Beed",
+            "Marathi": "Beed"
+          }
+        },
+        "bhandara": {
+          "name": "Bhandara",
+          "labels": {
+            "English": "Bhandara",
+            "Marathi": "Bhandara"
+          }
+        },
+        "buldhana": {
+          "name": "Buldhana",
+          "labels": {
+            "English": "Buldhana",
+            "Marathi": "Buldhana"
+          }
+        },
+        "chandrapur": {
+          "name": "Chandrapur",
+          "labels": {
+            "English": "Chandrapur",
+            "Marathi": "Chandrapur"
+          }
+        },
+        "chhatrapati_sambhajinagar": {
+          "name": "Chhatrapati Sambhajinagar",
+          "labels": {
+            "English": "Chhatrapati Sambhajinagar",
+            "Marathi": "Chhatrapati Sambhajinagar"
+          }
+        },
+        "dharashiv": {
+          "name": "Dharashiv",
+          "labels": {
+            "English": "Dharashiv",
+            "Marathi": "Dharashiv"
+          }
+        },
+        "dhule": {
+          "name": "Dhule",
+          "labels": {
+            "English": "Dhule",
+            "Marathi": "Dhule"
+          }
+        },
+        "gadchiroli": {
+          "name": "Gadchiroli",
+          "labels": {
+            "English": "Gadchiroli",
+            "Marathi": "Gadchiroli"
+          }
+        },
+        "gondia": {
+          "name": "Gondia",
+          "labels": {
+            "English": "Gondia",
+            "Marathi": "Gondia"
+          }
+        },
+        "hingoli": {
+          "name": "Hingoli",
+          "labels": {
+            "English": "Hingoli",
+            "Marathi": "Hingoli"
+          }
+        },
+        "jalgaon": {
+          "name": "Jalgaon",
+          "labels": {
+            "English": "Jalgaon",
+            "Marathi": "Jalgaon"
+          }
+        },
+        "jalna": {
+          "name": "Jalna",
+          "labels": {
+            "English": "Jalna",
+            "Marathi": "Jalna"
+          }
+        },
+        "kolhapur": {
+          "name": "Kolhapur",
+          "labels": {
+            "English": "Kolhapur",
+            "Marathi": "Kolhapur"
+          }
+        },
+        "latur": {
+          "name": "Latur",
+          "labels": {
+            "English": "Latur",
+            "Marathi": "Latur"
+          }
+        },
+        "mumbai_city": {
+          "name": "Mumbai City",
+          "labels": {
+            "English": "Mumbai City",
+            "Marathi": "Mumbai City"
+          }
+        },
+        "mumbai_suburban": {
+          "name": "Mumbai Suburban",
+          "labels": {
+            "English": "Mumbai Suburban",
+            "Marathi": "Mumbai Suburban"
+          }
+        },
+        "nagpur": {
+          "name": "Nagpur",
+          "labels": {
+            "English": "Nagpur",
+            "Marathi": "Nagpur"
+          }
+        },
+        "nanded": {
+          "name": "Nanded",
+          "labels": {
+            "English": "Nanded",
+            "Marathi": "Nanded"
+          }
+        },
+        "nandurbar": {
+          "name": "Nandurbar",
+          "labels": {
+            "English": "Nandurbar",
+            "Marathi": "Nandurbar"
+          }
+        },
+        "nashik": {
+          "name": "Nashik",
+          "labels": {
+            "English": "Nashik",
+            "Marathi": "Nashik"
+          }
+        },
+        "palghar": {
+          "name": "Palghar",
+          "labels": {
+            "English": "Palghar",
+            "Marathi": "Palghar"
+          }
+        },
+        "parbhani": {
+          "name": "Parbhani",
+          "labels": {
+            "English": "Parbhani",
+            "Marathi": "Parbhani"
+          }
+        },
+        "pune": {
+          "name": "Pune",
+          "labels": {
+            "English": "Pune",
+            "Marathi": "Pune"
+          }
+        },
+        "raigad": {
+          "name": "Raigad",
+          "labels": {
+            "English": "Raigad",
+            "Marathi": "Raigad"
+          }
+        },
+        "ratnagiri": {
+          "name": "Ratnagiri",
+          "labels": {
+            "English": "Ratnagiri",
+            "Marathi": "Ratnagiri"
+          }
+        },
+        "sangli": {
+          "name": "Sangli",
+          "labels": {
+            "English": "Sangli",
+            "Marathi": "Sangli"
+          }
+        },
+        "satara": {
+          "name": "Satara",
+          "labels": {
+            "English": "Satara",
+            "Marathi": "Satara"
+          }
+        },
+        "sindhudurg": {
+          "name": "Sindhudurg",
+          "labels": {
+            "English": "Sindhudurg",
+            "Marathi": "Sindhudurg"
+          }
+        },
+        "solapur": {
+          "name": "Solapur",
+          "labels": {
+            "English": "Solapur",
+            "Marathi": "Solapur"
+          }
+        },
+        "thane": {
+          "name": "Thane",
+          "labels": {
+            "English": "Thane",
+            "Marathi": "Thane"
+          }
+        },
+        "wardha": {
+          "name": "Wardha",
+          "labels": {
+            "English": "Wardha",
+            "Marathi": "Wardha"
+          }
+        },
+        "washim": {
+          "name": "Washim",
+          "labels": {
+            "English": "Washim",
+            "Marathi": "Washim"
+          }
+        },
+        "yavatmal": {
+          "name": "Yavatmal",
+          "labels": {
+            "English": "Yavatmal",
+            "Marathi": "Yavatmal"
+          }
+        }
+      }
+    },
+    "odisha": {
+      "name": "Odisha",
+      "default_local_language": "Odia",
+      "labels": {
+        "English": "Odisha",
+        "Odia": "ଓଡ଼ିଶା"
+      },
+      "districts": {
+        "angul": {
+          "name": "Angul",
+          "labels": {
+            "English": "Angul",
+            "Odia": "Angul"
+          }
+        },
+        "balangir": {
+          "name": "Balangir",
+          "labels": {
+            "English": "Balangir",
+            "Odia": "Balangir"
+          }
+        },
+        "balasore": {
+          "name": "Balasore",
+          "labels": {
+            "English": "Balasore",
+            "Odia": "Balasore"
+          }
+        },
+        "bargarh": {
+          "name": "Bargarh",
+          "labels": {
+            "English": "Bargarh",
+            "Odia": "Bargarh"
+          }
+        },
+        "bhadrak": {
+          "name": "Bhadrak",
+          "labels": {
+            "English": "Bhadrak",
+            "Odia": "Bhadrak"
+          }
+        },
+        "boudh": {
+          "name": "Boudh",
+          "labels": {
+            "English": "Boudh",
+            "Odia": "Boudh"
+          }
+        },
+        "cuttack": {
+          "name": "Cuttack",
+          "labels": {
+            "English": "Cuttack",
+            "Odia": "Cuttack"
+          }
+        },
+        "deogarh": {
+          "name": "Deogarh",
+          "labels": {
+            "English": "Deogarh",
+            "Odia": "Deogarh"
+          }
+        },
+        "dhenkanal": {
+          "name": "Dhenkanal",
+          "labels": {
+            "English": "Dhenkanal",
+            "Odia": "Dhenkanal"
+          }
+        },
+        "gajapati": {
+          "name": "Gajapati",
+          "labels": {
+            "English": "Gajapati",
+            "Odia": "Gajapati"
+          }
+        },
+        "ganjam": {
+          "name": "Ganjam",
+          "labels": {
+            "English": "Ganjam",
+            "Odia": "Ganjam"
+          }
+        },
+        "jagatsinghpur": {
+          "name": "Jagatsinghpur",
+          "labels": {
+            "English": "Jagatsinghpur",
+            "Odia": "Jagatsinghpur"
+          }
+        },
+        "jajpur": {
+          "name": "Jajpur",
+          "labels": {
+            "English": "Jajpur",
+            "Odia": "Jajpur"
+          }
+        },
+        "jharsuguda": {
+          "name": "Jharsuguda",
+          "labels": {
+            "English": "Jharsuguda",
+            "Odia": "Jharsuguda"
+          }
+        },
+        "kalahandi": {
+          "name": "Kalahandi",
+          "labels": {
+            "English": "Kalahandi",
+            "Odia": "Kalahandi"
+          }
+        },
+        "kandhamal": {
+          "name": "Kandhamal",
+          "labels": {
+            "English": "Kandhamal",
+            "Odia": "Kandhamal"
+          }
+        },
+        "kendrapara": {
+          "name": "Kendrapara",
+          "labels": {
+            "English": "Kendrapara",
+            "Odia": "Kendrapara"
+          }
+        },
+        "kendujhar": {
+          "name": "Kendujhar",
+          "labels": {
+            "English": "Kendujhar",
+            "Odia": "Kendujhar"
+          }
+        },
+        "khordha": {
+          "name": "Khordha",
+          "labels": {
+            "English": "Khordha",
+            "Odia": "Khordha"
+          }
+        },
+        "koraput": {
+          "name": "Koraput",
+          "labels": {
+            "English": "Koraput",
+            "Odia": "Koraput"
+          }
+        },
+        "malkangiri": {
+          "name": "Malkangiri",
+          "labels": {
+            "English": "Malkangiri",
+            "Odia": "Malkangiri"
+          }
+        },
+        "mayurbhanj": {
+          "name": "Mayurbhanj",
+          "labels": {
+            "English": "Mayurbhanj",
+            "Odia": "Mayurbhanj"
+          }
+        },
+        "nabarangpur": {
+          "name": "Nabarangpur",
+          "labels": {
+            "English": "Nabarangpur",
+            "Odia": "Nabarangpur"
+          }
+        },
+        "nayagarh": {
+          "name": "Nayagarh",
+          "labels": {
+            "English": "Nayagarh",
+            "Odia": "Nayagarh"
+          }
+        },
+        "nuapada": {
+          "name": "Nuapada",
+          "labels": {
+            "English": "Nuapada",
+            "Odia": "Nuapada"
+          }
+        },
+        "puri": {
+          "name": "Puri",
+          "labels": {
+            "English": "Puri",
+            "Odia": "Puri"
+          }
+        },
+        "rayagada": {
+          "name": "Rayagada",
+          "labels": {
+            "English": "Rayagada",
+            "Odia": "Rayagada"
+          }
+        },
+        "sambalpur": {
+          "name": "Sambalpur",
+          "labels": {
+            "English": "Sambalpur",
+            "Odia": "Sambalpur"
+          }
+        },
+        "subarnapur": {
+          "name": "Subarnapur",
+          "labels": {
+            "English": "Subarnapur",
+            "Odia": "Subarnapur"
+          }
+        },
+        "sundargarh": {
+          "name": "Sundargarh",
+          "labels": {
+            "English": "Sundargarh",
+            "Odia": "Sundargarh"
+          }
+        }
+      }
+    },
+    "punjab": {
+      "name": "Punjab",
+      "default_local_language": "Punjabi",
+      "labels": {
+        "English": "Punjab",
+        "Punjabi": "ਪੰਜਾਬ"
+      },
+      "districts": {
+        "amritsar": {
+          "name": "Amritsar",
+          "labels": {
+            "English": "Amritsar",
+            "Punjabi": "Amritsar"
+          }
+        },
+        "barnala": {
+          "name": "Barnala",
+          "labels": {
+            "English": "Barnala",
+            "Punjabi": "Barnala"
+          }
+        },
+        "bathinda": {
+          "name": "Bathinda",
+          "labels": {
+            "English": "Bathinda",
+            "Punjabi": "Bathinda"
+          }
+        },
+        "faridkot": {
+          "name": "Faridkot",
+          "labels": {
+            "English": "Faridkot",
+            "Punjabi": "Faridkot"
+          }
+        },
+        "fatehgarh_sahib": {
+          "name": "Fatehgarh Sahib",
+          "labels": {
+            "English": "Fatehgarh Sahib",
+            "Punjabi": "Fatehgarh Sahib"
+          }
+        },
+        "fazilka": {
+          "name": "Fazilka",
+          "labels": {
+            "English": "Fazilka",
+            "Punjabi": "Fazilka"
+          }
+        },
+        "ferozepur": {
+          "name": "Ferozepur",
+          "labels": {
+            "English": "Ferozepur",
+            "Punjabi": "Ferozepur"
+          }
+        },
+        "gurdaspur": {
+          "name": "Gurdaspur",
+          "labels": {
+            "English": "Gurdaspur",
+            "Punjabi": "Gurdaspur"
+          }
+        },
+        "hoshiarpur": {
+          "name": "Hoshiarpur",
+          "labels": {
+            "English": "Hoshiarpur",
+            "Punjabi": "Hoshiarpur"
+          }
+        },
+        "jalandhar": {
+          "name": "Jalandhar",
+          "labels": {
+            "English": "Jalandhar",
+            "Punjabi": "Jalandhar"
+          }
+        },
+        "kapurthala": {
+          "name": "Kapurthala",
+          "labels": {
+            "English": "Kapurthala",
+            "Punjabi": "Kapurthala"
+          }
+        },
+        "ludhiana": {
+          "name": "Ludhiana",
+          "labels": {
+            "English": "Ludhiana",
+            "Punjabi": "Ludhiana"
+          }
+        },
+        "malerkotla": {
+          "name": "Malerkotla",
+          "labels": {
+            "English": "Malerkotla",
+            "Punjabi": "Malerkotla"
+          }
+        },
+        "mansa": {
+          "name": "Mansa",
+          "labels": {
+            "English": "Mansa",
+            "Punjabi": "Mansa"
+          }
+        },
+        "moga": {
+          "name": "Moga",
+          "labels": {
+            "English": "Moga",
+            "Punjabi": "Moga"
+          }
+        },
+        "pathankot": {
+          "name": "Pathankot",
+          "labels": {
+            "English": "Pathankot",
+            "Punjabi": "Pathankot"
+          }
+        },
+        "patiala": {
+          "name": "Patiala",
+          "labels": {
+            "English": "Patiala",
+            "Punjabi": "Patiala"
+          }
+        },
+        "rupnagar": {
+          "name": "Rupnagar",
+          "labels": {
+            "English": "Rupnagar",
+            "Punjabi": "Rupnagar"
+          }
+        },
+        "sahibzada_ajit_singh_nagar": {
+          "name": "Sahibzada Ajit Singh Nagar",
+          "labels": {
+            "English": "Sahibzada Ajit Singh Nagar",
+            "Punjabi": "Sahibzada Ajit Singh Nagar"
+          }
+        },
+        "sangrur": {
+          "name": "Sangrur",
+          "labels": {
+            "English": "Sangrur",
+            "Punjabi": "Sangrur"
+          }
+        },
+        "shaheed_bhagat_singh_nagar": {
+          "name": "Shaheed Bhagat Singh Nagar",
+          "labels": {
+            "English": "Shaheed Bhagat Singh Nagar",
+            "Punjabi": "Shaheed Bhagat Singh Nagar"
+          }
+        },
+        "sri_muktsar_sahib": {
+          "name": "Sri Muktsar Sahib",
+          "labels": {
+            "English": "Sri Muktsar Sahib",
+            "Punjabi": "Sri Muktsar Sahib"
+          }
+        },
+        "tarn_taran": {
+          "name": "Tarn Taran",
+          "labels": {
+            "English": "Tarn Taran",
+            "Punjabi": "Tarn Taran"
+          }
+        }
+      }
+    },
+    "rajasthan": {
+      "name": "Rajasthan",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Rajasthan",
+        "Hindi": "राजस्थान"
+      },
+      "districts": {
+        "ajmer": {
+          "name": "Ajmer",
+          "labels": {
+            "English": "Ajmer",
+            "Hindi": "Ajmer"
+          }
+        },
+        "alwar": {
+          "name": "Alwar",
+          "labels": {
+            "English": "Alwar",
+            "Hindi": "Alwar"
+          }
+        },
+        "balotra": {
+          "name": "Balotra",
+          "labels": {
+            "English": "Balotra",
+            "Hindi": "Balotra"
+          }
+        },
+        "banswara": {
+          "name": "Banswara",
+          "labels": {
+            "English": "Banswara",
+            "Hindi": "Banswara"
+          }
+        },
+        "baran": {
+          "name": "Baran",
+          "labels": {
+            "English": "Baran",
+            "Hindi": "Baran"
+          }
+        },
+        "barmer": {
+          "name": "Barmer",
+          "labels": {
+            "English": "Barmer",
+            "Hindi": "Barmer"
+          }
+        },
+        "beawar": {
+          "name": "Beawar",
+          "labels": {
+            "English": "Beawar",
+            "Hindi": "Beawar"
+          }
+        },
+        "bharatpur": {
+          "name": "Bharatpur",
+          "labels": {
+            "English": "Bharatpur",
+            "Hindi": "Bharatpur"
+          }
+        },
+        "bhilwara": {
+          "name": "Bhilwara",
+          "labels": {
+            "English": "Bhilwara",
+            "Hindi": "Bhilwara"
+          }
+        },
+        "bikaner": {
+          "name": "Bikaner",
+          "labels": {
+            "English": "Bikaner",
+            "Hindi": "Bikaner"
+          }
+        },
+        "bundi": {
+          "name": "Bundi",
+          "labels": {
+            "English": "Bundi",
+            "Hindi": "Bundi"
+          }
+        },
+        "chittorgarh": {
+          "name": "Chittorgarh",
+          "labels": {
+            "English": "Chittorgarh",
+            "Hindi": "Chittorgarh"
+          }
+        },
+        "churu": {
+          "name": "Churu",
+          "labels": {
+            "English": "Churu",
+            "Hindi": "Churu"
+          }
+        },
+        "dausa": {
+          "name": "Dausa",
+          "labels": {
+            "English": "Dausa",
+            "Hindi": "Dausa"
+          }
+        },
+        "deeg": {
+          "name": "Deeg",
+          "labels": {
+            "English": "Deeg",
+            "Hindi": "Deeg"
+          }
+        },
+        "dholpur": {
+          "name": "Dholpur",
+          "labels": {
+            "English": "Dholpur",
+            "Hindi": "Dholpur"
+          }
+        },
+        "didwana_kuchaman": {
+          "name": "Didwana-Kuchaman",
+          "labels": {
+            "English": "Didwana-Kuchaman",
+            "Hindi": "Didwana-Kuchaman"
+          }
+        },
+        "dungarpur": {
+          "name": "Dungarpur",
+          "labels": {
+            "English": "Dungarpur",
+            "Hindi": "Dungarpur"
+          }
+        },
+        "hanumangarh": {
+          "name": "Hanumangarh",
+          "labels": {
+            "English": "Hanumangarh",
+            "Hindi": "Hanumangarh"
+          }
+        },
+        "jaipur": {
+          "name": "Jaipur",
+          "labels": {
+            "English": "Jaipur",
+            "Hindi": "Jaipur"
+          }
+        },
+        "jaisalmer": {
+          "name": "Jaisalmer",
+          "labels": {
+            "English": "Jaisalmer",
+            "Hindi": "Jaisalmer"
+          }
+        },
+        "jalore": {
+          "name": "Jalore",
+          "labels": {
+            "English": "Jalore",
+            "Hindi": "Jalore"
+          }
+        },
+        "jhalawar": {
+          "name": "Jhalawar",
+          "labels": {
+            "English": "Jhalawar",
+            "Hindi": "Jhalawar"
+          }
+        },
+        "jhunjhunu": {
+          "name": "Jhunjhunu",
+          "labels": {
+            "English": "Jhunjhunu",
+            "Hindi": "Jhunjhunu"
+          }
+        },
+        "jodhpur": {
+          "name": "Jodhpur",
+          "labels": {
+            "English": "Jodhpur",
+            "Hindi": "Jodhpur"
+          }
+        },
+        "karauli": {
+          "name": "Karauli",
+          "labels": {
+            "English": "Karauli",
+            "Hindi": "Karauli"
+          }
+        },
+        "khairthal_tijara": {
+          "name": "Khairthal-Tijara",
+          "labels": {
+            "English": "Khairthal-Tijara",
+            "Hindi": "Khairthal-Tijara"
+          }
+        },
+        "kota": {
+          "name": "Kota",
+          "labels": {
+            "English": "Kota",
+            "Hindi": "Kota"
+          }
+        },
+        "kotputli_behror": {
+          "name": "Kotputli-Behror",
+          "labels": {
+            "English": "Kotputli-Behror",
+            "Hindi": "Kotputli-Behror"
+          }
+        },
+        "nagaur": {
+          "name": "Nagaur",
+          "labels": {
+            "English": "Nagaur",
+            "Hindi": "Nagaur"
+          }
+        },
+        "pali": {
+          "name": "Pali",
+          "labels": {
+            "English": "Pali",
+            "Hindi": "Pali"
+          }
+        },
+        "phalodi": {
+          "name": "Phalodi",
+          "labels": {
+            "English": "Phalodi",
+            "Hindi": "Phalodi"
+          }
+        },
+        "pratapgarh": {
+          "name": "Pratapgarh",
+          "labels": {
+            "English": "Pratapgarh",
+            "Hindi": "Pratapgarh"
+          }
+        },
+        "rajsamand": {
+          "name": "Rajsamand",
+          "labels": {
+            "English": "Rajsamand",
+            "Hindi": "Rajsamand"
+          }
+        },
+        "salumber": {
+          "name": "Salumber",
+          "labels": {
+            "English": "Salumber",
+            "Hindi": "Salumber"
+          }
+        },
+        "sawai_madhopur": {
+          "name": "Sawai Madhopur",
+          "labels": {
+            "English": "Sawai Madhopur",
+            "Hindi": "Sawai Madhopur"
+          }
+        },
+        "sikar": {
+          "name": "Sikar",
+          "labels": {
+            "English": "Sikar",
+            "Hindi": "Sikar"
+          }
+        },
+        "sirohi": {
+          "name": "Sirohi",
+          "labels": {
+            "English": "Sirohi",
+            "Hindi": "Sirohi"
+          }
+        },
+        "sri_ganganagar": {
+          "name": "Sri Ganganagar",
+          "labels": {
+            "English": "Sri Ganganagar",
+            "Hindi": "Sri Ganganagar"
+          }
+        },
+        "tonk": {
+          "name": "Tonk",
+          "labels": {
+            "English": "Tonk",
+            "Hindi": "Tonk"
+          }
+        },
+        "udaipur": {
+          "name": "Udaipur",
+          "labels": {
+            "English": "Udaipur",
+            "Hindi": "Udaipur"
+          }
+        }
+      }
+    },
+    "tamil_nadu": {
+      "name": "Tamil Nadu",
+      "default_local_language": "Tamil",
+      "labels": {
+        "English": "Tamil Nadu",
+        "Tamil": "தமிழ்நாடு"
+      },
+      "districts": {
+        "ariyalur": {
+          "name": "Ariyalur",
+          "labels": {
+            "English": "Ariyalur",
+            "Tamil": "Ariyalur"
+          }
+        },
+        "chengalpattu": {
+          "name": "Chengalpattu",
+          "labels": {
+            "English": "Chengalpattu",
+            "Tamil": "Chengalpattu"
+          }
+        },
+        "chennai": {
+          "name": "Chennai",
+          "labels": {
+            "English": "Chennai",
+            "Tamil": "Chennai"
+          }
+        },
+        "coimbatore": {
+          "name": "Coimbatore",
+          "labels": {
+            "English": "Coimbatore",
+            "Tamil": "Coimbatore"
+          }
+        },
+        "cuddalore": {
+          "name": "Cuddalore",
+          "labels": {
+            "English": "Cuddalore",
+            "Tamil": "Cuddalore"
+          }
+        },
+        "dharmapuri": {
+          "name": "Dharmapuri",
+          "labels": {
+            "English": "Dharmapuri",
+            "Tamil": "Dharmapuri"
+          }
+        },
+        "dindigul": {
+          "name": "Dindigul",
+          "labels": {
+            "English": "Dindigul",
+            "Tamil": "Dindigul"
+          }
+        },
+        "erode": {
+          "name": "Erode",
+          "labels": {
+            "English": "Erode",
+            "Tamil": "Erode"
+          }
+        },
+        "kallakurichi": {
+          "name": "Kallakurichi",
+          "labels": {
+            "English": "Kallakurichi",
+            "Tamil": "Kallakurichi"
+          }
+        },
+        "kancheepuram": {
+          "name": "Kancheepuram",
+          "labels": {
+            "English": "Kancheepuram",
+            "Tamil": "Kancheepuram"
+          }
+        },
+        "kanniyakumari": {
+          "name": "Kanniyakumari",
+          "labels": {
+            "English": "Kanniyakumari",
+            "Tamil": "Kanniyakumari"
+          }
+        },
+        "karur": {
+          "name": "Karur",
+          "labels": {
+            "English": "Karur",
+            "Tamil": "Karur"
+          }
+        },
+        "krishnagiri": {
+          "name": "Krishnagiri",
+          "labels": {
+            "English": "Krishnagiri",
+            "Tamil": "Krishnagiri"
+          }
+        },
+        "madurai": {
+          "name": "Madurai",
+          "labels": {
+            "English": "Madurai",
+            "Tamil": "Madurai"
+          }
+        },
+        "mayiladuthurai": {
+          "name": "Mayiladuthurai",
+          "labels": {
+            "English": "Mayiladuthurai",
+            "Tamil": "Mayiladuthurai"
+          }
+        },
+        "nagapattinam": {
+          "name": "Nagapattinam",
+          "labels": {
+            "English": "Nagapattinam",
+            "Tamil": "Nagapattinam"
+          }
+        },
+        "namakkal": {
+          "name": "Namakkal",
+          "labels": {
+            "English": "Namakkal",
+            "Tamil": "Namakkal"
+          }
+        },
+        "perambalur": {
+          "name": "Perambalur",
+          "labels": {
+            "English": "Perambalur",
+            "Tamil": "Perambalur"
+          }
+        },
+        "pudukkottai": {
+          "name": "Pudukkottai",
+          "labels": {
+            "English": "Pudukkottai",
+            "Tamil": "Pudukkottai"
+          }
+        },
+        "ramanathapuram": {
+          "name": "Ramanathapuram",
+          "labels": {
+            "English": "Ramanathapuram",
+            "Tamil": "Ramanathapuram"
+          }
+        },
+        "ranipet": {
+          "name": "Ranipet",
+          "labels": {
+            "English": "Ranipet",
+            "Tamil": "Ranipet"
+          }
+        },
+        "salem": {
+          "name": "Salem",
+          "labels": {
+            "English": "Salem",
+            "Tamil": "Salem"
+          }
+        },
+        "sivaganga": {
+          "name": "Sivaganga",
+          "labels": {
+            "English": "Sivaganga",
+            "Tamil": "Sivaganga"
+          }
+        },
+        "tenkasi": {
+          "name": "Tenkasi",
+          "labels": {
+            "English": "Tenkasi",
+            "Tamil": "Tenkasi"
+          }
+        },
+        "thanjavur": {
+          "name": "Thanjavur",
+          "labels": {
+            "English": "Thanjavur",
+            "Tamil": "Thanjavur"
+          }
+        },
+        "the_nilgiris": {
+          "name": "The Nilgiris",
+          "labels": {
+            "English": "The Nilgiris",
+            "Tamil": "The Nilgiris"
+          }
+        },
+        "theni": {
+          "name": "Theni",
+          "labels": {
+            "English": "Theni",
+            "Tamil": "Theni"
+          }
+        },
+        "thoothukudi": {
+          "name": "Thoothukudi",
+          "labels": {
+            "English": "Thoothukudi",
+            "Tamil": "Thoothukudi"
+          }
+        },
+        "tiruchirappalli": {
+          "name": "Tiruchirappalli",
+          "labels": {
+            "English": "Tiruchirappalli",
+            "Tamil": "Tiruchirappalli"
+          }
+        },
+        "tirunelveli": {
+          "name": "Tirunelveli",
+          "labels": {
+            "English": "Tirunelveli",
+            "Tamil": "Tirunelveli"
+          }
+        },
+        "tirupathur": {
+          "name": "Tirupathur",
+          "labels": {
+            "English": "Tirupathur",
+            "Tamil": "Tirupathur"
+          }
+        },
+        "tiruppur": {
+          "name": "Tiruppur",
+          "labels": {
+            "English": "Tiruppur",
+            "Tamil": "Tiruppur"
+          }
+        },
+        "tiruvallur": {
+          "name": "Tiruvallur",
+          "labels": {
+            "English": "Tiruvallur",
+            "Tamil": "Tiruvallur"
+          }
+        },
+        "tiruvannamalai": {
+          "name": "Tiruvannamalai",
+          "labels": {
+            "English": "Tiruvannamalai",
+            "Tamil": "Tiruvannamalai"
+          }
+        },
+        "tiruvarur": {
+          "name": "Tiruvarur",
+          "labels": {
+            "English": "Tiruvarur",
+            "Tamil": "Tiruvarur"
+          }
+        },
+        "vellore": {
+          "name": "Vellore",
+          "labels": {
+            "English": "Vellore",
+            "Tamil": "Vellore"
+          }
+        },
+        "viluppuram": {
+          "name": "Viluppuram",
+          "labels": {
+            "English": "Viluppuram",
+            "Tamil": "Viluppuram"
+          }
+        },
+        "virudhunagar": {
+          "name": "Virudhunagar",
+          "labels": {
+            "English": "Virudhunagar",
+            "Tamil": "Virudhunagar"
+          }
+        }
+      }
+    },
+    "telangana": {
+      "name": "Telangana",
+      "default_local_language": "Telugu",
+      "labels": {
+        "English": "Telangana",
+        "Telugu": "తెలంగాణ"
+      },
+      "districts": {
+        "adilabad": {
+          "name": "Adilabad",
+          "labels": {
+            "English": "Adilabad",
+            "Telugu": "Adilabad"
+          }
+        },
+        "bhadradri_kothagudem": {
+          "name": "Bhadradri Kothagudem",
+          "labels": {
+            "English": "Bhadradri Kothagudem",
+            "Telugu": "Bhadradri Kothagudem"
+          }
+        },
+        "hanumakonda": {
+          "name": "Hanumakonda",
+          "labels": {
+            "English": "Hanumakonda",
+            "Telugu": "Hanumakonda"
+          }
+        },
+        "hyderabad": {
+          "name": "Hyderabad",
+          "labels": {
+            "English": "Hyderabad",
+            "Telugu": "Hyderabad"
+          }
+        },
+        "jagtial": {
+          "name": "Jagtial",
+          "labels": {
+            "English": "Jagtial",
+            "Telugu": "Jagtial"
+          }
+        },
+        "jangaon": {
+          "name": "Jangaon",
+          "labels": {
+            "English": "Jangaon",
+            "Telugu": "Jangaon"
+          }
+        },
+        "jayashankar_bhupalpally": {
+          "name": "Jayashankar Bhupalpally",
+          "labels": {
+            "English": "Jayashankar Bhupalpally",
+            "Telugu": "Jayashankar Bhupalpally"
+          }
+        },
+        "jogulamba_gadwal": {
+          "name": "Jogulamba Gadwal",
+          "labels": {
+            "English": "Jogulamba Gadwal",
+            "Telugu": "Jogulamba Gadwal"
+          }
+        },
+        "kamareddy": {
+          "name": "Kamareddy",
+          "labels": {
+            "English": "Kamareddy",
+            "Telugu": "Kamareddy"
+          }
+        },
+        "karimnagar": {
+          "name": "Karimnagar",
+          "labels": {
+            "English": "Karimnagar",
+            "Telugu": "Karimnagar"
+          }
+        },
+        "khammam": {
+          "name": "Khammam",
+          "labels": {
+            "English": "Khammam",
+            "Telugu": "Khammam"
+          }
+        },
+        "kumuram_bheem_asifabad": {
+          "name": "Kumuram Bheem Asifabad",
+          "labels": {
+            "English": "Kumuram Bheem Asifabad",
+            "Telugu": "Kumuram Bheem Asifabad"
+          }
+        },
+        "mahabubabad": {
+          "name": "Mahabubabad",
+          "labels": {
+            "English": "Mahabubabad",
+            "Telugu": "Mahabubabad"
+          }
+        },
+        "mahabubnagar": {
+          "name": "Mahabubnagar",
+          "labels": {
+            "English": "Mahabubnagar",
+            "Telugu": "Mahabubnagar"
+          }
+        },
+        "mancherial": {
+          "name": "Mancherial",
+          "labels": {
+            "English": "Mancherial",
+            "Telugu": "Mancherial"
+          }
+        },
+        "medak": {
+          "name": "Medak",
+          "labels": {
+            "English": "Medak",
+            "Telugu": "Medak"
+          }
+        },
+        "medchal_malkajgiri": {
+          "name": "Medchal-Malkajgiri",
+          "labels": {
+            "English": "Medchal-Malkajgiri",
+            "Telugu": "Medchal-Malkajgiri"
+          }
+        },
+        "mulugu": {
+          "name": "Mulugu",
+          "labels": {
+            "English": "Mulugu",
+            "Telugu": "Mulugu"
+          }
+        },
+        "nagarkurnool": {
+          "name": "Nagarkurnool",
+          "labels": {
+            "English": "Nagarkurnool",
+            "Telugu": "Nagarkurnool"
+          }
+        },
+        "nalgonda": {
+          "name": "Nalgonda",
+          "labels": {
+            "English": "Nalgonda",
+            "Telugu": "Nalgonda"
+          }
+        },
+        "narayanpet": {
+          "name": "Narayanpet",
+          "labels": {
+            "English": "Narayanpet",
+            "Telugu": "Narayanpet"
+          }
+        },
+        "nirmal": {
+          "name": "Nirmal",
+          "labels": {
+            "English": "Nirmal",
+            "Telugu": "Nirmal"
+          }
+        },
+        "nizamabad": {
+          "name": "Nizamabad",
+          "labels": {
+            "English": "Nizamabad",
+            "Telugu": "Nizamabad"
+          }
+        },
+        "peddapalli": {
+          "name": "Peddapalli",
+          "labels": {
+            "English": "Peddapalli",
+            "Telugu": "Peddapalli"
+          }
+        },
+        "rajanna_sircilla": {
+          "name": "Rajanna Sircilla",
+          "labels": {
+            "English": "Rajanna Sircilla",
+            "Telugu": "Rajanna Sircilla"
+          }
+        },
+        "rangareddy": {
+          "name": "Rangareddy",
+          "labels": {
+            "English": "Rangareddy",
+            "Telugu": "Rangareddy"
+          }
+        },
+        "sangareddy": {
+          "name": "Sangareddy",
+          "labels": {
+            "English": "Sangareddy",
+            "Telugu": "Sangareddy"
+          }
+        },
+        "siddipet": {
+          "name": "Siddipet",
+          "labels": {
+            "English": "Siddipet",
+            "Telugu": "Siddipet"
+          }
+        },
+        "suryapet": {
+          "name": "Suryapet",
+          "labels": {
+            "English": "Suryapet",
+            "Telugu": "Suryapet"
+          }
+        },
+        "vikarabad": {
+          "name": "Vikarabad",
+          "labels": {
+            "English": "Vikarabad",
+            "Telugu": "Vikarabad"
+          }
+        },
+        "wanaparthy": {
+          "name": "Wanaparthy",
+          "labels": {
+            "English": "Wanaparthy",
+            "Telugu": "Wanaparthy"
+          }
+        },
+        "warangal": {
+          "name": "Warangal",
+          "labels": {
+            "English": "Warangal",
+            "Telugu": "Warangal"
+          }
+        },
+        "yadadri_bhuvanagiri": {
+          "name": "Yadadri Bhuvanagiri",
+          "labels": {
+            "English": "Yadadri Bhuvanagiri",
+            "Telugu": "Yadadri Bhuvanagiri"
+          }
+        }
+      }
+    },
+    "uttar_pradesh": {
+      "name": "Uttar Pradesh",
+      "default_local_language": "Hindi",
+      "labels": {
+        "English": "Uttar Pradesh",
+        "Hindi": "उत्तर प्रदेश"
+      },
+      "districts": {
+        "agra": {
+          "name": "Agra",
+          "labels": {
+            "English": "Agra",
+            "Hindi": "Agra"
+          }
+        },
+        "aligarh": {
+          "name": "Aligarh",
+          "labels": {
+            "English": "Aligarh",
+            "Hindi": "Aligarh"
+          }
+        },
+        "ambedkar_nagar": {
+          "name": "Ambedkar Nagar",
+          "labels": {
+            "English": "Ambedkar Nagar",
+            "Hindi": "Ambedkar Nagar"
+          }
+        },
+        "amethi": {
+          "name": "Amethi",
+          "labels": {
+            "English": "Amethi",
+            "Hindi": "Amethi"
+          }
+        },
+        "amroha": {
+          "name": "Amroha",
+          "labels": {
+            "English": "Amroha",
+            "Hindi": "Amroha"
+          }
+        },
+        "auraiya": {
+          "name": "Auraiya",
+          "labels": {
+            "English": "Auraiya",
+            "Hindi": "Auraiya"
+          }
+        },
+        "ayodhya": {
+          "name": "Ayodhya",
+          "labels": {
+            "English": "Ayodhya",
+            "Hindi": "Ayodhya"
+          }
+        },
+        "azamgarh": {
+          "name": "Azamgarh",
+          "labels": {
+            "English": "Azamgarh",
+            "Hindi": "Azamgarh"
+          }
+        },
+        "baghpat": {
+          "name": "Baghpat",
+          "labels": {
+            "English": "Baghpat",
+            "Hindi": "Baghpat"
+          }
+        },
+        "bahraich": {
+          "name": "Bahraich",
+          "labels": {
+            "English": "Bahraich",
+            "Hindi": "Bahraich"
+          }
+        },
+        "ballia": {
+          "name": "Ballia",
+          "labels": {
+            "English": "Ballia",
+            "Hindi": "Ballia"
+          }
+        },
+        "balrampur": {
+          "name": "Balrampur",
+          "labels": {
+            "English": "Balrampur",
+            "Hindi": "Balrampur"
+          }
+        },
+        "banda": {
+          "name": "Banda",
+          "labels": {
+            "English": "Banda",
+            "Hindi": "Banda"
+          }
+        },
+        "barabanki": {
+          "name": "Barabanki",
+          "labels": {
+            "English": "Barabanki",
+            "Hindi": "Barabanki"
+          }
+        },
+        "bareilly": {
+          "name": "Bareilly",
+          "labels": {
+            "English": "Bareilly",
+            "Hindi": "Bareilly"
+          }
+        },
+        "basti": {
+          "name": "Basti",
+          "labels": {
+            "English": "Basti",
+            "Hindi": "Basti"
+          }
+        },
+        "bhadohi": {
+          "name": "Bhadohi",
+          "labels": {
+            "English": "Bhadohi",
+            "Hindi": "Bhadohi"
+          }
+        },
+        "bijnor": {
+          "name": "Bijnor",
+          "labels": {
+            "English": "Bijnor",
+            "Hindi": "Bijnor"
+          }
+        },
+        "budaun": {
+          "name": "Budaun",
+          "labels": {
+            "English": "Budaun",
+            "Hindi": "Budaun"
+          }
+        },
+        "bulandshahr": {
+          "name": "Bulandshahr",
+          "labels": {
+            "English": "Bulandshahr",
+            "Hindi": "Bulandshahr"
+          }
+        },
+        "chandauli": {
+          "name": "Chandauli",
+          "labels": {
+            "English": "Chandauli",
+            "Hindi": "Chandauli"
+          }
+        },
+        "chitrakoot": {
+          "name": "Chitrakoot",
+          "labels": {
+            "English": "Chitrakoot",
+            "Hindi": "Chitrakoot"
+          }
+        },
+        "deoria": {
+          "name": "Deoria",
+          "labels": {
+            "English": "Deoria",
+            "Hindi": "Deoria"
+          }
+        },
+        "etah": {
+          "name": "Etah",
+          "labels": {
+            "English": "Etah",
+            "Hindi": "Etah"
+          }
+        },
+        "etawah": {
+          "name": "Etawah",
+          "labels": {
+            "English": "Etawah",
+            "Hindi": "Etawah"
+          }
+        },
+        "farrukhabad": {
+          "name": "Farrukhabad",
+          "labels": {
+            "English": "Farrukhabad",
+            "Hindi": "Farrukhabad"
+          }
+        },
+        "fatehpur": {
+          "name": "Fatehpur",
+          "labels": {
+            "English": "Fatehpur",
+            "Hindi": "Fatehpur"
+          }
+        },
+        "firozabad": {
+          "name": "Firozabad",
+          "labels": {
+            "English": "Firozabad",
+            "Hindi": "Firozabad"
+          }
+        },
+        "gautam_buddha_nagar": {
+          "name": "Gautam Buddha Nagar",
+          "labels": {
+            "English": "Gautam Buddha Nagar",
+            "Hindi": "Gautam Buddha Nagar"
+          }
+        },
+        "ghaziabad": {
+          "name": "Ghaziabad",
+          "labels": {
+            "English": "Ghaziabad",
+            "Hindi": "Ghaziabad"
+          }
+        },
+        "ghazipur": {
+          "name": "Ghazipur",
+          "labels": {
+            "English": "Ghazipur",
+            "Hindi": "Ghazipur"
+          }
+        },
+        "gonda": {
+          "name": "Gonda",
+          "labels": {
+            "English": "Gonda",
+            "Hindi": "Gonda"
+          }
+        },
+        "gorakhpur": {
+          "name": "Gorakhpur",
+          "labels": {
+            "English": "Gorakhpur",
+            "Hindi": "Gorakhpur"
+          }
+        },
+        "hamirpur": {
+          "name": "Hamirpur",
+          "labels": {
+            "English": "Hamirpur",
+            "Hindi": "Hamirpur"
+          }
+        },
+        "hapur": {
+          "name": "Hapur",
+          "labels": {
+            "English": "Hapur",
+            "Hindi": "Hapur"
+          }
+        },
+        "hardoi": {
+          "name": "Hardoi",
+          "labels": {
+            "English": "Hardoi",
+            "Hindi": "Hardoi"
+          }
+        },
+        "hathras": {
+          "name": "Hathras",
+          "labels": {
+            "English": "Hathras",
+            "Hindi": "Hathras"
+          }
+        },
+        "jalaun": {
+          "name": "Jalaun",
+          "labels": {
+            "English": "Jalaun",
+            "Hindi": "Jalaun"
+          }
+        },
+        "jaunpur": {
+          "name": "Jaunpur",
+          "labels": {
+            "English": "Jaunpur",
+            "Hindi": "Jaunpur"
+          }
+        },
+        "jhansi": {
+          "name": "Jhansi",
+          "labels": {
+            "English": "Jhansi",
+            "Hindi": "Jhansi"
+          }
+        },
+        "kannauj": {
+          "name": "Kannauj",
+          "labels": {
+            "English": "Kannauj",
+            "Hindi": "Kannauj"
+          }
+        },
+        "kanpur_dehat": {
+          "name": "Kanpur Dehat",
+          "labels": {
+            "English": "Kanpur Dehat",
+            "Hindi": "Kanpur Dehat"
+          }
+        },
+        "kanpur_nagar": {
+          "name": "Kanpur Nagar",
+          "labels": {
+            "English": "Kanpur Nagar",
+            "Hindi": "Kanpur Nagar"
+          }
+        },
+        "kasganj": {
+          "name": "Kasganj",
+          "labels": {
+            "English": "Kasganj",
+            "Hindi": "Kasganj"
+          }
+        },
+        "kaushambi": {
+          "name": "Kaushambi",
+          "labels": {
+            "English": "Kaushambi",
+            "Hindi": "Kaushambi"
+          }
+        },
+        "kheri": {
+          "name": "Kheri",
+          "labels": {
+            "English": "Kheri",
+            "Hindi": "Kheri"
+          }
+        },
+        "kushinagar": {
+          "name": "Kushinagar",
+          "labels": {
+            "English": "Kushinagar",
+            "Hindi": "Kushinagar"
+          }
+        },
+        "lalitpur": {
+          "name": "Lalitpur",
+          "labels": {
+            "English": "Lalitpur",
+            "Hindi": "Lalitpur"
+          }
+        },
+        "lucknow": {
+          "name": "Lucknow",
+          "labels": {
+            "English": "Lucknow",
+            "Hindi": "Lucknow"
+          }
+        },
+        "maharajganj": {
+          "name": "Maharajganj",
+          "labels": {
+            "English": "Maharajganj",
+            "Hindi": "Maharajganj"
+          }
+        },
+        "mahoba": {
+          "name": "Mahoba",
+          "labels": {
+            "English": "Mahoba",
+            "Hindi": "Mahoba"
+          }
+        },
+        "mainpuri": {
+          "name": "Mainpuri",
+          "labels": {
+            "English": "Mainpuri",
+            "Hindi": "Mainpuri"
+          }
+        },
+        "mathura": {
+          "name": "Mathura",
+          "labels": {
+            "English": "Mathura",
+            "Hindi": "Mathura"
+          }
+        },
+        "mau": {
+          "name": "Mau",
+          "labels": {
+            "English": "Mau",
+            "Hindi": "Mau"
+          }
+        },
+        "meerut": {
+          "name": "Meerut",
+          "labels": {
+            "English": "Meerut",
+            "Hindi": "Meerut"
+          }
+        },
+        "mirzapur": {
+          "name": "Mirzapur",
+          "labels": {
+            "English": "Mirzapur",
+            "Hindi": "Mirzapur"
+          }
+        },
+        "moradabad": {
+          "name": "Moradabad",
+          "labels": {
+            "English": "Moradabad",
+            "Hindi": "Moradabad"
+          }
+        },
+        "muzaffarnagar": {
+          "name": "Muzaffarnagar",
+          "labels": {
+            "English": "Muzaffarnagar",
+            "Hindi": "Muzaffarnagar"
+          }
+        },
+        "pilibhit": {
+          "name": "Pilibhit",
+          "labels": {
+            "English": "Pilibhit",
+            "Hindi": "Pilibhit"
+          }
+        },
+        "pratapgarh": {
+          "name": "Pratapgarh",
+          "labels": {
+            "English": "Pratapgarh",
+            "Hindi": "Pratapgarh"
+          }
+        },
+        "prayagraj": {
+          "name": "Prayagraj",
+          "labels": {
+            "English": "Prayagraj",
+            "Hindi": "Prayagraj"
+          }
+        },
+        "rae_bareli": {
+          "name": "Rae Bareli",
+          "labels": {
+            "English": "Rae Bareli",
+            "Hindi": "Rae Bareli"
+          }
+        },
+        "rampur": {
+          "name": "Rampur",
+          "labels": {
+            "English": "Rampur",
+            "Hindi": "Rampur"
+          }
+        },
+        "saharanpur": {
+          "name": "Saharanpur",
+          "labels": {
+            "English": "Saharanpur",
+            "Hindi": "Saharanpur"
+          }
+        },
+        "sambhal": {
+          "name": "Sambhal",
+          "labels": {
+            "English": "Sambhal",
+            "Hindi": "Sambhal"
+          }
+        },
+        "sant_kabir_nagar": {
+          "name": "Sant Kabir Nagar",
+          "labels": {
+            "English": "Sant Kabir Nagar",
+            "Hindi": "Sant Kabir Nagar"
+          }
+        },
+        "shahjahanpur": {
+          "name": "Shahjahanpur",
+          "labels": {
+            "English": "Shahjahanpur",
+            "Hindi": "Shahjahanpur"
+          }
+        },
+        "shamli": {
+          "name": "Shamli",
+          "labels": {
+            "English": "Shamli",
+            "Hindi": "Shamli"
+          }
+        },
+        "shravasti": {
+          "name": "Shravasti",
+          "labels": {
+            "English": "Shravasti",
+            "Hindi": "Shravasti"
+          }
+        },
+        "siddharthnagar": {
+          "name": "Siddharthnagar",
+          "labels": {
+            "English": "Siddharthnagar",
+            "Hindi": "Siddharthnagar"
+          }
+        },
+        "sitapur": {
+          "name": "Sitapur",
+          "labels": {
+            "English": "Sitapur",
+            "Hindi": "Sitapur"
+          }
+        },
+        "sonbhadra": {
+          "name": "Sonbhadra",
+          "labels": {
+            "English": "Sonbhadra",
+            "Hindi": "Sonbhadra"
+          }
+        },
+        "sultanpur": {
+          "name": "Sultanpur",
+          "labels": {
+            "English": "Sultanpur",
+            "Hindi": "Sultanpur"
+          }
+        },
+        "unnao": {
+          "name": "Unnao",
+          "labels": {
+            "English": "Unnao",
+            "Hindi": "Unnao"
+          }
+        },
+        "varanasi": {
+          "name": "Varanasi",
+          "labels": {
+            "English": "Varanasi",
+            "Hindi": "Varanasi"
+          }
+        }
+      }
+    },
+    "west_bengal": {
+      "name": "West Bengal",
+      "default_local_language": "Bengali",
+      "labels": {
+        "English": "West Bengal",
+        "Bengali": "পশ্চিমবঙ্গ"
+      },
+      "districts": {
+        "alipurduar": {
+          "name": "Alipurduar",
+          "labels": {
+            "English": "Alipurduar",
+            "Bengali": "Alipurduar"
+          }
+        },
+        "bankura": {
+          "name": "Bankura",
+          "labels": {
+            "English": "Bankura",
+            "Bengali": "Bankura"
+          }
+        },
+        "birbhum": {
+          "name": "Birbhum",
+          "labels": {
+            "English": "Birbhum",
+            "Bengali": "Birbhum"
+          }
+        },
+        "cooch_behar": {
+          "name": "Cooch Behar",
+          "labels": {
+            "English": "Cooch Behar",
+            "Bengali": "Cooch Behar"
+          }
+        },
+        "dakshin_dinajpur": {
+          "name": "Dakshin Dinajpur",
+          "labels": {
+            "English": "Dakshin Dinajpur",
+            "Bengali": "Dakshin Dinajpur"
+          }
+        },
+        "darjeeling": {
+          "name": "Darjeeling",
+          "labels": {
+            "English": "Darjeeling",
+            "Bengali": "Darjeeling"
+          }
+        },
+        "hooghly": {
+          "name": "Hooghly",
+          "labels": {
+            "English": "Hooghly",
+            "Bengali": "Hooghly"
+          }
+        },
+        "howrah": {
+          "name": "Howrah",
+          "labels": {
+            "English": "Howrah",
+            "Bengali": "Howrah"
+          }
+        },
+        "jalpaiguri": {
+          "name": "Jalpaiguri",
+          "labels": {
+            "English": "Jalpaiguri",
+            "Bengali": "Jalpaiguri"
+          }
+        },
+        "jhargram": {
+          "name": "Jhargram",
+          "labels": {
+            "English": "Jhargram",
+            "Bengali": "Jhargram"
+          }
+        },
+        "kalimpong": {
+          "name": "Kalimpong",
+          "labels": {
+            "English": "Kalimpong",
+            "Bengali": "Kalimpong"
+          }
+        },
+        "kolkata": {
+          "name": "Kolkata",
+          "labels": {
+            "English": "Kolkata",
+            "Bengali": "Kolkata"
+          }
+        },
+        "malda": {
+          "name": "Malda",
+          "labels": {
+            "English": "Malda",
+            "Bengali": "Malda"
+          }
+        },
+        "murshidabad": {
+          "name": "Murshidabad",
+          "labels": {
+            "English": "Murshidabad",
+            "Bengali": "Murshidabad"
+          }
+        },
+        "nadia": {
+          "name": "Nadia",
+          "labels": {
+            "English": "Nadia",
+            "Bengali": "Nadia"
+          }
+        },
+        "north_24_parganas": {
+          "name": "North 24 Parganas",
+          "labels": {
+            "English": "North 24 Parganas",
+            "Bengali": "North 24 Parganas"
+          }
+        },
+        "paschim_bardhaman": {
+          "name": "Paschim Bardhaman",
+          "labels": {
+            "English": "Paschim Bardhaman",
+            "Bengali": "Paschim Bardhaman"
+          }
+        },
+        "paschim_medinipur": {
+          "name": "Paschim Medinipur",
+          "labels": {
+            "English": "Paschim Medinipur",
+            "Bengali": "Paschim Medinipur"
+          }
+        },
+        "purba_bardhaman": {
+          "name": "Purba Bardhaman",
+          "labels": {
+            "English": "Purba Bardhaman",
+            "Bengali": "Purba Bardhaman"
+          }
+        },
+        "purba_medinipur": {
+          "name": "Purba Medinipur",
+          "labels": {
+            "English": "Purba Medinipur",
+            "Bengali": "Purba Medinipur"
+          }
+        },
+        "purulia": {
+          "name": "Purulia",
+          "labels": {
+            "English": "Purulia",
+            "Bengali": "Purulia"
+          }
+        },
+        "south_24_parganas": {
+          "name": "South 24 Parganas",
+          "labels": {
+            "English": "South 24 Parganas",
+            "Bengali": "South 24 Parganas"
+          }
+        },
+        "uttar_dinajpur": {
+          "name": "Uttar Dinajpur",
+          "labels": {
+            "English": "Uttar Dinajpur",
+            "Bengali": "Uttar Dinajpur"
+          }
+        }
+      }
+    }
+  }
 }
