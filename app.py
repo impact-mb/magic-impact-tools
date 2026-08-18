@@ -79,14 +79,18 @@ def main():
     # ========================================================
     render_header()
 
-    render_tools_section(
-        tools
-    )
+    # ========================================================
+    # AI GENERATOR FIRST
+    # ========================================================
 
     render_ai_generator(
         languages=languages,
         india_geography=india_geography,
         default_model=default_model,
+    )
+
+    render_tools_section(
+        tools
     )
 
     render_footer()

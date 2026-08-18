@@ -52,7 +52,7 @@ def render_header():
         if LOGO_FILE.exists():
             st.image(
                 str(LOGO_FILE),
-                use_container_width=True,
+                width=100,
             )
         else:
             st.html(
