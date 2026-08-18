@@ -5,6 +5,7 @@ from core.languages import (
     translations_to_map,
 )
 from core.settings import PROMPT_LIBRARY_FILE
+from core.auth import current_user
 from services.ai_service import (
     generate_questionnaire,
 )
@@ -14,6 +15,11 @@ from services.geography_service import (
 )
 from services.xlsform_service import (
     build_xlsform,
+)
+from services.usage_service import (
+    format_next_available,
+    get_usage,
+    record_successful_generation,
 )
 
 
@@ -48,6 +54,30 @@ def render_ai_generator(
         "ODK / KoboToolbox XLSForm"
     )
 
+    user = current_user() or {}
+    username = str(user.get("username", "")).strip().lower()
+    display_name = str(user.get("display_name", username)).strip()
+    team = str(user.get("team", "")).strip()
+    daily_limit = int(user.get("ai_daily_limit", 5))
+
+    usage_error = None
+    try:
+        usage = get_usage(
+            username=username,
+            daily_limit=daily_limit,
+        )
+    except Exception as exc:
+        usage_error = str(exc)
+        # Fail closed so a broken ledger cannot create untracked AI usage.
+        usage = {
+            "limit": daily_limit,
+            "used": 0,
+            "remaining": 0,
+            "allowed": False,
+            "next_available_at": None,
+            "window_hours": 24,
+        }
+
     # ========================================================
     # ONE LARGE AI GENERATOR CONTAINER
     # ========================================================
@@ -77,6 +107,39 @@ def render_ai_generator(
         )
 
         st.divider()
+
+        with st.container(border=True):
+            st.markdown("### AI Generation Usage")
+
+            if usage_error:
+                st.error(
+                    "AI usage tracking is temporarily unavailable. "
+                    "Generation is disabled to protect the usage limit."
+                )
+            else:
+                st.markdown(
+                    f"**{display_name or username}** — "
+                    f"**{usage['used']} / {usage['limit']}** "
+                    "generations used in the last 24 hours"
+                )
+
+                if usage["allowed"]:
+                    st.caption(
+                        f"{usage['remaining']} generation"
+                        f"{'' if usage['remaining'] == 1 else 's'} remaining."
+                    )
+                else:
+                    next_time = format_next_available(
+                        usage.get("next_available_at")
+                    )
+                    if next_time:
+                        st.warning(
+                            "AI generation limit reached. "
+                            f"One generation becomes available after "
+                            f"{next_time} IST."
+                        )
+                    else:
+                        st.warning("AI generation limit reached.")
 
         # ====================================================
         # ROW 1: PROMPT | READY PROMPT | PROMPT LIBRARY
@@ -449,6 +512,8 @@ def render_ai_generator(
         generate_enabled = (
             language_valid
             and geography_valid
+            and usage["allowed"]
+            and not usage_error
         )
 
         generate_button = st.button(
@@ -507,6 +572,12 @@ def render_ai_generator(
                             )
                         )
 
+                record_successful_generation(
+                    username=username,
+                    display_name=display_name,
+                    team=team,
+                )
+
                 st.session_state[
                     "generated_questionnaire"
                 ] = questionnaire
@@ -527,8 +598,19 @@ def render_ai_generator(
                     "generated_geography_translations"
                 ] = geography_translations
 
+                updated_used = min(
+                    usage["used"] + 1,
+                    usage["limit"],
+                )
+                updated_remaining = max(
+                    0,
+                    usage["limit"] - updated_used,
+                )
+
                 st.success(
-                    "Questionnaire draft generated."
+                    "Questionnaire draft generated successfully. "
+                    f"AI usage: {updated_used} / {usage['limit']} used; "
+                    f"{updated_remaining} remaining."
                 )
 
             except Exception as exc:
